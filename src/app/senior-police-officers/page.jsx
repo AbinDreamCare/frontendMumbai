@@ -36,7 +36,7 @@ function page() {
       {seniorPoliceData.map((card, index) => (
         <div key={index} className="border rounded-lg p-4 shadow-2xl w-[362px] my-10 mx-5">
           <div className="flex justify-center bg-blue-950 rounded-xl h-[239px]">
-            <img src={`http://localhost:7000/uploads/${card.filename}`} height={253} width={301} />
+            <img src={`http://43.204.148.171:7000/uploads/${card.filename}`} height={253} width={301} />
           </div>
           <div className="text-center">
             <div>

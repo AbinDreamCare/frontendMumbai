@@ -41,7 +41,7 @@ function Page  (params)  {
       </div>
       <div className="flex justify-center w-full mt-10 ">
         <img
-          src={`http://localhost:7000/uploads/${Data.filename}`}
+          src={`http://43.204.148.171:7000/uploads/${Data.filename}`}
           height={100}
           width={600}
           className=" w-[100%] lg:w-[70%] h-80 p-2 border-1 bg-white"
@@ -51,7 +51,7 @@ function Page  (params)  {
         <div className=" lg:w-1/3  justify-center text-center align-middle bg-[#FFFFFF] p-4">
           <div className="flex justify-center ">
             <img
-              src={`http://localhost:7000/uploads/${Data.filename2}`}
+              src={`http://43.204.148.171:7000/uploads/${Data.filename2}`}
               height={300}
               width={300}
               className="align-middle p-1 rounded-2xl mt-[30%] "
@@ -146,7 +146,7 @@ function Page  (params)  {
           <h1 className="flex justify-center "><CiLocationOn size={30} /></h1>
           <h1 className="my-5 text-xl font-semibold text-center ">Jurisdiction Map</h1>
           <img
-            src={`http://localhost:7000/uploads/${Data.filename3}`}
+            src={`http://43.204.148.171:7000/uploads/${Data.filename3}`}
             height={700}
             width={450}
             className="p-1 align-middle rounded-2xl "

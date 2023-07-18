@@ -59,7 +59,7 @@ function page() {
               <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 <div className="flex justify-center text-orange-700">
                   <a
-                    href={`http://localhost:7000/uploads/${hierarchy.filename}`}
+                    href={`http://43.204.148.171:7000/uploads/${hierarchy.filename}`}
                     target="_blank"
                     download={hierarchy.filename}
                   >
