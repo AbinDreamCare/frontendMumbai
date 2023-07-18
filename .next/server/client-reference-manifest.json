@@ -40,9 +40,17 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/login/page.jsx": {
+    "(app-client)/./src/app/page.js": {
       "*": {
-        "id": "(sc_client)/./src/app/login/page.jsx",
+        "id": "(sc_client)/./src/app/page.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/police-station/[id]/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/police-station/[id]/page.jsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -139,11 +147,19 @@
       ],
       "async": false
     },
-    "D:\\Dream Care\\Mumbai Police\\mumbaiHost\\frontend\\src\\app\\login\\page.jsx": {
-      "id": "(app-client)/./src/app/login/page.jsx",
+    "D:\\Dream Care\\Mumbai Police\\mumbaiHost\\frontend\\src\\app\\page.js": {
+      "id": "(app-client)/./src/app/page.js",
       "name": "*",
       "chunks": [
-        "app/login/page:static/chunks/app/login/page.js"
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "D:\\Dream Care\\Mumbai Police\\mumbaiHost\\frontend\\src\\app\\police-station\\[id]\\page.jsx": {
+      "id": "(app-client)/./src/app/police-station/[id]/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/police-station/[id]/page:static/chunks/app/police-station/[id]/page.js"
       ],
       "async": false
     }
@@ -152,6 +168,7 @@
     "D:\\Dream Care\\Mumbai Police\\mumbaiHost\\frontend\\src\\app\\layout": [
       "static/css/app/layout.css"
     ],
-    "D:\\Dream Care\\Mumbai Police\\mumbaiHost\\frontend\\src\\app\\login\\page": []
+    "D:\\Dream Care\\Mumbai Police\\mumbaiHost\\frontend\\src\\app\\page": [],
+    "D:\\Dream Care\\Mumbai Police\\mumbaiHost\\frontend\\src\\app\\police-station\\[id]\\page": []
   }
 }

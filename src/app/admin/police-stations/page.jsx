@@ -107,9 +107,9 @@ function Page() {
       name: 'Station Photo',
       cell: (row) =>
         row.filename ? (
-          <a href={`http://43.204.148.171/uploads/${row.filename}`} target="_blank" download={row.name}>
+          <a href={`http://3.7.252.48/uploads/${row.filename}`} target="_blank" download={row.name}>
             {/* <FaDownload className="h-10 w-10 p-3 text-white rounded-full bg-yellow-300" /> */}
-            <img src={`http://43.204.148.171/uploads/${row.filename}`}/>
+            <img src={`http://3.7.252.48/uploads/${row.filename}`}/>
           </a>
         ) : (
           <FaDownload className="h-10 w-10 p-3 text-white rounded-full bg-yellow-300" />
@@ -120,9 +120,9 @@ function Page() {
       name: 'Officer Photo',
       cell: (row) =>
         row.filename2 ? (
-          <a href={`http://43.204.148.171/uploads/${row.filename2}`} target="_blank" download={row.name}>
+          <a href={`http://3.7.252.48/uploads/${row.filename2}`} target="_blank" download={row.name}>
             {/* <FaDownload className="h-10 w-10 p-3 text-white rounded-full bg-yellow-300" /> */}
-            <img src={`http://43.204.148.171/uploads/${row.filename2}`}/>
+            <img src={`http://3.7.252.48/uploads/${row.filename2}`}/>
           </a>
         ) : (
           <FaDownload className="h-10 w-10 p-3 text-white rounded-full bg-yellow-300" />
@@ -133,9 +133,9 @@ function Page() {
       name: 'Map Photo',
       cell: (row) =>
         row.filename3 ? (
-          <a href={`http://43.204.148.171/uploads/${row.filename3}`} target="_blank" download={row.name}>
+          <a href={`http://3.7.252.48/uploads/${row.filename3}`} target="_blank" download={row.name}>
             {/* <FaDownload className="h-10 w-10 p-3 text-white rounded-full bg-yellow-300" /> */}
-            <img src={`http://43.204.148.171/uploads/${row.filename3}`}/>
+            <img src={`http://3.7.252.48/uploads/${row.filename3}`}/>
           </a>
         ) : (
           <FaDownload className="h-10 w-10 p-3 text-white rounded-full bg-yellow-300" />

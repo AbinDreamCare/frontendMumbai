@@ -33,7 +33,7 @@ function Page() {
       {Data.map((card, index) => (
         <div key={index} className="border rounded-lg p-4 shadow-2xl w-[362px] my-10 mx-5">
           <div className="md:flex justify-center bg-blue-950 rounded-xl h-[239px]">
-            <img src={`http://43.204.148.171/uploads/${card.filename}`} height={253} width={301} />
+            <img src={`http://3.7.252.48/uploads/${card.filename}`} height={253} width={301} />
           </div>
           <div className="text-center">
             <div>

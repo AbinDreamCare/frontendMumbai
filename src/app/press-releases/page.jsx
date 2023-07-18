@@ -64,7 +64,7 @@ function Page() {
               <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 <div className="flex justify-center text-orange-700">
                   <a
-                    href={`http://43.204.148.171/uploads/${hierarchy.filename}`}
+                    href={`http://3.7.252.48/uploads/${hierarchy.filename}`}
                     target="_blank"
                     download={hierarchy.filename}
                   >

@@ -105,7 +105,7 @@ function Page() {
       name: 'File',
       cell: (row) =>
         row.filename ? (
-          <a href={`http://43.204.148.171/uploads/${row.filename}`} target="_blank" download={row.name}>
+          <a href={`http://3.7.252.48/uploads/${row.filename}`} target="_blank" download={row.name}>
             <FaDownload className="h-10 w-10 p-3 text-white rounded-full bg-yellow-300" />
           </a>
         ) : (
