@@ -40,136 +40,140 @@ function Page() {
       <div className="w-full">
         <div className="bg-[#D2D2D2]">
           <Navbar />
-          <div className="text-5xl font-bold leading-9 text-center text-white">
-            <h1 className="pt-14">{t("feedback")}</h1>
+          <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
+            <h1 className="pt-14 mt-5">{t("feedback")}</h1>
           </div>
-
-          <div className="flex md:ml-10">
-            <div className="items-center justify-center my-20 ml-5 md:mx-20 md:ml-0">
-              <div className="md:ms-16">
-              <h1 className="font-bold text-black">{t("disclaimer")}</h1>
-              <h1 className="text-black">{t("inform_2")}</h1>
-              <h1 className="text-black">{t("inform_3")}</h1>
+          <div className="w-full flex justify-center">
+            <div className="w-10/12">
+              <div>
+                <h1 className="font-bold text-black">{t("disclaimer")}</h1>
+                <h1 className="text-black">{t("inform_2")}</h1>
+                <h1 className="text-black">{t("inform_3")}</h1>
               </div>
-              <div className="">
-                <div className="container ml-9 md:ml-0 ">
-                  <div className="justify-center my-5 md:flex md:space-x-7 md:mx-10 ">
-                    <div>
-                      <label
-                        htmlFor="dropdownValue"
-                        className="font-bold text-gray-500"
-                      >
-                        {t("select_category")} *
-                      </label>
-                      <br />
-                      <select
-                        name="reportdropdownValue"
-                        //   onChange={handlereportType}
-                        id="reportdropdownValue"
-                        className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
-                      >
-                        <option value="">{t("select_category")}</option>
-                        {optionsFeedback.map((option) => (
-                          <option key={option.value} value={option.label}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="dropdownValue"
-                        className="font-bold text-gray-500"
-                      >
-                        {t("police_station")}
-                      </label>
-                      <br />
-                      <select
-                        name="reportdropdownValue"
-                        //   onChange={handlereportType}
-                        id="reportdropdownValue"
-                        className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
-                      >
-                        <option value="">{t("select_police_station")}</option>
-                        {optionsPoliceStation.map((option) => (
-                          <option key={option.value} value={option.label}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label htmlFor="name" className="font-bold text-gray-500">
-                        {t("full_name")}*
-                      </label>
-                      <br />
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        //   onChange={handleNameChange}
-                        className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
-                      />
-                    </div>
-                  </div>
-                  <div className="justify-center my-5 md:flex md:space-x-7 md:mx-10 ">
-                    <div>
-                      <label
-                        htmlFor="contact"
-                        className="font-bold text-gray-500"
-                      >
-                        {t("contact_no")}*
-                      </label>
-                      <br />
-                      <input
-                        type="number"
-                        id="contact"
-                        name="contact"
-                        //   onChange={handlenumber}
-                        className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="font-bold text-gray-500"
-                      >
-                        {t("email")} *
-                      </label>
-                      <br />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        //   onChange={handleemail}
-                        className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
-                      />
-                    </div>
-                    <div className="justify-center md:flex md:space-x-7 md:mx-16">
-                      <div>
-                        <label
-                          htmlFor="address"
-                          className="font-bold text-gray-500"
-                        >
-                          {t("subject")} *
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          id="subject"
-                          name="subject"
-                          //   onChange={handleaddress}
-                          className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
-                        />
-                      </div>
-                    </div>
+
+              <div className="justify-between  my-5 md:flex ">
+                <div className="md:w-4/12 md:pr-8 flex justify-start my-5 md:my-0">
+                  <div className="w-full">
+                  <label
+                    htmlFor="dropdownValue"
+                    className="font-bold text-gray-500"
+                  >
+                    {t("select_category")} *
+                  </label>
+                  <br />
+                  <select
+                    name="reportdropdownValue"
+                    //   onChange={handlereportType}
+                    id="reportdropdownValue"
+                    className="w-full py-1 border border-gray-500 rounded-lg "
+                  >
+                    <option value="">{t("select_category")}</option>
+                    {optionsFeedback.map((option) => (
+                      <option key={option.value} value={option.label}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
                   </div>
                 </div>
-                <div className="flex justify-center mx-10 my-5">
-                  <div className=" justify-center md:w-[100%] w-full">
+                <div className="md:w-4/12 md:px-4 flex justify-center my-5 md:my-0 w-full">
+                  <div className="w-full">
+                  <label
+                    htmlFor="dropdownValue"
+                    className="font-bold text-gray-500"
+                  >
+                    {t("police_station")}
+                  </label>
+                  <br />
+                  <select
+                    name="reportdropdownValue"
+                    //   onChange={handlereportType}
+                    id="reportdropdownValue"
+                    className="w-full py-1 border border-gray-500 rounded-lg "
+                  >
+                    <option value="">{t("select_police_station")}</option>
+                    {optionsPoliceStation.map((option) => (
+                      <option key={option.value} value={option.label}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                  </div>
+                </div>
+                <div className="md:w-4/12 md:pl-8 flex justify-items-end  my-5 md:my-0">
+                  <div className="w-full float-right">
+                  <label htmlFor="name" className="font-bold text-gray-500">
+                    {t("full_name")}*
+                  </label>
+                  <br />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    //   onChange={handleNameChange}
+                    className="w-full py-1 border border-gray-500 rounded-lg "
+                  />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-between w-full">
+                <div className="md:w-4/12 md:pr-8 flex justify-items-start  my-5 md:my-0">
+                  <div className="w-full">
+                  <label htmlFor="contact" className="font-bold text-gray-500">
+                    {t("contact_no")}*
+                  </label>
+                  <br />
+                  <input
+                    type="number"
+                    id="contact"
+                    name="contact"
+                    //   onChange={handlenumber}
+                    className="w-full py-1 border border-gray-500 rounded-lg "
+                  />
+                  </div>
+                </div>
+                <div className="md:w-4/12 md:px-4 flex justify-center  my-5 md:my-0">
+                  <div className="w-full">
+                  <label htmlFor="email" className="font-bold text-gray-500">
+                    {t("email")} *
+                  </label>
+                  <br />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    //   onChange={handleemail}
+                    className="w-full  py-1 border border-gray-500 rounded-lg "
+                  />
+                  </div>
+                </div>
+                <div className="md:w-4/12 md:pl-8 flex justify-items-end  my-5 md:my-0">
+                  <div className="w-full">
+                    <label
+                      htmlFor="address"
+                      className="font-bold text-gray-500"
+                    >
+                      {t("subject")} *
+                    </label>
+                    <br />
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      //   onChange={handleaddress}
+                      className="w-full py-1 border border-gray-500 rounded-lg "
+                    />
+                  </div>
+                </div>
+              </div>
+
+
+              <div className="flex justify-center w-full my-5">
+                  <div className="  md:w-[100%] w-full">
                     <label
                       htmlFor="article"
-                      className="font-bold md:ms-5 text-gray-500"
+                      className="font-bold  text-gray-500"
                     >
                       {t("addrress")}*
                     </label>
@@ -179,15 +183,18 @@ function Page() {
                       id="address"
                       name="address"
                       //   onChange={handledescription}
-                      className="md:w-[96%] w-full md:mx-5 py-1 border border-gray-500 rounded-lg"
+                      className=" w-full py-1 border border-gray-500 rounded-lg"
                     />
                   </div>
                 </div>
-                <div className="flex justify-center mx-10 my-5">
-                  <div className=" justify-center md:w-[100%] w-full">
+
+
+
+                <div className="flex justify-center my-5">
+                  <div className=" justify-center w-full">
                     <label
                       htmlFor="article"
-                      className="font-bold md:ms-5 text-gray-500"
+                      className="font-bold  text-gray-500"
                     >
                       {t("description")}
                     </label>
@@ -197,11 +204,14 @@ function Page() {
                       id="article"
                       name="article"
                       //   onChange={handledescription}
-                      className="w-full md:w-[96%] md:mx-5 py-1 border border-gray-500 rounded-lg"
+                      className="w-full py-1 border border-gray-500 rounded-lg"
                     />
                   </div>
                 </div>
-                <div className="flex justify-center ">
+
+
+
+                <div className="flex justify-center mb-16">
                   <div className="">
                     <div className="flex justify-center">
                       <img src="" alt="captcha" className="bg-white" />
@@ -241,9 +251,11 @@ function Page() {
                     </div>
                   </div>
                 </div>
-              </div>
+
+
             </div>
           </div>
+
           <div className="mt-[26rem] md:mt-[0rem]">
             <Footer />
           </div>
