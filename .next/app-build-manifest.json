@@ -1,66 +1,45 @@
 {
   "pages": {
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-<<<<<<< Updated upstream
-    "/page": [
+    "/traffic-branch/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/traffic-branch/page.js"
     ],
-    "/lost-and-found/page": [
-=======
-    "/crime-branch/page": [
->>>>>>> Stashed changes
+    "/divisional-acps/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/crime-branch/page.js"
-    ],
-<<<<<<< Updated upstream
-    "/feedback/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/feedback/page.js"
-=======
-    "/women-assistant-cell/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/women-assistant-cell/page.js"
-    ],
-    "/communication-it/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/communication-it/page.js"
-    ],
-    "/cyber-crime/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cyber-crime/page.js"
-    ],
-    "/police-welfare/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/police-welfare/page.js"
-    ],
-    "/history/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/history/page.js"
+      "static/chunks/app/divisional-acps/page.js"
     ],
     "/emergency-contacts/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/emergency-contacts/page.js"
     ],
-    "/initiatives/page": [
+    "/senior-police-officers/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/initiatives/page.js"
->>>>>>> Stashed changes
+      "static/chunks/app/senior-police-officers/page.js"
+    ],
+    "/hierarchy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hierarchy/page.js"
+    ],
+    "/passport-status/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/passport-status/page.js"
     ]
   }
 }

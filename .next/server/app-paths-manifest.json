@@ -1,12 +1,5 @@
 {
   "/page": "app/page.js",
-<<<<<<< Updated upstream
-  "/feedback/page": "app/feedback/page.js",
-  "/lost-and-found/page": "app/lost-and-found/page.js"
-=======
-  "/history/page": "app/history/page.js",
-  "/initiatives/page": "app/initiatives/page.js",
-  "/emergency-contacts/page": "app/emergency-contacts/page.js",
-  "/police-welfare/page": "app/police-welfare/page.js"
->>>>>>> Stashed changes
+  "/senior-police-officers/page": "app/senior-police-officers/page.js",
+  "/emergency-contacts/page": "app/emergency-contacts/page.js"
 }

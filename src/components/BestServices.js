@@ -61,6 +61,7 @@ export default function BestServices() {
       name: t('loudspeaker_permission'),
       message: t('laudspeaker_msg'),
       icon: <HiSpeakerphone size={35} />,
+      link:"/loud-speaker",
     },
     {
       index: 5,
@@ -83,12 +84,14 @@ export default function BestServices() {
       name: t('dcp_visits'),
       message: t('dcp_visit_msg'),
       icon: <TbUserSearch size={35} />,
+      link:"/dcp-visits"
     },
     {
       index: 8,
       name: t('police_clearance'),
       message: t('police_clearance_msg'),
       icon: <BsCheck2Square size={35} />,
+      link:"https://pcs.mahaonline.gov.in/Forms/Home.aspx",
     },
     {
       index: 9,

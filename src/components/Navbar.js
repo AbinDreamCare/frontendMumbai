@@ -119,7 +119,7 @@ const Navbar = () => {
   // { title: t('licensing_unit')},
   { title: t('citizen_wall'), link:"https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx" },
   { title: t('safety_tips') },
-  { title: t('dcp_visits')},
+  { title: t('dcp_visits'), link:"/dcp-visits"},
   // { title: t('tenders') },
   { title: t('faqs')},
   ]
