@@ -1,7 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/lost-and-found/page": "app/lost-and-found/page.js",
-  "/tenant-info/page": "app/tenant-info/page.js",
-  "/passport-status/page": "app/passport-status/page.js",
-  "/police-station/[id]/page": "app/police-station/[id]/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/feedback/page": "app/feedback/page.js"
 }
