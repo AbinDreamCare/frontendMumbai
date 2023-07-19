@@ -166,9 +166,9 @@ export default function BestServices() {
           <div className="flex justify-center mx-2 cursor-pointer sm:w-1/12 md:w-2/12 ">
             <Image
               src="/bestService_img.png"
-              width={180}
+              width={190}
               height={50}
-              className="hidden  sm:block"
+              className="hidden object-none sm:block"
               alt="Picture of the Police Officer"
             />
           </div>
