@@ -30,16 +30,27 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/senior-police-officers/page.js"
+<<<<<<< Updated upstream
     ],
     "/hierarchy/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/hierarchy/page.js"
+=======
+>>>>>>> Stashed changes
     ],
     "/passport-status/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/passport-status/page.js"
+<<<<<<< Updated upstream
+=======
+    ],
+    "/hierarchy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hierarchy/page.js"
+>>>>>>> Stashed changes
     ]
   }
 }
