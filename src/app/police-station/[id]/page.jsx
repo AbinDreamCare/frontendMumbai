@@ -44,12 +44,21 @@ function Page  (params)  {
           src={`http://3.7.252.48/uploads/${Data.filename}`}
           height={100}
           width={600}
+<<<<<<< Updated upstream
           className=" w-[90%] lg:w-[70%] h-80 p-2 border-1 bg-white"
         ></img>
       </div>
       <div className="px-2 mt-10 lg:flex lg:px-56 rounded-xl ">
         <div className=" lg:w-1/3  justify-center text-center align-middle bg-[#FFFFFF] p-4">
           <div className="flex justify-center">
+=======
+          className=" w-[100%] lg:w-[70%] h-80 p-2 border-1 bg-[#FFFFFF]"
+        ></img>
+      </div>
+      <div className="px-2 mt-10 lg:flex lg:px-56 rounded-xl ">
+        <div className=" lg:w-1/3  justify-center text-center align-middle bg-[#E7E7E7] p-4">
+          <div className="flex justify-center ">
+>>>>>>> Stashed changes
             <img
               src={`http://3.7.252.48/uploads/${Data.filename2}`}
               height={300}
@@ -108,6 +117,8 @@ function Page  (params)  {
               <h1>{Data.divisionEmail}</h1>
             </div>
             <div className="col-span-6 row-start-5 p-2 border ">
+
+              
               <h1>Zone :</h1>
               <h1>{Data.zoneEng}</h1>
             </div>

@@ -13,9 +13,9 @@ function Page() {
   return (
     <div>
       <Navbar/>
-      <div className="bg-[#15233E] h-auto">
-      <div className="text-white pb-14">
-        <div className="text-5xl font-bold leading-9 text-center text-white">
+      <div className="bg-[#D2D2D2] h-auto">
+      <div className="text-[#15233E] pb-14">
+        <div className="text-5xl font-bold leading-9 text-center pt-14 text-[#15233E]">
           <h1 className="pt-14">{t('our_mission')}</h1>
         </div>
         <div className="px-5 mt-8 lg:mt-28 lg:px-72"> 

@@ -184,11 +184,11 @@ function page  () {
       
         {Array.isArray(fields) &&
           fields.map((fieldGroup, groupIndex) => (
-            <div className="flex mb-4" key={groupIndex}>
+            <div className="flex mb-4 text-[#15233E] " key={groupIndex}>
               {Array.isArray(fieldGroup) &&
                 fieldGroup.map((field, fieldIndex) => (
                   <div
-                    className={field.fullWidth ? 'w-full' : 'w-1/2 mr-2'}
+                    className={field.fullWidth ? 'w-full' : 'w-1/2 mr-2 '}
                     key={fieldIndex}
                   >
                     <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor={field.name}>
@@ -249,10 +249,10 @@ function page  () {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#E7E7E7]">
       <Navbar/>
-        <div className="">
-        <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
+        <div className="  ">
+        <div className="text-5xl font-bold leading-9 text-center text-[#15233E] pt-14">
             <h1 className="pt-14">Tenant Information</h1>
           </div>
         <div className="w-[80%] px-2 lg:px-10 mx-auto py-10">

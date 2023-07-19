@@ -31,13 +31,13 @@ function Page() {
     <div>
       <Navbar/>
       <div className="bg-[#D2D2D2] h-screen">
-      <div className="font-bold  text-5xl leading-9 text-center text-[#15233E]">
+      <div className="font-bold  text-5xl leading-9 text-center pt-14 text-[#15233E]">
             <h1 className="pt-14">{t('press_release')}</h1>
           </div>
       <div className="flex justify-center w-full mt-10">
       <table className="pt-10 bg-white ">
         <thead>
-          <tr className="text-base text-center text-gray-800 border-2 border-black">
+          <tr className="text-base text-center text-gray-800 ">
             <th className="px-6 py-3 font-medium tracking-wider text-center uppercase border">
               Date
             </th>

@@ -48,9 +48,49 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/lost-and-found/page.jsx": {
+    "(app-client)/./src/app/crime-branch/page.jsx": {
       "*": {
-        "id": "(sc_client)/./src/app/lost-and-found/page.jsx",
+        "id": "(sc_client)/./src/app/crime-branch/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/our-mission/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/our-mission/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/responsibility/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/responsibility/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/hierarchy/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/hierarchy/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/police-map/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/police-map/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/martyrs/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/martyrs/page.jsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -64,9 +104,25 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/passport-status/page.jsx": {
+    "(app-client)/./src/app/lost-and-found/page.jsx": {
       "*": {
-        "id": "(sc_client)/./src/app/passport-status/page.jsx",
+        "id": "(sc_client)/./src/app/lost-and-found/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/feedback/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/feedback/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/loud-speaker/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/loud-speaker/page.jsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -79,11 +135,51 @@
         "chunks": [],
         "async": false
       }
+    },
+    "(app-client)/./src/app/passport-status/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/passport-status/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/useful-websites/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/useful-websites/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/press-releases/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/press-releases/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/police-recruitment/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/police-recruitment/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/divisional-acps/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/divisional-acps/page.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
     }
   },
   "edgeSSRModuleMapping": {},
   "clientModules": {
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\error-boundary.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -91,7 +187,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\error-boundary.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -99,7 +195,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\app-router.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -107,7 +203,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\app-router.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -115,7 +211,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\layout-router.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -123,7 +219,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\layout-router.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -131,7 +227,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\render-from-template-context.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -139,7 +235,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\render-from-template-context.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -147,7 +243,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\static-generation-searchparams-bailout-provider.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\client\\components\\static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -155,7 +251,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\static-generation-searchparams-bailout-provider.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\node_modules\\next\\dist\\esm\\client\\components\\static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -163,7 +259,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\src\\app\\page.js": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\page.js": {
       "id": "(app-client)/./src/app/page.js",
       "name": "*",
       "chunks": [
@@ -171,7 +267,7 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\src\\app\\globals.css": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\globals.css": {
       "id": "(app-client)/./src/app/globals.css",
       "name": "*",
       "chunks": [
@@ -179,15 +275,55 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\src\\app\\lost-and-found\\page.jsx": {
-      "id": "(app-client)/./src/app/lost-and-found/page.jsx",
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\crime-branch\\page.jsx": {
+      "id": "(app-client)/./src/app/crime-branch/page.jsx",
       "name": "*",
       "chunks": [
-        "app/lost-and-found/page:static/chunks/app/lost-and-found/page.js"
+        "app/crime-branch/page:static/chunks/app/crime-branch/page.js"
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\src\\app\\tenant-info\\page.jsx": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\our-mission\\page.jsx": {
+      "id": "(app-client)/./src/app/our-mission/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/our-mission/page:static/chunks/app/our-mission/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\responsibility\\page.jsx": {
+      "id": "(app-client)/./src/app/responsibility/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/responsibility/page:static/chunks/app/responsibility/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\hierarchy\\page.jsx": {
+      "id": "(app-client)/./src/app/hierarchy/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/hierarchy/page:static/chunks/app/hierarchy/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\police-map\\page.jsx": {
+      "id": "(app-client)/./src/app/police-map/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/police-map/page:static/chunks/app/police-map/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\martyrs\\page.jsx": {
+      "id": "(app-client)/./src/app/martyrs/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/martyrs/page:static/chunks/app/martyrs/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\tenant-info\\page.jsx": {
       "id": "(app-client)/./src/app/tenant-info/page.jsx",
       "name": "*",
       "chunks": [
@@ -195,7 +331,39 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\src\\app\\passport-status\\page.jsx": {
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\lost-and-found\\page.jsx": {
+      "id": "(app-client)/./src/app/lost-and-found/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/lost-and-found/page:static/chunks/app/lost-and-found/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\feedback\\page.jsx": {
+      "id": "(app-client)/./src/app/feedback/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/feedback/page:static/chunks/app/feedback/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\loud-speaker\\page.jsx": {
+      "id": "(app-client)/./src/app/loud-speaker/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/loud-speaker/page:static/chunks/app/loud-speaker/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\police-station\\[id]\\page.jsx": {
+      "id": "(app-client)/./src/app/police-station/[id]/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/police-station/[id]/page:static/chunks/app/police-station/[id]/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\passport-status\\page.jsx": {
       "id": "(app-client)/./src/app/passport-status/page.jsx",
       "name": "*",
       "chunks": [
@@ -203,23 +371,61 @@
       ],
       "async": false
     },
-    "D:\\frontendMumbai\\src\\app\\police-station\\[id]\\page.jsx": {
-      "id": "(app-client)/./src/app/police-station/[id]/page.jsx",
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\useful-websites\\page.jsx": {
+      "id": "(app-client)/./src/app/useful-websites/page.jsx",
       "name": "*",
       "chunks": [
-        "app/police-station/[id]/page:static/chunks/app/police-station/[id]/page.js"
+        "app/useful-websites/page:static/chunks/app/useful-websites/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\press-releases\\page.jsx": {
+      "id": "(app-client)/./src/app/press-releases/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/press-releases/page:static/chunks/app/press-releases/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\police-recruitment\\page.jsx": {
+      "id": "(app-client)/./src/app/police-recruitment/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/police-recruitment/page:static/chunks/app/police-recruitment/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\divisional-acps\\page.jsx": {
+      "id": "(app-client)/./src/app/divisional-acps/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/divisional-acps/page:static/chunks/app/divisional-acps/page.js"
       ],
       "async": false
     }
   },
   "entryCSSFiles": {
-    "D:\\frontendMumbai\\src\\app\\page": [],
-    "D:\\frontendMumbai\\src\\app\\layout": [
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\layout": [
       "static/css/app/layout.css"
     ],
-    "D:\\frontendMumbai\\src\\app\\lost-and-found\\page": [],
-    "D:\\frontendMumbai\\src\\app\\tenant-info\\page": [],
-    "D:\\frontendMumbai\\src\\app\\passport-status\\page": [],
-    "D:\\frontendMumbai\\src\\app\\police-station\\[id]\\page": []
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\crime-branch\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\our-mission\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\responsibility\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\hierarchy\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\organizational-structure\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\police-map\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\martyrs\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\tenant-info\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\lost-and-found\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\feedback\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\traffic-branch\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\loud-speaker\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\police-station\\[id]\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\passport-status\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\useful-websites\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\press-releases\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\police-recruitment\\page": [],
+    "C:\\Users\\suyas\\OneDrive\\Desktop\\frontendMumbai\\src\\app\\divisional-acps\\page": []
   }
 }

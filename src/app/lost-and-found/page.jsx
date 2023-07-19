@@ -34,8 +34,8 @@ const Page = ()=>{
     <>
     <div>
       <Navbar/>
-    <div className="w-full bg-[#D2D2D2]">
-    <div className="text-5xl font-bold leading-9 text-center text-white">
+    <div className="w-full bg-[#D2D2D2] pb-10">
+    <div className="text-5xl font-bold leading-9 text-center text-[#15233E] pt-14">
           <h1 className="pt-14">Lost And Found</h1>
         </div>
       <div className="text-center w-[80%] px-10 mx-auto my-10">
@@ -79,7 +79,7 @@ const Page = ()=>{
             <option value="20">Kamothe</option>
           </select>
         </div>
-    <div className='py-3 font-bold text-center bg-blue-300'>
+    <div className='py-3 font-bold text-center bg-blue-400'>
         Applicant's Details
       </div>
 
@@ -152,7 +152,7 @@ const Page = ()=>{
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-      <div className='py-3 font-bold text-center bg-blue-300'>
+      <div className='py-3 font-bold text-center bg-blue-400'>
         Article Details
       </div>
       <div className="flex mb-4">
@@ -303,13 +303,13 @@ const Page = ()=>{
 
 
       <button
-        className="px-4 py-2 mx-5 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+        className="px-4 py-2 mx-5 mt-3 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
         type="reset"
       >
         Reset
       </button>
       <button
-        className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+        className="px-4 py-2 font-bold mt-3 text-white bg-blue-500 rounded hover:bg-blue-700"
         type="submit"
       >
         Submit

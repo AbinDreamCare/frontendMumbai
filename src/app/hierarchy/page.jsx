@@ -111,31 +111,31 @@ function Page() {
       <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
             <h1 className="pt-14 my-10">{t('hierarchy')}</h1>
           </div>
-      <div className="flex justify-center mt-10">
-      <table className="pt-10 text-white ">
-        <thead>
-          <tr className="mx-5 text-base text-center bg-[#15233E]">
+      <div className="flex justify-center mt-10 border-[#15233E]">
+      <table className="pt-10 text-[#15233E] border-[#15233E]">
+        <thead className="border-[#15233E]">
+          <tr className="mx-5 text-base text-center bg-[#E7E7E7] border-[#15233E]">
             <th
               scope="col"
-              className="px-6 py-3 font-medium tracking-wider text-center text-white uppercase border"
+              className="px-6 py-3 font-medium tracking-wider text-center text-[#15233E] border-[#15233E] uppercase border"
             >
               {t('desgn')}
             </th>
             <th
               scope="col"
-              className="px-6 py-3 font-medium tracking-wider text-center text-white uppercase border"
+              className="px-6 py-3 font-medium tracking-wider text-center text-[#15233E] border-[#15233E] uppercase border"
             >
               {t('short_form')}
             </th>
             <th
               scope="col"
-              className="hidden px-6 py-3 font-medium tracking-wider text-center text-white uppercase border sm:table-cell"
+              className="hidden px-6 py-3 font-medium tracking-wider text-center text-[#15233E] border-[#15233E] uppercase border sm:table-cell"
             >
               {t('rank')}
             </th>
             <th
               scope="col"
-              className="px-6 py-3 font-medium tracking-wider text-center text-white uppercase border"
+              className="px-6 py-3 font-medium tracking-wider text-center text-[#15233E] border-[#15233E] uppercase border"
             >
               {t('insignia')}
             </th>
@@ -143,17 +143,17 @@ function Page() {
         </thead>
         <tbody>
           {table.map((hierarchy) => (
-            <tr key={hierarchy.designation} className="mx-5 bg-[#15233E]">
-              <td className="px-6 py-3 text-sm font-medium text-left text-white align-middle border">
+            <tr key={hierarchy.designation} className="mx-5 bg-[#E7E7E7]">
+              <td className="px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border">
                 {hierarchy.designation}
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left text-white align-middle border">
+              <td className="px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border">
                 {hierarchy.shortForm}
               </td>
-              <td className="hidden px-6 py-3 text-sm font-medium text-left text-white align-middle border md:table-cell">
+              <td className="hidden px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border md:table-cell">
                 {hierarchy.rank}
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left text-white align-middle border">
+              <td className="px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border">
                 <Image
                   width={150}
                   height={80}

@@ -14,11 +14,11 @@ const CrimeBranch = ()=> {
       <div className="">
         <Navbar/>
           <div className="bg-[#D2D2D2] py-10">
-          <div className="text-5xl font-bold leading-9 text-center text-white">
+          <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
           <h1 className="pt-14">{t('crime_branch')}</h1>
         </div>
-          <div className="flex items-center justify-center my-10">
-          <img src="./trafficBrach.png" className="w-[50%] h-[50%]" />
+          <div className="flex items-center justify-center my-10  md:mx-44 mx-5">
+          <img src="./trafficBrach.png" className="w-[100%] h-[50%]" />
           </div>
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
               <h1 className="text-xl font-extrabold">{t('crime_branch_navi_mumbai')}</h1>

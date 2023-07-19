@@ -19,7 +19,7 @@ const Page = () => {
   return (
     <div className="bg-[#D2D2D2]">
       <Navbar/>
-      <div className="text-5xl font-bold leading-9 text-center text-white">
+      <div className="text-5xl font-bold leading-9 text-center text-[#15233E] pt-14">
           <h1 className="pt-14">{t('martyrs')}</h1>
         </div>
       <div className="justify-center w-full md:flex">

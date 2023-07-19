@@ -33,8 +33,8 @@ function Page() {
   return (
     <div>
       <Navbar/>
-    <div className="w-full bg-[#D2D2D2]">
-    <div className="text-5xl font-bold leading-9 text-center text-white">
+    <div className="w-full bg-[#D2D2D2]  pb-14">
+    <div className="text-5xl font-bold leading-9 text-center text-[#15233E] py-14">
           <h1 className="pt-14">Laudspeaker Permission</h1>
         </div>
     <form onSubmit={handleSubmit} className="w-[80%] px-10 mx-auto">
@@ -53,7 +53,7 @@ function Page() {
             <option value="no">NRI Sagari</option>
           </select>
         </div>
-    <div className='py-3 font-bold text-center bg-blue-300'>
+    <div className='py-3 font-bold text-center bg-blue-400'>
         Applicant's Details
       </div>
 
@@ -98,7 +98,7 @@ function Page() {
           onChange={(e) => setAddress(e.target.value)}
         />
       </div>
-      <div className='py-3 font-bold text-center bg-blue-300'>
+      <div className='py-3 font-bold text-center bg-blue-400'>
         Organization Details
       </div>
       <div className="flex mb-4">
@@ -186,7 +186,7 @@ function Page() {
           onChange={(e) => setFile(e.target.files[0])}
         />
       </div>
-      <div className='py-3 font-bold text-center bg-blue-300'>
+      <div className='py-3 font-bold text-center bg-blue-400'>
         Organiser's Details
       </div>
       <div className="flex mb-4">
@@ -230,7 +230,7 @@ function Page() {
           onChange={(e) => setAddress(e.target.value)}
         />
       </div>
-      <div className='py-3 font-bold text-center bg-blue-300'>
+      <div className='py-3 font-bold text-center bg-blue-400'>
         Program Details
       </div>
       <div className="flex mb-4">
@@ -397,7 +397,7 @@ function Page() {
         />
       </div>
       </div>
-      <div className='py-3 font-bold text-center bg-blue-300'>
+      <div className='py-3 font-bold text-center bg-blue-400'>
       Loudspeaker Contractor Details
       </div>
       <div className="flex mb-4">
@@ -478,13 +478,13 @@ function Page() {
 
 
       <button
-        className="px-4 py-2 mx-5 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+        className="px-4 py-2 mx-5 font-bold text-white bg-blue-400 rounded hover:bg-blue-700"
         type="reset"
       >
         Reset
       </button>
       <button
-        className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+        className="px-4 py-2 font-bold text-white bg-blue-400 rounded hover:bg-blue-700"
         type="submit"
       >
         Submit

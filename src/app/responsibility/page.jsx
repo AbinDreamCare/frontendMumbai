@@ -15,11 +15,11 @@ function Page  () {
     <div>
       <Navbar/>
       <div className=" bg-[#D2D2D2]">
-        <div className="text-white">
-          <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
+        <div className="text-[#15233E]">
+          <div className="text-5xl font-bold leading-9 text-center pt-14 text-[#15233E]">
             <h1 className="pt-14">{t('responsibility')}</h1>
           </div>
-          <div className="mx-5 bg-[#0C162B] lg:mx-72 rounded-xl">
+          <div className="mx-5 bg-[#E7E7E7] lg:mx-72 rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
               <p className="font-bold">{t('res_1')}</p>
               <p className="ml-5 text-lg font-normal">
@@ -34,7 +34,7 @@ function Page  () {
               </p>
             </div>
           </div>
-          <div className="mx-5 bg-[#0C162B] lg:mx-72 rounded-xl">
+          <div className="mx-5 bg-[#E7E7E7] lg:mx-72 rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
               <p className="font-bold">{t('res_7')}</p>
               <p className="ml-5 text-lg font-normal">
@@ -42,23 +42,23 @@ function Page  () {
               </p>
             </div>
           </div>
-          <div className="mx-5 bg-[#0C162B] lg:mx-72 rounded-xl">
+          <div className="mx-5 bg-[#E7E7E7] lg:mx-72 rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
               <p className="font-bold">{t('res_4')}</p>
               <p className="ml-5 text-lg font-normal">
-              {/* {t('res_5')} */}
+              {t('res_5')}
                 <br />
-                {/* {t('res_6')} */}
+                {t('res_6')}
                 <br />
-                {/* {t('res_7')} */}
+                {t('res_7')}
                 <br />
-                {/* {t('res_8')} */}
+                {t('res_8')}
                 <br />
                 {t('res_9')}
               </p>
             </div>
           </div>
-          <div className="mx-5 bg-[#0C162B] lg:mx-72 rounded-xl">
+          <div className="mx-5 bg-[#E7E7E7] lg:mx-72 rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
               <p className="font-bold">{t('res_10')}</p>
               <p className="ml-5 text-lg font-normal">
@@ -74,7 +74,7 @@ function Page  () {
               </p>
             </div>
           </div>
-          <div className="mx-5 bg-[#0C162B] lg:mx-72 rounded-xl">
+          <div className="mx-5 bg-[#E7E7E7] lg:mx-72 rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
               <p className="font-bold">{t('res_15')}</p>
               <p className="ml-5 text-lg font-normal">

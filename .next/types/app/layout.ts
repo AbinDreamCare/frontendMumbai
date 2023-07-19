@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 // File: D:\frontendMumbai\src\app\layout.js
+=======
+// File: C:\Users\suyas\OneDrive\Desktop\frontendMumbai\src\app\layout.js
+>>>>>>> Stashed changes
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

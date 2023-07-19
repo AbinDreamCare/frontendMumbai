@@ -39,6 +39,7 @@ function Page() {
     <>
       <div className="w-full">
         <div className="bg-[#D2D2D2]">
+<<<<<<< Updated upstream
           <Navbar />
           <div className="text-5xl font-bold leading-9 text-center text-white">
             <h1 className="pt-14">{t("feedback")}</h1>
@@ -50,6 +51,120 @@ function Page() {
               <h1 className="font-bold text-black">{t("disclaimer")}</h1>
               <h1 className="text-black">{t("inform_2")}</h1>
               <h1 className="text-black">{t("inform_3")}</h1>
+=======
+          <Navbar/>
+          <div className="text-5xl font-bold leading-9 text-center text-[#15233E] pt-14 ">
+          <h1 className="pt-14">{t('feedback')}</h1>
+        </div>
+
+            <div className="flex md:ml-10 ">
+            <div className="items-center justify-center my-20 ml-5 md:mx-28 md:ml-0">
+                <h1 className="font-bold text-black">{t('disclaimer')}</h1>
+                <h1 className="text-black">{t('inform_2')}</h1>
+                <h1 className="text-black">{t('inform_3')}</h1>
+            <div>
+
+            <div className="container ml-9 md:ml-0 ">
+                <div className="justify-center my-5 md:flex md:space-x-7 md:mx-10 ">
+                    <div>
+                <label
+                  htmlFor="dropdownValue"
+                  className="font-bold text-gray-500"
+                >
+                  {t('select_category')} *
+                </label>
+                <br />
+                <select
+                  name="reportdropdownValue"
+                //   onChange={handlereportType}
+                  id="reportdropdownValue"
+                  className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
+                >
+                  <option value="">{t('select_category')}</option>
+                  {optionsFeedback.map((option) => (
+                    <option key={option.value} value={option.label}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+                    </div>
+                    <div>
+                <label
+                  htmlFor="dropdownValue"
+                  className="font-bold text-gray-500"
+                >
+                  {t('police_station')}
+                </label>
+                <br />
+                <select
+                  name="reportdropdownValue"
+                //   onChange={handlereportType}
+                  id="reportdropdownValue"
+                  className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
+                >
+                  <option value="">{t('select_police_station')}</option>
+                  {optionsPoliceStation.map((option) => (
+                    <option key={option.value} value={option.label}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+                    </div>
+                    <div>
+                <label htmlFor="name" className="font-bold text-gray-500">
+                {t('full_name')}*
+                </label>
+                <br />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                //   onChange={handleNameChange}
+                  className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
+                />
+                    </div>
+                </div>
+                <div className="justify-center my-5 md:flex md:space-x-7 md:mx-10 ">
+                    <div>
+                <label htmlFor="contact" className="font-bold text-gray-500">
+                {t('contact_no')}*
+                </label>
+                <br />
+                <input
+                  type="number"
+                  id="contact"
+                  name="contact"
+                //   onChange={handlenumber}
+                  className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
+                />
+                    </div>
+                    <div>
+                <label htmlFor="email" className="font-bold text-gray-500">
+                {t('email')} *
+                </label>
+                <br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                //   onChange={handleemail}
+                  className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
+                />
+                    </div>
+                    <div className="justify-center md:flex md:space-x-7 md:mx-10">
+              <div>
+                <label htmlFor="address" className="font-bold text-gray-500">
+                  {t('subject')} *
+                </label>
+                <br />
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                //   onChange={handleaddress}
+                  className="w-5/6 py-1 border border-gray-500 rounded-lg md:w-80"
+                />
+>>>>>>> Stashed changes
               </div>
               <div className="">
                 <div className="container ml-9 md:ml-0 ">
@@ -181,6 +296,23 @@ function Page() {
                       //   onChange={handledescription}
                       className="md:w-[96%] w-full md:mx-5 py-1 border border-gray-500 rounded-lg"
                     />
+<<<<<<< Updated upstream
+=======
+                    <div className="text-red-600 ">
+                      <div className="justify-center text-center">
+                      {/* <p>{errorMessage}</p> */}
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div className="flex justify-center">
+                    <button
+                      type="submit"
+                      className="p-1 mx-5 font-bold text-white rounded-lg bg-blue-800 border border-gray-500"
+                    >
+                      {t('submit')}
+                    </button>
+>>>>>>> Stashed changes
                   </div>
                 </div>
                 <div className="flex justify-center mx-10 my-5">

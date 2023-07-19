@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 // File: D:\frontendMumbai\src\app\page.js
+=======
+// File: C:\Users\suyas\OneDrive\Desktop\frontendMumbai\src\app\page.js
+>>>>>>> Stashed changes
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
