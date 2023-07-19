@@ -95,7 +95,7 @@ const Carousel = () => {
                   </a>
                 </li>
                 <li className="text-white border-b-4 cursor-pointer">
-                  <div onClick={() => (router.push("#"))} className="flex justify-center">
+                  <div onClick={() => (router.push("/traffic-branch"))} className="flex justify-center">
                     <Image
                       src="/traffic_img.png"
                       alt="Emergency Help"
@@ -104,7 +104,7 @@ const Carousel = () => {
                       height={70}
                     />
                   </div>
-                  <h1 onClick={() => (router.push("#"))} className="w-full mb-4 text-center hover:text-[#EB1815]">
+                  <h1 onClick={() => (router.push("/traffic-branch"))} className="w-full mb-4 text-center hover:text-[#EB1815]">
                     {t('traffic_branch')}
                   </h1>
                 </li>

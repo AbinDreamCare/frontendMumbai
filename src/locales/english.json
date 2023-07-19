@@ -43,7 +43,7 @@
     "special_branch":"Special Branch",
     "cyber_crime":"Cyber Crime",
     "anti_narcotics_cell":"Anti Narcotics Cell",
-    "crime_against_women_unit":"Crime Against Women Unit",
+    "crime_against_women_unit":"",
     "juvenile_aid_protection_unit":"Juvenile Aid Protection Unit (JAPU)",
     "anti_human_trafficking_unit":"Anti Human Trafficking Unit",
     "crime_detection_unit":"Crime Detection Unit",
@@ -69,7 +69,7 @@
     "police_corner":"Police Corner",
     "police_staff_council_meetings":"Police Staff Council Meeting",
     "police_foundation":"Police Foundation",
-    "welfare_activities":"Welfare Activities",
+    "welfare_activities":"Police Welfare Branch",
     "media_coverage":"Media Coverage",
     "press_release":"Press Release",
     "crime_review":"Crime Review",
@@ -82,6 +82,8 @@
     "divisional_acp":"Divisional ACPs",
     "senior_police_officers":"Senior Police Officers",
     "emergency_contacts":"Emergency Contacts",
+
+    "women_assistance_cell":"Women Assistance Cell",
 
     "____________________Carousel______________________________________________________________________________":"",
 

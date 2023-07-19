@@ -59,8 +59,8 @@ const Navbar = () => {
   { title: t('hierarchy'), link: "/hierarchy" },
   { title: t('organizational_structure'), link:"/organizational-structure"},
   { title: t('navi_mumbai_police_map'), link:"/police-map"},
-  { title: t('history') },
-  { title: t('initiative') },
+  { title: t('history'), link:"/history"},
+  { title: t('initiative') , link:"/initiatives"},
   { title: t('gallery')},
   { title: t('martyrs'), link: "/martyrs" },
   ]
@@ -94,10 +94,9 @@ const Navbar = () => {
   ]
 
   const SpecialUnits3 = [
-    { title: t('cyber_crime') },
-    { title: t('communication_it')},
-  // { title: t('anti_narcotics_cell') },
-  { title: t('crime_against_women_unit')},
+    { title: t('cyber_crime'), link:"/cyber-crime" },
+    { title: t('communication_it'), link:"/communication-it"},
+  { title: t('women_assistance_cell'), link: "/women-assistant-cell"},
   // { title: t('juvenile_aid_protection_unit') },
   // { title: t('anti_human_trafficking_unit') },
   // { title: t('crime_detection_unit')},
@@ -106,7 +105,7 @@ const Navbar = () => {
   const CitizenCorner = [
     { title: t('search_and_view_fir'), link:"https://citizen.mahapolice.gov.in/Citizen/MH/PublishedFIRs.aspx", target:"_blank" },
   // { title: t('shooting_aaplication') },
-  { title: t('police_clearance')},
+  { title: t('police_clearance') , link:"https://pcs.mahaonline.gov.in/Forms/Home.aspx"},
   { title: t('loudspeaker_permission'), link: "/loud-speaker"},
   { title: t('accident_compensation') },
   { title: t('right_to_info')},
@@ -117,7 +116,7 @@ const Navbar = () => {
   const CitizenCorner2 = [
     // { title: t('gras_payment') },
   { title: t('useful_website') , link:"/useful-websites"},
-  { title: t('licensing_unit')},
+  // { title: t('licensing_unit')},
   { title: t('citizen_wall'), link:"https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx" },
   { title: t('safety_tips') },
   { title: t('dcp_visits')},
@@ -127,8 +126,8 @@ const Navbar = () => {
 
   const PoliceCorner = [
     // { title: t('police_staff_council_meetings') },
-  { title: t('police_foundation') },
-  { title: t('welfare_activities')},
+  // { title: t('police_foundation') },
+  // { title: t('welfare_activities'), link:"/police-welfare"}, 
   // { title: t('media_coverage') },
   { title: t('press_release') , link: "/press-releases"},
   // { title: t('crime_review')},
@@ -138,7 +137,7 @@ const Navbar = () => {
   ]
 
   const ContactUs = [
-    { title: t('police_station_incharge'), link:"" },
+    // { title: t('police_station_incharge'), link:"" },
   { title: t('divisional_acp'), link:"/divisional-acps" },
   { title: t('senior_police_officers'), link: "/senior-police-officers"},
   { title: t('emergency_contacts') , link: "/emergency-contacts"},
@@ -224,7 +223,7 @@ const Navbar = () => {
                     </div>
                     <div>
                       {SpecialUnits3.map((special, i) => (
-                        <li className="w-72 hover:text-[#E7581A]" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="w-72 hover:text-[#E7581A]" key={i}>{special.title}</li>
                       ))}
                     </div>
 
