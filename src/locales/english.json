@@ -20,7 +20,7 @@
     "cctns":"CCTNS",
     "control_room":"Control Room",
     "police_head_quarter":"Police Head Quarters",
-    "communication_it":"Communication & IT",
+    "communication_it":"Communication & IT (Wireless)",
 
     "report_us":"Report Us",
     "online_complaint":"Online Complaint",
@@ -47,6 +47,9 @@
     "juvenile_aid_protection_unit":"Juvenile Aid Protection Unit (JAPU)",
     "anti_human_trafficking_unit":"Anti Human Trafficking Unit",
     "crime_detection_unit":"Crime Detection Unit",
+    "citizen_portal":"Citizen Portal",
+    "citizen_portal_msg":"Empowering Police Through IT",
+    "nagarikanchi_sanad":"Nagarikanchi Sanad",
 
     "citizen_corner":"Citizen Corner",
     "search_and_view_fir":"Search And View Published FIR",
@@ -60,7 +63,7 @@
     "gras_payment":"GRAS Payment",
     "useful_website":"Useful Website",
     "licensing_unit":"Licensing unit",
-    "citizen_wall":"Citizen Wall",
+    "citizen_wall":"Citizen Alert Wall",
     "safety_tips":"Safety Tips",
     "dcp_visits":"DCP Visits",
     "tenders":"Tenders",

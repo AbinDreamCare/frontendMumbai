@@ -20,7 +20,7 @@
     "cctns":"सीसीटीएनएस",
     "control_room":"नियंत्रण कक्ष",
     "police_head_quarter":"पोलीस मुख्यालय",
-    "communication_it":"कम्युनिकेशन आणि आयटी",
+    "communication_it":"कम्युनिकेशन आणि आयटी (बिनतारी)",
 
     "report_us":"आम्हाला कळवा",
     "online_complaint":"ई-तक्रार",
@@ -47,6 +47,9 @@
     "juvenile_aid_protection_unit":"बाल सहाय्य्य संरक्षण केंद्र (JAPU)",
     "anti_human_trafficking_unit":"मानवी तक्रार विरोधी कक्ष",
     "crime_detection_unit":"गुन्हे प्रकटीकरण कक्ष",
+    "citizen_portal":"नागरिकांसाठी सेवा",
+    "citizen_portal_msg":"माहीती तंत्रज्ञानाद्वारे पोलीसांचे सबलीकरण",
+    "nagarikanchi_sanad":"नागरीकांची सनद",
 
     "citizen_corner":"नागरिकांकरिता",
     "search_and_view_fir":"प्रथम माहिती अहवाल शोधा आणि पहा",

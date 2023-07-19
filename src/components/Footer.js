@@ -14,11 +14,11 @@ function Footer() {
   const { t } = useTranslation();
   
   const marqueeComp = [
-    { image1: "/digitalIndia_img.png" },
-    { image2: "/G20_img.png" },
-    { image3: "/gal_img11.png" },
-    { image4: "/mahadbt_img.png" },
-    { image5: "/startupIndia_img.png" },
+    { image1: "/digitalIndia_img.png" ,link:"https://digitalindia.gov.in/"},
+    { image2: "/G20_img.png" , link:"https://www.g20.org/en/"},
+    { image3: "/gal_img11.png", link:"https://www.mahapolice.gov.in/" },
+    { image4: "/mahadbt_img.png", link:"https://mahadbt.maharashtra.gov.in/login/login" },
+    { image5: "/startupIndia_img.png", link:"https://www.startupindia.gov.in/" },
   ];
   return (
     <div className="md:-mt-28 -mt-96 ">
@@ -30,7 +30,9 @@ function Footer() {
         <Marquee>
           {marqueeComp.map((images, index) => (
             <div key={index} className="flex items-center justify-center p-0 mx-10">
+              <a href={images.link} target="_blank">
               <img  className="p-2"  src={Object.values(images)[0]} />
+              </a>
             </div>
           ))}
         </Marquee>
@@ -58,7 +60,7 @@ function Footer() {
             <div className="justify-start md:flex md:justify-end text-[12px]">
               <div>
                 <div onClick={() => (router.push('/press-releases'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('press_release')}</div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('faqs')}</div>
+                <div onClick={() => (router.push('/faqs'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('faqs')}</div>
                 <div onClick={() => (router.push('/martyrs'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('martyrs')}</div>
                 <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('site_map')}</div>
               </div>
@@ -66,11 +68,11 @@ function Footer() {
                 <div onClick={() => (router.push('/senior-officers'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
                   {t('senior_police_officers')}
                 </div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('history')}</div>
+                <div onClick={() => (router.push('/history'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('history')}</div>
                 <div onClick={() => (router.push('/police-recruitment'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
                   {t('police_recruitments')}
                 </div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('disclaimer')}</div>
+                {/* <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('disclaimer')}</div> */}
               </div>
             </div>
           </div>
@@ -80,10 +82,10 @@ function Footer() {
             </div>
             <div className="md:flex justify-end text-[12px] ">
               <div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('safety_tips')}</div>
+                <div onClick={() => (router.push('/safety-tips'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('safety_tips')}</div>
                 <div onClick={() => (router.push("https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx"))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('citizen_wall')}</div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('initiative')}</div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('licensing_unit')}</div>
+                <div onClick={() => (router.push('/initiatives'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('initiative')}</div>
+                {/* <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('licensing_unit')}</div> */}
               </div>
               <div>
                 <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('missing_person')}</div>
@@ -101,10 +103,10 @@ function Footer() {
             </div>
             <div className="flex justify-start md:justify-end text-[12px]">
               <div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('tenders')}</div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('online_complaint')}</div>
+                {/* <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('tenders')}</div> */}
+                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/Login.aspx'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('online_complaint')}</div>
                 <div onClick={() => (router.push("/lost-and-found"))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('lost_found')}</div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">
+                <div onClick={() => (router.push('/right-to-information'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
                   {t('right_to_info')}
                 </div>
               </div>
@@ -115,13 +117,13 @@ function Footer() {
           <div className="flex ">
             <div className="me-2">{t('follow_us')}</div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white hover:text-[#E7581A]">
-              <AiOutlineInstagram />
+              <a href="https://www.instagram.com/navimumbaipolice/?hl=en" target="_blank"><AiOutlineInstagram /></a>
             </div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white hover:text-[#E7581A]">
-              <AiOutlineFacebook />
+            <a href="https://www.facebook.com/navimumbaipolice.gov.in/" target="_blank"><AiOutlineFacebook /></a>
             </div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white hover:text-[#E7581A]">
-              <FiTwitter />
+              <a href="https://twitter.com/Navimumpolice?s=20" target="_blank"><FiTwitter /></a>
             </div>
           </div>
         </div>
@@ -156,10 +158,10 @@ function Footer() {
             </div>
             <div className="flex justify-start md:justify-end text-[12px]">
               <div>
-                <div className="cursor-pointer">{t('tenders')}</div>
-                <div className="cursor-pointer">{t('online_complaint')}</div>
+                {/* <div className="cursor-pointer">{t('tenders')}</div> */}
+                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/Login.aspx'))} className="cursor-pointer">{t('online_complaint')}</div>
                 <div onClick={() => (router.push("/lost-and-found"))} className="cursor-pointer">{t('lost_found')}</div>
-                <div className="cursor-pointer">
+                <div onClick={() => (router.push('/right-to-information'))} className="cursor-pointer">
                 {t('right_to_info')}
                 </div>
               </div>
@@ -177,7 +179,7 @@ function Footer() {
             <div className="justify-start text-[12px]">
               <div>
                 <div onClick={() => (router.push('/press-releases'))} className="cursor-pointer">{t('press_release')}</div>
-                <div className="me-[48px] cursor-pointer">{t('faqs')}</div>
+                <div onClick={() => (router.push('/faqs'))} className="me-[48px] cursor-pointer">{t('faqs')}</div>
                 <div onClick={() => (router.push('/martyrs'))} className="me-[48px] cursor-pointer">{t('martyrs')}</div>
                 <div className="me-[48px] cursor-pointer">{t('site_map')}</div>
               </div>
@@ -185,7 +187,7 @@ function Footer() {
                 <div onClick={() => (router.push('/senior-officers'))} className="me-[48px] cursor-pointer">
                 {t('senior_police_officers')}
                 </div>
-                <div className="me-[48px] cursor-pointer">{t('history')}</div>
+                <div onClick={() => (router.push('/history'))} className="me-[48px] cursor-pointer">{t('history')}</div>
                 <div onClick={() => (router.push('/police-recruitment'))} className="me-[48px] cursor-pointer">
                 {t('police_recruitments')}
                 </div>
@@ -201,10 +203,10 @@ function Footer() {
             </div>
             <div className="md:flex justify-end text-[12px] ">
               <div>
-                <div className="me-[48px] cursor-pointer">{t('safety_tips')}</div>
+                <div onClick={() => (router.push('/safety-tips'))} className="me-[48px] cursor-pointer">{t('safety_tips')}</div>
                 <div onClick={() => (router.push("https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx"))} className="me-[48px] cursor-pointer">{t('citizen_wall')}</div>
-                <div className="me-[48px] cursor-pointer">{t('initiative')}</div>
-                <div className="me-[48px] cursor-pointer">{t('licensing_unit')}</div>
+                <div onClick={() => (router.push('/initiatives'))} className="me-[48px] cursor-pointer">{t('initiative')}</div>
+                {/* <div className="me-[48px] cursor-pointer">{t('licensing_unit')}</div> */}
               </div>
               <div>
                 <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx'))} className="me-[48px] cursor-pointer">{t('missing_persons')}</div>
@@ -222,13 +224,13 @@ function Footer() {
           <div className="flex ">
             <div className="me-2">{t('follow_us')}</div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white">
-              <AiOutlineInstagram />
+            <a href="https://www.instagram.com/navimumbaipolice/?hl=en" target="_blank"><AiOutlineInstagram /></a>
             </div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white">
-              <AiOutlineFacebook />
+              <a href="https://www.facebook.com/navimumbaipolice.gov.in/" target="_blank"><AiOutlineFacebook /></a>
             </div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white">
-              <FiTwitter />
+            <a href="https://twitter.com/Navimumpolice?s=20" target="_blank"><FiTwitter /></a>
             </div>
           </div>
         </div>

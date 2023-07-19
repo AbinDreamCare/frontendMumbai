@@ -95,10 +95,10 @@ export default function BestServices() {
     },
     {
       index: 9,
-      name: t('crime_branch'),
-      message: t('crime_branch_msg'),
+      name: t('citizen_portal'),
+      message: t('citizen_portal_msg'),
       icon: <IoMdWallet size={35} />,
-      link:'/crime-branch',
+      link:'https://citizen.mahapolice.gov.in/Citizen/MH/index_mh.aspx',
     },
     {
       index: 10,
@@ -144,13 +144,13 @@ export default function BestServices() {
                       <div onClick={() => (router.push(serviceName.link))} className="text-[16px] md:text-[24px] lg:text-xl font-bold mt-2 ml-2 md:ml-0 md:mt-0 text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.name}
                       </div>
-                      <div className="hidden text-xs font-normal sm:block md:text-sm text-[#15233E] hover:text-[#E7581A]">
+                      <div onClick={() => (router.push(serviceName.link))} className="hidden text-xs font-normal sm:block md:text-sm text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.message}
                       </div>
                     </div>
                     <div className="hidden mx-2 mt-1 md:block">
                       <div  className={`flex justify-center md:w-16 md:h-16 bg-[#E7581A]  hover:bg-sky-900 w-[50px] h-[50px]   rounded-full cursor-pointer`}>
-                        <div className={`flex  items-center text-white`}>
+                        <div onClick={() => (router.push(serviceName.link))} className={`flex  items-center text-white`}>
                           {serviceName.icon}
                         </div>
                       </div>
@@ -168,7 +168,7 @@ export default function BestServices() {
               src="/bestService_img.png"
               width={190}
               height={50}
-              className="hidden object-none sm:block"
+              className="hidden object-none sm:block w-[100%]"
               alt="Picture of the Police Officer"
             />
           </div>
@@ -179,7 +179,7 @@ export default function BestServices() {
                   <div className="flex ">
                     <div className="mx-2 mt-1 my-14 md:my-0">
                       <div className="flex justify-center w-16 h-16 bg-[#E7581A] rounded-full cursor-pointer hover:bg-sky-900">
-                        <div className="flex items-center text-white">
+                        <div onClick={() => (router.push(serviceName.link))} className="flex items-center text-white">
                           {serviceName.icon}
                         </div>
                       </div>
@@ -188,7 +188,7 @@ export default function BestServices() {
                       <div onClick={() => (router.push(serviceName.link))} className="text-[16px] md:text-xl font-bold mt-2 ml-2 md:ml-0 md:mt-0 text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.name}
                       </div>
-                      <div className="hidden text-xs md:text-sm font-normal sm:block md:text-[16px] text-[#15233E] hover:text-[#E7581A]">
+                      <div onClick={() => (router.push(serviceName.link))} className="hidden text-xs md:text-sm font-normal sm:block md:text-[16px] text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.message}
                       </div>
                     </div>

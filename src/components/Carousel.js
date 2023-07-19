@@ -65,17 +65,19 @@ const Carousel = () => {
         <iframe className="hidden md:block rep " width="560" height="315" src="https://www.youtube-nocookie.com/embed/EoYWwSalaJ4?autoplay=1&loop=1&playlist=EoYWwSalaJ4&mute=1&controls=0&rel=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <iframe className="md:hidden rep " width="560" height="315" src="https://www.youtube.com/embed/ixomwj9LP2s?autoplay=1&mute=1&loop=1&playlist=ixomwj9LP2s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-        <div className="z-10 md:bg-opacity-[68%] md:w-[7%] w-[25%] opacity- h-screen ">
+         <div className="z-10 md:bg-opacity-[68%] md:w-[7%] w-[25%] opacity- h-screen ">
           <div className="flex">
+            <a href="tel:+112">
             <Image
               src="/call_img.png"
               alt="hb"
               width={60}
               height={60}
-              className="absolute w-16 h-16 cursor-pointer bottom-[45%] right-[5%] md:right-16 md:top-16"
+              className="absolute w-16 h-16 cursor-pointer bottom-[45%] right-[5%] md:right-16 md:top-16 hover:scale-125 hover:shadow-xl"
             />
+            </a>
           </div>
-          <div className="flex bg-[#15233EAD] md:h-full  justify-center ">
+          {/* <div className="flex bg-[#15233EAD] md:h-full  justify-center ">
             <div className="z-10 flex justify-center py-6 bg-transparent">
               <ul className="z-20 mt-8 space-y-2">
                 <li className="text-white border-b-4 cursor-pointer ">
@@ -157,9 +159,8 @@ const Carousel = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          {/* <div>Headline</div> */}
-        </div>
+          </div> */}
+          </div> 
 
         <div className="absolute top-[5%] md:top-[55%] left-[25%] md:left-[40%] w-[60%] md:w-[25%] bg-white border-[1px] border-[#E7581A] rounded-2xl py-2 px-4 z-20">
           <button onClick={toggleDropdown} className="dropdown-toggle text-[#E7581A] flex justify-between w-full">

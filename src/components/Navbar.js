@@ -66,7 +66,7 @@ const Navbar = () => {
   ]
 
   const ReportUs = [
-    { title: t('online_complaint') , link:"https://citizen.mahapolice.gov.in/Citizen/MH/PublishedFIRs.aspx" ,},
+    { title: t('online_complaint') , link:"https://citizen.mahapolice.gov.in/Citizen/Login.aspx" ,},
   { title: t('tenant_information') , link :"/tenant-info" },
   { title: t('lost_found'), link: "/lost-and-found"},
   { title: t('feedback') , link: "/feedback"},
@@ -74,10 +74,10 @@ const Navbar = () => {
 
   const SpecialUnits1 = [
     { title: t('crime_branch'), link: "/crime-branch" },
-  { title: t('economic_offence_wing') },
+  { title: t('economic_offence_wing'), link:"/economic-offence-wing" },
   { title: t('traffic_branch'), link:"/traffic-branch"},
   // { title: t('police_sergeon') },
-  { title: t('motor_transport_unit') },
+  { title: t('motor_transport_unit'), link:"/motor-transport-unit" },
   // { title: t('navi_mumbai_police_band')},
   ]
 
@@ -87,10 +87,10 @@ const Navbar = () => {
   // { title: t('riot_control_police')},
   // { title: t('modemized_control_room') },
   // { title: t('protection_security') },
-  { title: t('cctns')},
-  { title: t('control_room')},
-  { title: t('police_head_quarter')},
-  { title: t('special_branch')},
+  { title: t('cctns'), link:"/cctns"},
+  { title: t('control_room'), link:"/control-room"},
+  { title: t('police_head_quarter'), link:"/police-headquarter"},
+  { title: t('special_branch'), link:"/special-branch"},
   ]
 
   const SpecialUnits3 = [
@@ -108,7 +108,7 @@ const Navbar = () => {
   { title: t('police_clearance') , link:"https://pcs.mahaonline.gov.in/Forms/Home.aspx"},
   { title: t('loudspeaker_permission'), link: "/loud-speaker"},
   { title: t('accident_compensation') },
-  { title: t('right_to_info')},
+  { title: t('right_to_info'), link:"/right-to-information"},
   // { title: t('your_contribution') },
   { title: t('passport_status'), link: "/passport-status"},
   ]
@@ -118,10 +118,11 @@ const Navbar = () => {
   { title: t('useful_website') , link:"/useful-websites"},
   // { title: t('licensing_unit')},
   { title: t('citizen_wall'), link:"https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx" },
-  { title: t('safety_tips') },
+  { title: t('safety_tips'), link:"/safety-tips" },
   { title: t('dcp_visits'), link:"/dcp-visits"},
   // { title: t('tenders') },
-  { title: t('faqs')},
+  { title: t('faqs'), link:"/faqs"},
+  {title: t('nagarikanchi_sanad'), link:"/nagarikanchi-sanad"},
   ]
 
   const PoliceCorner = [
@@ -133,7 +134,7 @@ const Navbar = () => {
   // { title: t('crime_review')},
   // { title: t('miscellaneoue') },
   { title: t('police_recruitments'), link: "/police-recruitment"},
-  { title: t('good_work')},
+  { title: t('good_work'), link:"/good-work"},
   ]
 
   const ContactUs = [
@@ -142,16 +143,7 @@ const Navbar = () => {
   { title: t('senior_police_officers'), link: "/senior-police-officers"},
   { title: t('emergency_contacts') , link: "/emergency-contacts"},
   ]
-  // const aboutUs = ["Our mission", "Hall of Fame", "Responsibilities", "Hierarchy", "Organizational Structure", "Navi Mumbai Police Map", "History", "Initiatives", "Gallery", "Martyrs"]
-  // const ReportUs = ["Online Complaint", "Tenant Information", "Lost/found", "Inform Us/Feedback"]
-  // const SpecialUnits1 = ["Crime Branch", "Economic Offense Wing", "Traffic Branch", "Police Surgeon", "Motor Transport Unit", "Greater Mumbai Police Band"]
-  // const SpecialUnits2 = ["Local Armed Police", "Quick Response team", "Riot Control Police", "Modemized Control Room", "Protection & Security", "Special Branch"]
-  // const SpecialUnits3 = ["Cyber Crime", "Anti Narcotic Cell", "Crime against Women Unit", "Juvenile Aid Protection Unit(JAPU)", "Anti Human Trafficking Unit", "Crime Detection Unit"]
-  // const CitizenCorner = ["Search & View Public FIR", "Filming/Shooting Application", "Police Clearance Service", "Loudspeaker Permission", "Accident Compensation", "Right to Information(RTI)", "Your Contribution", "Passport Status"]
-  // const CitizenCorner2 = ["GRAS Payment", "Useful Websites", "Licensing Unit", "Citizen Wall", "Safety Tips", "DCP Visits", "Tenders", "FAQs"]
-  // const PoliceCorner = ["Police Staff Council Meeting", "Police Foundation", "Welfare Activities", "Media Coverage", "Press Release", "Crime Review", "Miscellaneous", "Police Recruitment", "Good Work"]
-  // const ContactUs = ["Police Station Incharge", "Divisional ACP's", "Senior Police Officers", "Emergency Contacts"]
-
+  
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -218,7 +210,7 @@ const Navbar = () => {
                     </div>
                     <div>
                       {SpecialUnits2.map((special, i) => (
-                        <li className="w-60 hover:text-[#E7581A]" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="w-60 hover:text-[#E7581A]" key={i}>{special.title}</li>
                       ))}
                     </div>
                     <div>
@@ -493,7 +485,7 @@ const Navbar = () => {
                     <div className="w-full h-full mt-2 ml-6 text-sm">
                     <ul className="rounded-lg ">
                       {PoliceCorner.map((report, i) => (
-                      <li className="py-2" key={i}>{report.title}</li>
+                      <li onClick={() => (router.push(report.link))} className="py-2" key={i}>{report.title}</li>
                     ))}
                       </ul>
                     </div>
@@ -505,7 +497,7 @@ const Navbar = () => {
                     <div className="w-full h-full mt-2 ml-6 text-sm">
                     <ul className="rounded-lg ">
                       {ContactUs.map((report, i) => (
-                      <li className="py-2" key={i}>{report.title}</li>
+                      <li onClick={() => (router.push(report.link))} className="py-2" key={i}>{report.title}</li>
                     ))}
                       </ul>
                     </div>

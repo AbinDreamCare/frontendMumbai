@@ -18,7 +18,7 @@ const page = ()=> {
           <h1 className="pt-14">{t('cyber_crime')}</h1>
         </div>
           <div className="flex items-center justify-center my-10">
-          <img src="./trafficBrach.png" className="w-[50%] h-[50%]" />
+          <img src="./navi_head.png" className="w-[50%] h-[50%]" />
           </div>
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
               <h1 className="text-xl font-extrabold text-center underline">CYBER POLICE STATION, NAVI MUMBAI</h1>

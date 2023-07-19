@@ -18,7 +18,7 @@ const page = ()=> {
           <h1 className="pt-14">{t('women_assistance_cell')}</h1>
         </div>
           <div className="flex items-center justify-center my-10">
-          <img src="./police_head.jfif" className="w-[80%] h-[50%]" />
+          <img src="./navi_head.png" className="w-[80%] h-[50%]" />
           </div>
           <div className="text[#15233E] md:mx-20 md:ml-36 mx-5 text-left">
               <h1>This cell is specially created to look into the grievances of women and cases of domestic violence. Women Social workers and members of Non-Governmental Organization have been taken on the panel. They hear the cases of victims and other family members and try to bring about settlement between them by counselling.The cases not settled are sent to Police Station for legal action.</h1>

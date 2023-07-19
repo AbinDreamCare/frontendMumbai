@@ -18,7 +18,7 @@ const CrimeBranch = ()=> {
           <h1 className="pt-14">{t('crime_branch')}</h1>
         </div>
           <div className="flex items-center justify-center my-10  md:mx-44 mx-5">
-          <img src="./trafficBrach.png" className="w-[100%] h-[50%]" />
+          <img src="./navi_head.png" className="w-[100%] h-[50%]" />
           </div>
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
               <h1 className="text-xl font-extrabold">{t('crime_branch_navi_mumbai')}</h1>
