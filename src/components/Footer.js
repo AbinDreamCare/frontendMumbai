@@ -220,7 +220,7 @@ function Footer() {
         </div>
         <div className="mx-16 mt-6 md:flex md:justify-between">
           <div className="flex ">
-            <div className="me-2">{t('foloow_us')}</div>
+            <div className="me-2">{t('follow_us')}</div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white">
               <AiOutlineInstagram />
             </div>

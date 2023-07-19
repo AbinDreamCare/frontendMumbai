@@ -316,7 +316,7 @@ const Page = ()=>{
       </button>
     </form>
     </div>
-    <div className="mt-[26rem] md:mt-[0rem]">
+    <div className="mt-[26rem] md:mt-[2rem]">
     <Footer />
       </div>
     </div>

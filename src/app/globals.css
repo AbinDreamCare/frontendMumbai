@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 /* .rep {
   position: absolute;
   top: 0;
@@ -12,6 +12,9 @@
   z-index: -1;
 } */
 
+*{
+  font-family: 'Lato', sans-serif;
+}
 .rep {
   position: absolute;
   top: 0;

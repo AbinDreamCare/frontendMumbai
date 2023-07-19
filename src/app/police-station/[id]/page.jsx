@@ -44,17 +44,17 @@ function Page  (params)  {
           src={`http://3.7.252.48/uploads/${Data.filename}`}
           height={100}
           width={600}
-          className=" w-[100%] lg:w-[70%] h-80 p-2 border-1 bg-white"
+          className=" w-[90%] lg:w-[70%] h-80 p-2 border-1 bg-white"
         ></img>
       </div>
       <div className="px-2 mt-10 lg:flex lg:px-56 rounded-xl ">
         <div className=" lg:w-1/3  justify-center text-center align-middle bg-[#FFFFFF] p-4">
-          <div className="flex justify-center ">
+          <div className="flex justify-center">
             <img
               src={`http://3.7.252.48/uploads/${Data.filename2}`}
               height={300}
               width={300}
-              className="align-middle p-1 rounded-2xl mt-[30%] "
+              className="align-middle p-1 rounded-2xl md:mt-[30%] mt-[5%]"
             ></img>
           </div>
           <h1 className="text-lg font-semibold">{Data.officerNameEng}</h1>
@@ -85,7 +85,7 @@ function Page  (params)  {
                 </a>
               </h1>
             </div>
-            <div className="col-span-6 row-start-2 p-2 border">
+            <div className="col-span-6 row-start-2 p-2 break-words whitespace-normal border">
               <h1>Email ID:</h1>
               <h1>{Data.email}</h1>
             </div>
@@ -141,7 +141,7 @@ function Page  (params)  {
           </div>
         </div>
       </div>
-      <div className="p-8 m-10 lg:flex justify-evenly ">
+      <div className="p-3 md:p-8 md:m-10 lg:flex justify-evenly ">
         <div className=" bg-[#FFFFFF] p-8 rounded-xl">
           <h1 className="flex justify-center "><CiLocationOn size={30} /></h1>
           <h1 className="my-5 text-xl font-semibold text-center ">Jurisdiction Map</h1>
@@ -152,15 +152,15 @@ function Page  (params)  {
             className="p-1 align-middle rounded-2xl "
           ></img>
         </div>
-        <div className="bg-[#FFFFFF] p-8 rounded-xl">
+        <div className="bg-[#FFFFFF] p-8 rounded-xl mt-5 md:mt-0">
           <h1 className="flex justify-center"><CiLocationOn size={30} /></h1>
           <h1 className="my-5 text-xl font-semibold text-center">Locate Us</h1>
           <div>
             <iframe
               src={Data.mapLink}
-              width="440"
-              height="330"
-             className="rounded-2xl w-[220] lg:w-[440px] lg:h-[330px]"
+              // width="440"
+              // height="330"
+             className="rounded-2xl w-[300px] h-[299px] md:w-[440px] md:h-[330px]"
 
               
             ></iframe>
@@ -169,7 +169,9 @@ function Page  (params)  {
       </div>
     </div>
 
-    <Footer/>
+    <div className="mt-[26rem] md:mt-[2rem]">
+    <Footer />
+      </div>
     
     </div>
   );

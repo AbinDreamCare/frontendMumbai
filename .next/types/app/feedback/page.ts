@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream:.next/types/app/feedback/page.ts
 // File: D:\Dream Care\Mumbai Police\mumbaiHost\frontend\src\app\feedback\page.jsx
 import * as entry from '../../../../src/app/feedback/page.js'
+=======
+// File: D:\frontendMumbai\src\app\police-station\[id]\page.jsx
+import * as entry from '../../../../../src/app/police-station/[id]/page.js'
+>>>>>>> Stashed changes:.next/types/app/police-station/[id]/page.ts
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
 type TEntry = typeof import('../../../../src/app/feedback/page.js')

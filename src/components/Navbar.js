@@ -46,7 +46,7 @@ const Navbar = () => {
     localStorage.setItem(KEY, currentLang)
   },[currentLang])
   
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   
   const handleOptionChange = (option) => {
     setCurrentLang(option);
@@ -66,7 +66,7 @@ const Navbar = () => {
   ]
 
   const ReportUs = [
-    { title: t('online_complaint') },
+    { title: t('online_complaint') , link:"https://citizen.mahapolice.gov.in/Citizen/MH/PublishedFIRs.aspx" ,},
   { title: t('tenant_information') , link :"/tenant-info" },
   { title: t('lost_found'), link: "/lost-and-found"},
   { title: t('feedback') , link: "/feedback"},
@@ -104,7 +104,7 @@ const Navbar = () => {
   ]
 
   const CitizenCorner = [
-    { title: t('search_and_view_fir') },
+    { title: t('search_and_view_fir'), link:"https://citizen.mahapolice.gov.in/Citizen/MH/PublishedFIRs.aspx", target:"_blank" },
   // { title: t('shooting_aaplication') },
   { title: t('police_clearance')},
   { title: t('loudspeaker_permission'), link: "/loud-speaker"},
@@ -239,7 +239,8 @@ const Navbar = () => {
                   <ul className="text-black bg-white px-6 py-2 flex border-[1px]  rounded-lg">
                     <div>
                       {CitizenCorner.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="w-60 hover:text-[#E7581A]" key={i}>{special.title}</li>
+                        
+                        <li onClick={() => (router.push(special.link))} tar={special.target} className="w-60 hover:text-[#E7581A]" key={i}>{special.title}</li>
                       ))}
                     </div>
                     <div>

@@ -22,7 +22,7 @@ export default function SocialMedia() {
     <>
       {/* <Try /> */}
       <div className="bg-zinc-500 md:bg-[url('/social_bg_img.png')] py-5">
-        <div className="mx-20 mt-5 text-[24px] md:text-4xl font-extrabold md:justify-center md:flex text-white md:text-white">
+        <div className="mx-20 mt-5 text-center text-[24px] md:text-4xl font-extrabold md:justify-center md:flex text-white md:text-white">
           {t('social_media')}
         </div>
         <div className="items-center justify-center md:flex">
@@ -88,7 +88,7 @@ export default function SocialMedia() {
                 >
                   <div onMouseOver={stopScroll} onMouseOut={startScroll}>
                     <div className="mt-1 card">
-                      <div className="box-shadow py-5 px-5 border-x-4 border-gray-800  ">
+                      <div className="px-5 py-5 border-gray-800 box-shadow border-x-4 ">
                         <a href="#" target="_blank" className="web-link2">
                           Navi Mumbai Police Constable Recruitment 2021 - Final Selection and Waiting List for Interview
                         </a>
@@ -96,14 +96,14 @@ export default function SocialMedia() {
 
                     </div>
                     <div className="my-5 card">
-                      <div className="box-shadow py-5 px-5 border-x-4 border-gray-800  ">
+                      <div className="px-5 py-5 border-gray-800 box-shadow border-x-4 ">
                         <a href="#" target="_blank" className="web-link2">
                           Navi Mumbai Police Driver Constable Recruitment 2022 - Final Selection and Waiting List for Interview
                         </a>
                       </div>
                     </div>
                     <div className="my-5 card">
-                      <div className="box-shadow py-5 px-5 border-x-4 border-gray-800  ">
+                      <div className="px-5 py-5 border-gray-800 box-shadow border-x-4 ">
                         <a href="#" target="_blank" className="web-link2">
                           Navi Mumbai Police Driver Constable Recruitment 2022 - Final Selection and Waiting List for Interview
                         </a>
