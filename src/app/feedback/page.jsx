@@ -5,10 +5,12 @@ import { useTranslation } from "react-i18next";
 import i18Instance from "@/customHooks/i18Instance";
 import { useState } from "react";
 import axios from "@/customHooks/axiosInstance";
+import { useRouter } from "next/navigation";
 i18Instance();
 
 function Page() {
   const { t } = useTranslation();
+  const router = useRouter()
   const [otpVerPopup, setotpVerPopup] = useState(false)
   const optionsFeedback = [
     { value: "option1", label: t("inform_us") },
@@ -69,20 +71,14 @@ function Page() {
 
   const handleSubmit = async (e) => {
     alert("submit enter");
-    // e.preventDefault();
-    //  if (user.username === "" || user.email === "" || user.phone === "") {
-    //    console.log("Fields can't be empty");
-    //  } else if (
-    //    !/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(user.email)
-    //  ) {
-    //   console.log("Enter valid email id");
-    //  }  else {
+    e.preventDefault();
+   
     try {
       const {data}=await axios.post("/feedBackRoute/create",feedbackData)
       // const { data } = await signUp(user);
       console.log("feedback data",data);
      
-      // resetForm();
+      resetForm();
    
     } catch (error) {
       console.log(error);
