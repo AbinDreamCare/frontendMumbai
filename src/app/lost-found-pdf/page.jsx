@@ -37,6 +37,7 @@ console.log('data',data);
     <div className="text-gray-800">
       <div className="w-[90%] ms-[5%] flex justify-center border-b-2 border-black">
         <div>
+        <a href="/" className="p-1  mx-5 font-bold text-white bg-blue-800 border border-gray-500">go back</a>
           <div className="flex justify-center py-5">
             {" "}
             <img

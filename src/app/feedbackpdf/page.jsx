@@ -1,173 +1,499 @@
-'use client';
+"use client";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import { useTranslation } from "react-i18next";
+import i18Instance from "@/customHooks/i18Instance";
+import { useEffect, useState } from "react";
 import axios from "@/customHooks/axiosInstance";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+i18Instance();
 
-function page() {
-  // const [docId,setDocId]=useState("")
-//  useEffect(()=>{
-//   const queryString = window.location.search;
-//   console.log(queryString);
-//   let paramString = queryString.split('?')[1];
-//   let queryStrings = new URLSearchParams(paramString);
+function Page() {
   
-//   for (let pair of queryStrings.entries()) {
-//      console.log("Key is: " + pair[0]);
-//      console.log("Value is: " + pair[1]);
-//      setDocId(pair[1])
-//   }
+  const { t } = useTranslation();
+  const router = useRouter()
+  const [otpVerPopup, setotpVerPopup] = useState(false)
+  const optionsFeedback = [
+    { value: "option1", label: t("inform_us") },
+    { value: "option2", label: t("feedback") },
+  ];
+
+  const optionsPoliceStation = [
+    { value: "option1", label: t("apmc") },
+    { value: "option2", label: t("cbd_belapur") },
+    { value: "option3", label: t("kalamboli") },
+    { value: "option4", label: t("kamothe") },
+    { value: "option5", label: t("khandeshwar") },
+    { value: "option6", label: t("kharghar") },
+    { value: "option7", label: t("kopar_khairane") },
+    { value: "option8", label: t("mora_sagari") },
+    { value: "option9", label: t("nerul") },
+    { value: "option10", label: t("nhava_sheva") },
+    { value: "option11", label: t("nri") },
+    { value: "option12", label: t("panvel") },
+    { value: "option13", label: t("panvel_taluka") },
+    { value: "option14", label: t("rabale") },
+    { value: "option15", label: t("rabale_midc") },
+    { value: "option16", label: t("sanpada") },
+    { value: "option17", label: t("taloja") },
+    { value: "option18", label: t("turbhe") },
+    { value: "option19", label: t("uran") },
+    { value: "option20", label: t("washi") },
+  ];
+  const [verifyCaptcha,setVerifycaptcha]=useState("")
+  const [captchaerror,setCaptchaError]=useState(true)
+
   
-//  },[])
-// console.log("Id",docId);
+  const [feedbackData, setFeedBackdata] = useState({
+    policeStation: "",
+    category: "",
+    fullName: "",
+    mobile: "",
+    email: "",
+    Address: "",
+    subject: "",
+    description: "",
+  });
+  const [captcha, setCaptcha] = useState("");
+  const [captchaImage, setCaptchaImage] = useState("");
+  useEffect(() => {
+    handleRefreshCaptcha();
+  }, []);
+  const handleRefreshCaptcha = () => {
+    //function for refreshing the captcha from backend
+    axios
+      .get("/captcha/sendcaptcha")
+      .then((response) => {
+        const { data } = response;
+        setCaptchaImage("data:image/svg+xml;base64," + btoa(data));
+      })
+      .catch((error) => {
+        console.log(error.message);
+        seterrorMessage("Failed to refresh captcha.");
+      });
+  };
 
-const [data,setData]=useState()
-useEffect(async()=>{
-
-  async function fetchData() {
-    let docId;
-    const queryString = window.location.search;
-    console.log(queryString);
-    let paramString = queryString.split('?')[1];
-    let queryStrings = new URLSearchParams(paramString);
-    
-    for (let pair of queryStrings.entries()) {
-       console.log("Key is: " + pair[0]);
-       console.log("Value is: " + pair[1]);
-      docId=pair[1]
+  const handleCaptchaCheck=async()=>{
+    const ata={
+     currentCaptcha:captcha
     }
-    // You can await here
-    const ata= {docId:docId}
-  const {data}=await axios.post('/feedBackRoute/getone',ata)
-  console.log('data1',data);
-  if(data){
-    setData(data)
-  }
-    // ...
-  }
-  fetchData();
- 
-},[])
+console.log("ata",ata);
 
-
-console.log('data',data);
-
-  return (
+    const {data}=await axios.post("/captcha/verifycaptcha",ata)
+    alert("called")
+    console.log(("datacaptcha" ,captcha));
+    setCaptchaError(false)
     
-    <div>
-      <div id="divcontents">
+ }
+
+ console.log(("errorsss",captchaerror));
+  const handleChange = (e) => {
+    setFeedBackdata({ ...feedbackData, [e.target.name]: e.target.value });
+  };
+  console.log("feedback", feedbackData);
+
+  const resetForm = () => {
+    setFeedBackdata({
+      policeStation: "",
+      category: "",
+      fullName: "",
+      mobile: "",
+      email: "",
+      Address: "",
+      subject: "",
+      description: "",
+    });
+  };
+const [otp,setOtp]=useState("")
+console.log("otp",otp);
+  const handleSubmit = async (e) => {
+   
+    // e.preventDefault();
+   
+    try {
+     
+        const {data}=await axios.post("/feedBackRoute/create",feedbackData)
+      // const { data } = await signUp(user);
+      console.log("feedback data",data);
+      if(data){
+        const id=data._id
+      router.push(`/feedbackpdf?data=${id}`)
+      resetForm();
+      }else{
+        alert("Registration Failed")
+      }
       
-      <div className="text-gray-800">
       
-      <div className="w-[90%] ms-[5%] flex justify-center border-b-2 border-black">
-        <div>
-      <div></div>
-          <div className="flex justify-center py-5">
-            
-            {" "}
-            <img
-            
-              className="w-32"
-              src="/admin/logo-navi-mumbai.png"
-              alt="logo"
-            />
-            
-          </div>
-          <h1 className="text-4xl mb-5 text-gray-800 text-center">
-            Navi Mumbai Police
-          </h1>
-        </div>
-      </div>
+   
+    } catch (error) {
+      console.log(error);
+    }
+    //  }
+  };
+console.log("captcha",captcha);
+  return (
+    <>
+      <div className="w-full">
+        <div className="bg-[#D2D2D2]">
+          <Navbar />
 
-      <div className="w-[90%] ms-[5%] ">
-        <div className="flex justify-between text-xl my-2 mb-6 font-bold">
-          <h1>Information Report</h1>
-          <div>
-          < a href="javascript:window.print()" className="p-1  mx-5 font-bold text-white bg-blue-800 border border-gray-500">Download this as a PDF</a>
-  
+          <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
+            <h1 className="pt-14 mt-5">{t("feedback")}</h1>
           </div>
-          <h1>Date / तारीख:{data?.createdAt}</h1>
-        </div>
-        <div className="flex justify-between text-xl pb-4 font-bold border-b-2 border-black">
-          <h1>Police Station / पोलीस ठाणे : {data?.policeStation}</h1>
-          <h1>Report No. / अहवाल क्र. : {data?._id}</h1>
-        </div>
-        <div className="border-b-2 border-black">
-          <h1 className="text-xl underline py-2 font-bold">
-            Information Details / माहितीचा तपशील:-
-          </h1>
 
-          <div className="text-lg">
-            <div>
-              <span className="text-center">Name / नाव </span>
-              <span className="ms-[230px]">:{data?.fullName}</span>
-            </div>
-            <div>
-              <span className="text-center">Mobile No. / मोबाइल क्र </span>
-              <span className="ms-[143px]">:{data?.mobile}</span>
-            </div>
-            <div>
-              <span className="text-center">Email / ईमेल </span>
-              <span className="ms-[223px]">:{data?.email}</span>
-            </div>
-            <div>
-              <span className="text-center">Address / पत्ता </span>
-              <span className="ms-[210px]">:{data?.Address}</span>
-            </div>
-            <div>
-              <span className="text-center">Subject / विषय </span>
-              <span className="ms-[208px]">:{data?.subject}</span>
-            </div>
-            <div>
-              <span className="text-center">Description / वर्णन </span>
-              <span className="ms-[182px]">:{data?.description}</span>
-            </div>
-          </div>
-        </div>
+          <div className="w-full flex justify-center">
+            <div className="w-10/12">
+              <div>
+                <h1 className="font-bold text-black">{t("disclaimer")}</h1>
+                <h1 className="text-black">{t("inform_2")}</h1>
+                <h1 className="text-black">{t("inform_3")}</h1>
+              </div>
 
-        <div className="border-b-2 border-black">
-          <h1 className="text-xl  py-2 font-bold">Note:</h1>
-          <div className="flex justify-between">
-            <div className="w-6/12">
-              <h1>
-                1. This is a digitally signed document and requires no
-                signatureas per IT Act 2008.
-              </h1>
-              <h1>
-                2. If required approach the concerned Police Station for Police
-                Stamp/Signature.
-              </h1>
-              <h1>
-                3. This application is for lodging report of Articles Inform Us
-                in Navi Mumbai City only.
-              </h1>
-              <h4>
-                4. Authority issuing duplicate document/article may obtain proof
-                of identity.
-              </h4>
-            </div>
-            <div className="relative w-6/12">
-              <img src="/digital-sign.png" className="h-40 opacity-50" alt="" />
-              <div className="absolute top-[15%] font-bold left-[20%] ">
-                <h1>Navi Mumbai Police</h1>
-                <h1>Digitally Signed</h1>
-                <h1>Date:{data?.createdAt} </h1>
+              <div className="justify-between  my-5 md:flex ">
+                <div className="md:w-4/12 md:pr-8 flex justify-start my-5 md:my-0">
+                  <div className="w-full">
+                    <label
+                      htmlFor="dropdownValue"
+                      className="font-bold text-gray-500"
+                    >
+                      {t("select_category")} *
+                    </label>
+                    <br />
+                    <select
+                      name="category"
+                      required
+                      onChange={handleChange}
+                      id="reportdropdownValue"
+                      className="w-full py-1 border border-gray-500 rounded-lg "
+                    >
+                      <option value="">{t("select_category")}</option>
+                      {optionsFeedback.map((option) => (
+                        <option key={option.value} value={option.label}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="md:w-4/12 md:px-4 flex justify-center my-5 md:my-0 w-full">
+                  <div className="w-full">
+                    <label
+                      htmlFor="dropdownValue"
+                      className="font-bold text-gray-500"
+                    >
+                      {t("police_station")}
+                    </label>
+                    <br />
+                    <select
+                      name="policeStation"
+                      //  value={feedbackData.firstName}
+                      onChange={handleChange}
+                      id="reportdropdownValue"
+                      className="w-full py-1 border border-gray-500 rounded-lg "
+                      required
+                    >
+                      <option value="">{t("select_police_station")}</option>
+                      {optionsPoliceStation.map((option) => (
+                        <option key={option.value} value={option.label}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="md:w-4/12 md:pl-8 flex justify-items-end  my-5 md:my-0">
+                  <div className="w-full float-right">
+                    <label htmlFor="name" className="font-bold text-gray-500">
+                      {t("full_name")}*
+                    </label>
+                    <br />
+                    <input
+                      type="text"
+                      id="name"
+                      name="fullName"
+                      value={feedbackData.fullName}
+                      onChange={handleChange}
+                      className="w-full py-1 border border-gray-500 rounded-lg "
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-between w-full">
+                <div className="md:w-4/12 md:pr-8 flex justify-items-start  my-5 md:my-0">
+                  <div className="w-full">
+                    <label
+                      htmlFor="contact"
+                      className="font-bold text-gray-500"
+                    >
+                      {t("contact_no")}*
+                    </label>
+                    <br />
+                    <input
+                      type="number"
+                      name="mobile"
+                      value={feedbackData.mobile}
+                      onChange={handleChange}
+                      className="w-full py-1 border border-gray-500 rounded-lg "
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="md:w-4/12 md:px-4 flex justify-center  my-5 md:my-0">
+                  <div className="w-full">
+                    <label htmlFor="email" className="font-bold text-gray-500">
+                      {t("email")} *
+                    </label>
+                    <br />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={feedbackData.email}
+                      onChange={handleChange}
+                      className="w-full  py-1 border border-gray-500 rounded-lg "
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="md:w-4/12 md:pl-8 flex justify-items-end  my-5 md:my-0">
+                  <div className="w-full">
+                    <label
+                      htmlFor="address"
+                      className="font-bold text-gray-500"
+                    >
+                      {t("subject")} *
+                    </label>
+                    <br />
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={feedbackData.subject}
+                      onChange={handleChange}
+                      className="w-full py-1 border border-gray-500 rounded-lg "
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+                        {/* <button onClick={()=>{
+                          const id="64b840ff50a3e5672e40106d"
+                         
+                        }}>
+                          haiiiiii
+                        </button> */}
+              <div className="flex justify-center w-full my-5">
+                <div className="  md:w-[100%] w-full">
+                  <label htmlFor="article" className="font-bold  text-gray-500">
+                    {t("addrress")}*
+                  </label>
+                  <br />
+                  <input
+                    type="text"
+                    id="address"
+                    name="Address"
+                    value={feedbackData.Address}
+                    onChange={handleChange}
+                    className=" w-full py-1 border border-gray-500 rounded-lg"
+                    required
+                  />
+                  
+                </div>
+              </div>
+
+              <div className="flex justify-center my-5">
+                <div className=" justify-center w-full">
+                  <label htmlFor="article" className="font-bold  text-gray-500">
+                    {t("description")}
+                  </label>
+                  <br />
+                  <input
+                    type="text"
+                    id="article"
+                    name="description"
+                    value={feedbackData.description}
+                    onChange={handleChange}
+                    className="w-full py-1 border border-gray-500 rounded-lg"
+                    required
+                  />
+                </div>
+              </div>
+
+              <img
+                    src={captchaImage}
+             
+                    alt="captcha"
+                    className="bg-white h-16 w-40"
+                  />
+
+<button
+                    type="button"
+                    className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
+                    onClick={handleRefreshCaptcha}
+                  >
+                      {t("refresh")}
+                    </button>
+                    <input
+                  type="text"
+                  name="captcha"
+                  placeholder="Enter the data above"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[30%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                  value={captcha}
+                  onChange={(e) => setCaptcha(e.target.value)}
+                />
+               
+                {captchaerror && <span>enter Captcha ....!</span>
+                }
+              <button
+                        // type="submit"
+                        onClick={async() => {
+                          // alert()
+                          handleCaptchaCheck()
+                          if(!captchaerror){
+                          if(feedbackData.mobile!==""){
+
+                            const ata={
+                              mobile:feedbackData.mobile
+                            }
+                            
+                            const {data}=await axios.post("/otp/sendOtp",ata)
+                            console.log("data",data);
+                            //const data="kkkk"
+                            if(data.status=="pending"){
+                              setotpVerPopup(!otpVerPopup)
+                            }else{
+                              alert("Failed to Send OTP")
+                            }
+                          }else{
+                            alert("Enter Mobile Number")
+                          }
+                        }else{
+                          alert("captcha error")
+                        }
+                          
+                          
+                          
+                        }}
+                        className="p-1 mx-5 font-bold text-white bg-blue-800 border border-gray-500"
+                      >
+                        {t("submit")}
+                      </button>
+              <div className="flex justify-center mb-16">
+                <div className="">
+                  <div className="flex justify-center">
+                    <span>_</span>
+                    {/* <img src=""  className="bg-white" /> */}
+                    {/* <button
+                      type="button"
+                      className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
+                      // onClick={handleRefreshCaptcha}
+                    >
+                      {t("refresh")}
+                    </button> */}
+                  </div>
+                  <div className="flex justify-center w-full mt-5">
+                    <div className="w-full">
+                      {/* <input
+                        type="text"
+                        name="captcha"
+                        placeholder="Enter the numbers above"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required
+                        // value={values.captcha}
+                        //   onChange={handleCaptchaInput}
+                      /> */}
+                      <div className="text-red-600 ">
+                        <div className="justify-center text-center">
+                          {/* <p>{errorMessage}</p> */}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-center">
+                      {/* <button
+                        // type="submit"
+                        onClick={() => {
+                          // alert()
+                          console.log("hello");
+                        }}
+                        className="p-1 mx-5 font-bold text-white bg-blue-800 border border-gray-500"
+                      >
+                        {t("submit")}
+                      </button> */}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <h1 className="text-xl  py-2 font-bold">Disclaimer / अस्वीकरण:</h1>
-          <h1>1. As per the prevailing laws, FIR of a major crime (′cognizable crimes like theft, burglary, motor vehicle theft, accident, chain-snatching, assault, rape, murder, attempt to commit murder, robbery, dacoity, extortion etc) can only be registered at a Police Station. Please contact your nearest Police Station for the same. / प्रचलित कायद्यांनुसार एखाद्या मोठ्या गुन्ह्याबद्दल तक्रार/प्रथम खबरी अहवाल संबंधित पोलीस ठाणे येथे नोंदणी करावी. (उदा. चोरी, घरफोडी करून चोरी, मोटर वाहन चोरी, अपघात, सोन-साखळी चोरणे, मारहाण, बलात्कार, खून, खून करण्याचा प्रयत्न, दरोडा, डकैती, खंडणी वगैरे) यासाठी आपल्या जवळच्या पोलीस ठाणेशी संपर्क साधावा.</h1>
-          <h1>2. Report non-cognizable complaint on online complaint portal. [Online Complaint] / अ-दखलपात्र स्वरूपाच्या तक्रारी ई- तक्रार या पोर्टल वर नोंदवा. [ Online Complaint ]</h1>
-          <h1 className="mb-3">3. Report here feedback of experience about police. / पोलिसांबद्दलच्या अनुभवाचा अभिप्राय येथे नोंदवा.</h1>
-        </div>
-        <h1 className="text-center font-bold mb-10">Issued By: Navi Mumbai Police</h1>
-      </div>
-    </div>
-      </div>
-      
-    </div>
-    
-  );
 
+          <div className="mt-[26rem] md:mt-[0rem]">
+            <Footer />
+          </div>
+        </div>
+      </div>
+
+
+      {otpVerPopup && 
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+      <div className="bg-white p-8 rounded-md">
+        <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
+       
+          <input
+            type="number"
+            value={otp}
+            name="otp"
+           
+            onChange={(e)=>{
+            setOtp(e.target.value)
+            }}
+            className="w-full border border-gray-300 p-2 rounded-md mb-4"
+            placeholder="Enter OTP"
+          />
+          <div className="flex justify-end">
+            <button
+              type="button"
+              onClick={()=>{
+                setotpVerPopup(!otpVerPopup)
+              }}
+              className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
+            >
+              Cancel
+            </button>
+            <button
+              // type="submit"
+              className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
+              onClick={async()=>{
+               if(otp!=="" && otp.length ==6){
+                const ata={
+                  mobile:feedbackData.mobile,
+                  otp:otp
+                }
+                console.log("verify",ata);
+                const {data}=await axios.post("/otp/verifyOtp",ata)
+                if(data.valid){
+                  
+                  handleSubmit()
+
+                }else{
+                  alert("OTP verification Failed")
+                }
+               }else{
+                alert("enter a valid OTP")
+               }
+              }}
+            >
+              Verify
+            </button>
+          </div>
+       
+      </div>
+    </div>
+}
+    </>
+  );
 }
 
-export default page;
+export default Page;

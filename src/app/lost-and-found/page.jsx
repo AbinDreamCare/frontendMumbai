@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
@@ -26,6 +26,8 @@ const Page = () => {
   const [option2, setOption2] = useState("");
   const [file, setFile] = useState(null);
   const [otpVerPopup, setotpVerPopup] = useState(false)
+  const [verifyCaptcha,setVerifycaptcha]=useState("")
+  const [captchaerror,setCaptchaError]=useState(true)
   const [lostFoundData, setlostFoundData] = useState({
     policeStation: "",
     
@@ -57,6 +59,41 @@ const Page = () => {
   //     [name]: value,
   //   }));
   // };
+  const [captcha, setCaptcha] = useState("");
+  const [captchaImage, setCaptchaImage] = useState("");
+
+
+  useEffect(() => {
+    handleRefreshCaptcha();
+  }, []);
+  const handleRefreshCaptcha = () => {
+    //function for refreshing the captcha from backend
+    axios
+      .get("/captcha/sendcaptcha")
+      .then((response) => {
+        const { data } = response;
+        setCaptchaImage("data:image/svg+xml;base64," + btoa(data));
+      })
+      .catch((error) => {
+        console.log(error.message);
+        seterrorMessage("Failed to refresh captcha.");
+      });
+  };
+
+  const handleCaptchaCheck=async()=>{
+    const ata={
+     currentCaptcha:captcha
+    }
+console.log("ata",ata);
+
+    const {data}=await axios.post("/captcha/verifycaptcha",ata)
+    alert("called")
+    console.log(("datacaptcha" ,captcha));
+    setCaptchaError(false)
+    
+ }
+
+ console.log(("errorsss",captchaerror));
   console.log("lostFoundData", lostFoundData);
 
   const resetForm = () => {
@@ -426,7 +463,32 @@ const Page = () => {
                 IT Act.
               </h1>
             </div>
+            <img
+                    src={captchaImage}
+             
+                    alt="captcha"
+                    className="bg-white h-16 w-40"
+                  />
 
+<button
+                    type="button"
+                    className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
+                    onClick={handleRefreshCaptcha}
+                  >
+                      {t("refresh")}
+                    </button>
+                    <input
+                  type="text"
+                  name="captcha"
+                  placeholder="Enter the data above"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[30%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                  value={captcha}
+                  onChange={(e) => setCaptcha(e.target.value)}
+                />
+               
+                {captchaerror && <span>enter Captcha ....!</span>
+                }
             {/* <button
               className="px-4 py-2 mx-5 mt-3 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
               type="reset"
@@ -437,6 +499,8 @@ const Page = () => {
           
               onClick={async() => {
                 // alert()
+                handleCaptchaCheck()
+                if(!captchaerror){
                 if(lostFoundData.mobile!==""){
 
                   const ata={
@@ -453,6 +517,8 @@ const Page = () => {
                   }
                 }else{
                   alert("Enter Mobile Number")
+                }}else{
+                  alert("captcha error")
                 }
                 
                 
@@ -501,6 +567,7 @@ const Page = () => {
               // type="submit"
               className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
               onClick={async()=>{
+                
                if(otp!=="" && otp.length ==6){
                 const ata={
                   mobile:lostFoundData.mobile,
