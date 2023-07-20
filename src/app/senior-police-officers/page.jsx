@@ -31,8 +31,8 @@ function page() {
       <div className="font-bold  text-5xl leading-9 text-center text-[#15233E]">
             <h1 className="pt-14">{t('senior_police_officers')}</h1>
           </div>
-      <div className="flex justify-center w-full">
-      <div className="grid items-center justify-center w-full grid-cols-3">
+      <div className="md:flex justify-center w-full">
+      <div className="md:grid items-center justify-center w-full grid-cols-3">
       {seniorPoliceData.map((card, index) => (
         <div key={index} className="border rounded-lg p-4 shadow-2xl w-[362px] my-10 mx-5">
           <div className="flex justify-center bg-blue-950 rounded-xl h-[239px]">

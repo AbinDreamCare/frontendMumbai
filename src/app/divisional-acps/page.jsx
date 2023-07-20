@@ -28,16 +28,16 @@ function Page() {
       <div className="font-bold  text-5xl leading-9 text-center text-[#15233E]">
             <h1 className="py-14">{t('divisional_acp')}</h1>
           </div>
-      <div className="flex justify-center w-full">
-      <div className="grid items-center justify-center w-full grid-cols-3">
+      <div className="md:flex justify-center w-full">
+      <div className="md:grid items-center justify-center w-full grid-cols-3">
       {Data.map((card, index) => (
         <div key={index} className="border rounded-lg p-4 shadow-2xl w-[362px] my-10 mx-5">
-          <div className="md:flex justify-center bg-blue-950 rounded-xl h-[239px]">
+          <div className="md:flex justify-center md:bg-blue-950 rounded-xl h-[239px]">
             <img src={`http://3.7.252.48/uploads/${card.filename}`} height={253} width={301} />
           </div>
           <div className="text-center">
             <div>
-              <h1 className="mt-2 text-lg font-semibold text-orange-600">{card.nameEng}</h1>
+              <h1 className="md:mt-2 mt-8 text-lg font-semibold text-orange-600">{card.nameEng}</h1>
             </div>
             <div>
               <h1 className="mt-1 text-sm font-semibold">{card.designationEng}</h1>
