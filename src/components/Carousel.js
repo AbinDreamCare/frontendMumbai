@@ -5,6 +5,9 @@ import axios from '@/customHooks/axiosInstance'
 import { useRouter } from "next/navigation";
 import { useTranslation} from "react-i18next";
 import i18Instance from "@/customHooks/i18Instance";
+import { FcBusinesswoman } from "react-icons/fc";
+import { FcManager } from "react-icons/fc";
+import { FcPhone } from "react-icons/fc";
 
 i18Instance()
 
@@ -77,7 +80,7 @@ const Carousel = () => {
             />
             </a>
           </div>
-          {/* <div className="flex bg-[#15233EAD] md:h-full  justify-center ">
+          <div className="flex bg-[#15233EAD] md:h-full  justify-center ">
             <div className="z-10 flex justify-center py-6 bg-transparent">
               <ul className="z-20 mt-8 space-y-2">
                 <li className="text-white border-b-4 cursor-pointer ">
@@ -96,51 +99,80 @@ const Carousel = () => {
                   </h1>
                   </a>
                 </li>
+                <a href="tel:7738393839">
                 <li className="text-white border-b-4 cursor-pointer">
-                  <div onClick={() => (router.push("/traffic-branch"))} className="flex justify-center">
+                  
+                  <div className="flex justify-center">
                     <Image
                       src="/traffic_img.png"
                       alt="Emergency Help"
-                      className="hover:filter w-[36px] h-[30px] hover:brightness-75"
+                      className="hover:filter w-[36px] h-[30px] hover:brightness-75 mt-2"
                       width={95}
                       height={70}
                     />
                   </div>
-                  <h1 onClick={() => (router.push("/traffic-branch"))} className="w-full mb-4 text-center hover:text-[#EB1815]">
-                    {t('traffic_branch')}
+                  <h1 className="w-full mb-4 text-center hover:text-[#EB1815]">
+                    Traffic Helpline
                   </h1>
                 </li>
+                </a>
 
+                <a href="tel:103">
                 <li className="text-white border-b-4 cursor-pointer">
-                <div onClick={() => (router.push("/passport-status"))} className="flex justify-center">
-                    <Image
+                <div className="flex justify-center text-white">
+                    {/* <Image
                       src="/passport_img.png"
                       alt="Emergency Help"
                       className="hover:filter w-[36px] h-[34px] hover:brightness-75"
                       width={95}
                       height={70}
-                    />
+                    /> */}
+                    <FcBusinesswoman size={30}/>
                   </div>
-                  <h1 onClick={() => (router.push("/passport-status"))} className="w-full mb-4 text-center hover:text-[#EB1815]">
-                    {t('passport_status')}
+                  <h1 className="w-full mb-4 text-center hover:text-[#EB1815]">
+                    Women Helpline
                   </h1>
                 </li>
+                </a>
 
+                <a href="tel:1093">
                 <li className="text-white border-b-4 cursor-pointer">
-                <div onClick={() => (router.push("/crime-branch"))} className="flex justify-center">
-                    <Image
+                <div className="flex justify-center">
+                    {/* <Image
                       src="/crime_img.png"
                       alt="Emergency Help"
                       className="hover:filter w-[36px] h-[30px] hover:brightness-75"
                       width={95}
                       height={70}
-                    />
+                    /> */}
+                    <FcPhone size={30}/>
                   </div>
-                  <h1 onClick={() => (router.push("/crime-branch"))} className="w-full mb-4 text-center hover:text-[#EB1815]">
-                    {t('crime_branch')}
+                  <h1 className="w-full mb-4 text-center hover:text-[#EB1815]">
+                    Costal Helpline 
                   </h1>
                 </li>
+                </a>
 
+                <a href="tel:1090">
+                <li className="text-white border-b-4 cursor-pointer">
+                <div className="flex justify-center">
+                    {/* <Image
+                      src="/crime_img.png"
+                      alt="Emergency Help"
+                      className="hover:filter w-[36px] h-[30px] hover:brightness-75"
+                      width={95}
+                      height={70}
+                    /> */}
+
+                    <FcManager size={30}/>
+                  </div>
+                  <h1 className="w-full mb-4 text-center hover:text-[#EB1815]">
+                    Senior Citizen
+                  </h1>
+                </li>
+                </a>
+
+                <a href="tel:8424820665">
                 <li className="text-white cursor-pointer ">
                   <div className="flex justify-center">
                     <Image
@@ -151,15 +183,17 @@ const Carousel = () => {
                       height={70}
                     />
                   </div>
-                  <a href="https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx" target="_blank"> 
+                  
                   <h1 className="w-full mb-4 text-center min-w-fit hover:text-[#EB1815]">
-                    {t('citizen_corner')}
+                    Whatsapp Number
                   </h1>
-                  </a>
                 </li>
+                </a>
+
+                
               </ul>
             </div>
-          </div> */}
+          </div>
           </div> 
 
         <div className="absolute top-[5%] md:top-[55%] left-[25%] md:left-[40%] w-[60%] md:w-[25%] bg-white border-[1px] border-[#E7581A] rounded-2xl py-2 px-4 z-20">
