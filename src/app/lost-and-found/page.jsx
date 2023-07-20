@@ -70,6 +70,7 @@ const Page = () => {
     ArticleDetails: {
       reportType: "",
       articleType: "",
+      location: '',
       city: "",
       state: '',
       pin: '',
@@ -302,6 +303,24 @@ const Page = () => {
                 </select>
               </div>
             </div>
+
+            <div className="w-full ml-2">
+                <label
+                  className="block mb-2 text-sm font-bold text-gray-700"
+                  htmlFor="contact"
+                >
+                  Location*
+                </label>
+                <input
+                  className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
+                  id="contact"
+                  type="text"
+                  name="location"
+                  placeholder="Enter the lost/found Location"
+                  value={lostFoundData?.ArticleDetails.location}
+                  onChange={handleChange}
+                />
+              </div>
             
             <div className="flex mb-4">
               
