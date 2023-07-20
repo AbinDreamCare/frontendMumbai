@@ -55,51 +55,97 @@ console.log('data',data);
 
       <div className="w-[90%] ms-[5%] ">
         <div className="flex justify-between text-xl my-2 mb-6 font-bold">
-          <h1>In Respect of Articles Lost/Found in Navi Mumbai City.</h1>
+          <h1>Tenant Information / भा डेकरुची मा हि ती :</h1>
           
           <h1>Date / तारीख:{data?.createdAt}</h1>
         </div>
         <div className="flex justify-between text-xl pb-4 font-bold border-b-2 border-black">
           <h1>Police Station / पोलीस ठाणे : Antop Hill</h1>
-          <h1>Lost/Found Report No : {data?._id}</h1>
+          <h1>Register Id.: {data?._id}</h1>
         </div>
         <div className="border-b-2 border-black">
           <h1 className="text-xl underline py-2 font-bold">
-          Complaint Details / तक्रा र तपशी ल:-
+          Owner Details / जा गा मा लका चे तपशी ल:-
           </h1>
 
           <div className="text-lg">
             <div>
-              <span className="text-center">Full Name / पूर्ण नाव </span>
+              <span className="text-center">Owner Name / पूर्ण नाव</span>
               <span className="ms-[370px]">:{data?.name}</span>
             </div>
             <div>
-              <span className="text-center">Mobile No. / मोबाइल क्र </span>
+              <span className="text-center">Owner Mobile / भ्रमणध्वनी क्रमांक </span>
               <span className="ms-[347px]">:{data?.mobile}</span>
             </div>
             <div>
-              <span className="text-center">Email / ईमेल </span>
+              <span className="text-center">Owner Email / ई-मेल आयड </span>
               <span className="ms-[430px]">:{data?.email}</span>
             </div>
             <div>
-              <span className="text-center">Address / पत्ता </span>
+              <span className="text-center">Owner Address / पत </span>
               <span className="ms-[413px]">:{data?.address}</span>
             </div>
             <div>
-              <span className="text-center">Article Description / लेख वर्णन </span>
-              <span className="ms-[295px]">:{data?.ArticleDescription
-}</span>
+              <span className="text-center">Owner City/District / शहर/जिल </span>
+              <span className="ms-[295px]">:{data?.city}</span>
             </div>
             <div>
-              <span className="text-center">Location of Lost / Found Article / हरवलेले/सापडलेलेदस्तऐवजचे स्थान </span>
-              <span className="ms-[25px]">:{data?.reportType
-}
-</span>
+              <span className="text-center">Owner State / राज </span>
+              <span className="ms-[25px]">:{data?.state}</span>
+            </div>
+          
+          </div>
+        </div>
+
+        <div className="border-b-2 border-black">
+          <h1 className="text-xl underline py-2 font-bold">
+          Rented Property Details / भा ड्या ने दि लेल्या जा गेचा तपशी ल:-
+          </h1>
+
+          <div className="text-lg">
+            <div>
+              <span className="text-center">Address of Rented Property / भाड्याने दिलेल्या मालमत्तेचापत</span>
+              <span className="ms-[370px]">:{data?.name}</span>
             </div>
             <div>
-              <span className="text-center">Date And Time of Lost / गमावलेली तारीख आणि वेळ </span>
-              <span className="ms-[142px]">:{data?.createdAt}</span>
+              <span className="text-center">Rented Property Pin code / पिनकोड </span>
+              <span className="ms-[347px]">:{data?.mobile}</span>
             </div>
+            <div>
+              <span className="text-center">Rented Property Agreement Start Date / करार प्रारंभतारीख </span>
+              <span className="ms-[430px]">:{data?.email}</span>
+            </div>
+            <div>
+              <span className="text-center">Agreement End Date / करार शेवटची तारीख </span>
+              <span className="ms-[413px]">:{data?.address}</span>
+            </div>
+                     
+          </div>
+        </div>
+
+        <div className="border-b-2 border-black">
+          <h1 className="text-xl underline py-2 font-bold">
+          Tenant Details / भा डेकरुचा तपशी ल:-
+          </h1>
+
+          <div className="text-lg">
+            <div>
+              <span className="text-center">Tenant′s Name / पूर्ण नाव</span>
+              <span className="ms-[370px]">:{data?.name}</span>
+            </div>
+            <div>
+              <span className="text-center">Tenant Permanent Address / कायमचा पत </span>
+              <span className="ms-[347px]">:{data?.mobile}</span>
+            </div>
+            <div>
+              <span className="text-center">Tenant City/District / शहर/जिल</span>
+              <span className="ms-[430px]">:{data?.email}</span>
+            </div>
+            <div>
+              <span className="text-center">Identity Proof of Tenant / भाडेकरु ओळख पुराव</span>
+              <span className="ms-[413px]">:{data?.address}</span>
+            </div>
+                     
           </div>
         </div>
 
