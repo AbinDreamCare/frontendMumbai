@@ -1,8 +1,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Mumbai Police',
-  description: 'This is the official website of Mumbai Police Department',
+  title: 'Navi Mumbai Police | Government of Maharashtra',
+  description: 'This is the official website of Navi Mumbai Police Department',
 }
 
 export default function RootLayout({ children }) {
