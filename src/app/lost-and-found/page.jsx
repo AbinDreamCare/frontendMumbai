@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
 import i18Instance from "@/customHooks/i18Instance";
 import { useRouter } from "next/navigation";
+import axios from "@/customHooks/axiosInstance";
 i18Instance();
 
 const Page = () => {
@@ -24,26 +25,27 @@ const Page = () => {
   const [option1, setOption1] = useState("");
   const [option2, setOption2] = useState("");
   const [file, setFile] = useState(null);
-
+  const [otpVerPopup, setotpVerPopup] = useState(false)
   const [lostFoundData, setlostFoundData] = useState({
     policeStation: "",
-    applicantDetails: {
+    
       name: "",
       email: "",
-      contact: "",
+      mobile: "",
       address: "",
       pin: "",
-    },
-    ArticleDetails: {
+   
+   
       reportType: "",
       articleType: "",
       city: "",
       state: '',
-      pin: '',
-    },
+      Articlepin: '',
+  
     ArticleDescription: "",
   });
-
+  const [otp,setOtp]=useState("")
+  console.log("otp",otp);
   const handleChange = (e) => {
     setlostFoundData({ ...lostFoundData, [e.target.name]: e.target.value });
   };
@@ -70,7 +72,6 @@ const Page = () => {
     ArticleDetails: {
       reportType: "",
       articleType: "",
-      location: '',
       city: "",
       state: '',
       pin: '',
@@ -81,14 +82,20 @@ const Page = () => {
 
   const handleSubmit = async (e) => {
     alert("submit enter");
-    e.preventDefault();
+    //e.preventDefault();
 
     try {
-      const { data } = await axios.post("/create", lostFoundData);
+      const { data } = await axios.post("/LostandFound/create", lostFoundData);
       // const { data } = await signUp(user);
       console.log("lost & found data", data);
-      router.push('/lost-found-pdf');
+      //router.push('/lost-found-pdf');
+      if(data){
+        const id=data._id
+      router.push(`/Lost-found-pdf?data=${id}`)
       resetForm();
+      }else{
+        alert("Registration Failed")
+      }
     } catch (error) {
       console.log(error);
     }
@@ -123,7 +130,7 @@ const Page = () => {
             </h1>
           </div>
 
-          <form onSubmit={handleSubmit} className="w-[80%] px-10 mx-auto">
+          <div  className="w-[80%] px-10 mx-auto">
             <div className="w-1/2 my-3">
               <label
                 className="block mb-2 text-sm font-bold text-gray-700"
@@ -174,13 +181,14 @@ const Page = () => {
                   Full Name*
                 </label>
                 <input
-                  className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
-                  id="name"
+                   id="name"
                   type="text"
                   name="name"
                   placeholder="Enter your name"
-                  value={lostFoundData?.applicantDetails.name}
                   onChange={handleChange}
+                  value={lostFoundData.name}
+                  className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
+                
                   required
                 />
               </div>
@@ -197,7 +205,7 @@ const Page = () => {
                   type="text"
                   name="email"
                   placeholder="Enter your contact number"
-                  value={lostFoundData?.applicantDetails.email}
+                  value={lostFoundData.email}
                   onChange={handleChange}
                 />
               </div>
@@ -214,9 +222,9 @@ const Page = () => {
                   className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
                   id="name"
                   type="number"
-                  name="contact"
+                  name="mobile"
                   placeholder="Enter your Mobile No"
-                  value={lostFoundData?.applicantDetails.contact}
+                  value={lostFoundData.mobile}
                   onChange={handleChange}
                 />
               </div>
@@ -233,7 +241,7 @@ const Page = () => {
                   type="text"
                   name="address"
                   placeholder="Enter your Address"
-                  value={lostFoundData?.applicantDetails.address}
+                  value={lostFoundData.address}
                   onChange={handleChange}
                 />
               </div>
@@ -250,7 +258,8 @@ const Page = () => {
                 id="name"
                 type="number"
                 placeholder="Enter your PIN Code"
-                value={lostFoundData?.applicantDetails.pin}
+                name="pin"
+                value={lostFoundData.pin}
                 onChange={handleChange}
               />
             </div>
@@ -269,12 +278,12 @@ const Page = () => {
                   className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
                   id="option2"
                   name="reportType"
-                  value={lostFoundData?.ArticleDetails.reportType}
+                  value={lostFoundData.reportType}
                   onChange={handleChange}
                 >
-                  <option value="">Select Report Type</option>
-                  <option value="1">Lost Item Report</option>
-                  <option value="2">Found Item Report</option>
+                  <option value="none">Select Report Type</option>
+                  <option value="Lost Item Report">Lost Item Report</option>
+                  <option value="Found Item Report">Found Item Report</option>
                 </select>
               </div>
               <div className="w-1/2 ml-2">
@@ -288,39 +297,21 @@ const Page = () => {
                   className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
                   id="option2"
                   name="articleType"
-                  value={lostFoundData?.ArticleDetails.articleType}
+                  value={lostFoundData.articleType}
                   onChange={handleChange}
                 >
-                  <option value="">Select Article Type</option>
-                  <option value="1">Driving Licence</option>
-                  <option value="2">PAN Card</option>
-                  <option value="3">AADHAR Card</option>
-                  <option value="4">Voter ID Card</option>
-                  <option value="5">Ration Card</option>
-                  <option value="6">Educational Document</option>
-                  <option value="7">Mobile </option>
-                  <option value="8">Other Document</option>
+                  <option value="none">Select Article Type</option>
+                  <option value="Driving Licence">Driving Licence</option>
+                  <option value="PAN Card">PAN Card</option>
+                  <option value="AADHAR Card">AADHAR Card</option>
+                  <option value="Voter ID Card">Voter ID Card</option>
+                  <option value="Ration Card">Ration Card</option>
+                  <option value="Educational Document">Educational Document</option>
+                  <option value="Mobile ">Mobile </option>
+                  <option value="Other Document">Other Document</option>
                 </select>
               </div>
             </div>
-
-            <div className="w-full ml-2">
-                <label
-                  className="block mb-2 text-sm font-bold text-gray-700"
-                  htmlFor="contact"
-                >
-                  Location*
-                </label>
-                <input
-                  className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
-                  id="contact"
-                  type="text"
-                  name="location"
-                  placeholder="Enter the lost/found Location"
-                  value={lostFoundData?.ArticleDetails.location}
-                  onChange={handleChange}
-                />
-              </div>
             
             <div className="flex mb-4">
               
@@ -335,11 +326,11 @@ const Page = () => {
                   className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
                   id="option2"
                   name="city"
-                  value={lostFoundData?.ArticleDetails.city}
+                  value={lostFoundData.city}
                   onChange={handleChange}
                 >
                   <option value="">Select City</option>
-                  <option value="yes">Navi Mumbai</option>
+                  <option value="yNavi Mumbai">Navi Mumbai</option>
                 </select>
               </div>
 
@@ -354,11 +345,11 @@ const Page = () => {
                   className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
                   id="option2"
                   name="state"
-                  value={lostFoundData?.ArticleDetails.state}
+                  value={lostFoundData.state}
                   onChange={handleChange}
                 >
-                  <option value="">Select City</option>
-                  <option value="yes">Maharashtra</option>
+                  <option value="">Select State</option>
+                  <option value="Maharashtra">Maharashtra</option>
                 </select>
               </div>
             </div>
@@ -376,9 +367,9 @@ const Page = () => {
                   className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
                   id="contact"
                   type="number"
-                  name="pin"
+                  name="Articlepin"
                   placeholder="Enter your contact number"
-                  value={lostFoundData?.ArticleDetails.pin}
+                  value={lostFoundData.Articlepin}
                   onChange={handleChange}
                 />
               </div>
@@ -436,24 +427,106 @@ const Page = () => {
               </h1>
             </div>
 
-            <button
+            {/* <button
               className="px-4 py-2 mx-5 mt-3 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
               type="reset"
             >
               Reset
-            </button>
+            </button> */}
             <button
+          
+              onClick={async() => {
+                // alert()
+                if(lostFoundData.mobile!==""){
+
+                  const ata={
+                    mobile:lostFoundData.mobile
+                  }
+                  
+                  const {data}=await axios.post("/otp/sendOtp",ata)
+                  console.log("data",data);
+                  //const data="kkkk"
+                  if(data.status=="pending"){
+                    setotpVerPopup(!otpVerPopup)
+                  }else{
+                    alert("Failed to Send OTP")
+                  }
+                }else{
+                  alert("Enter Mobile Number")
+                }
+                
+                
+                
+              }}
+            
               className="px-4 py-2 font-bold mt-3 text-white bg-blue-500 rounded hover:bg-blue-700"
-              type="submit"
+             
             >
               Submit
             </button>
-          </form>
+          </div>
         </div>
         <div className="mt-[26rem] md:mt-[10rem]">
           <Footer />
         </div>
       </div>
+
+      {otpVerPopup && 
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+      <div className="bg-white p-8 rounded-md">
+        <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
+       
+          <input
+            type="number"
+            value={otp}
+            name="otp"
+           
+            onChange={(e)=>{
+            setOtp(e.target.value)
+            }}
+            className="w-full border border-gray-300 p-2 rounded-md mb-4"
+            placeholder="Enter OTP"
+          />
+          <div className="flex justify-end">
+            <button
+              type="button"
+              onClick={()=>{
+                setotpVerPopup(!otpVerPopup)
+              }}
+              className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
+            >
+              Cancel
+            </button>
+            <button
+              // type="submit"
+              className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
+              onClick={async()=>{
+               if(otp!=="" && otp.length ==6){
+                const ata={
+                  mobile:lostFoundData.mobile,
+                  otp:otp
+                }
+                console.log("verify",ata);
+                const {data}=await axios.post("/otp/verifyOtp",ata)
+                if(data.valid){
+                  
+                  handleSubmit()
+
+                }else{
+                  alert("OTP verification Failed")
+                }
+               }else{
+                alert("enter a valid OTP")
+               }
+              }}
+            >
+              Verify
+            </button>
+          </div>
+       
+      </div>
+    </div>
+}
     </>
   );
 };

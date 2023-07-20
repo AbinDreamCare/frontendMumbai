@@ -1,6 +1,38 @@
-import React from "react";
-
+"use client";
+import React, { useEffect, useState } from "react";
+import axios from "@/customHooks/axiosInstance";
 function page() {
+    const [data,setData]=useState()
+useEffect(async()=>{
+
+  async function fetchData() {
+    let docId;
+    const queryString = window.location.search;
+    console.log(queryString);
+    let paramString = queryString.split('?')[1];
+    let queryStrings = new URLSearchParams(paramString);
+    
+    for (let pair of queryStrings.entries()) {
+       console.log("Key is: " + pair[0]);
+       console.log("Value is: " + pair[1]);
+      docId=pair[1]
+    }
+    // You can await here
+    const ata= {docId:docId}
+  const {data}=await axios.post('/LostandFound/getone',ata)
+  console.log('data1',data);
+  if(data){
+    setData(data)
+  }
+    // ...
+  }
+  fetchData();
+ 
+},[])
+
+
+console.log('data',data);
+
   return (
     <div className="text-gray-800">
       <div className="w-[90%] ms-[5%] flex justify-center border-b-2 border-black">
@@ -16,17 +48,20 @@ function page() {
           <h1 className="text-4xl mb-5 text-gray-800 text-center">
             Navi Mumbai Police
           </h1>
+          < a href="javascript:window.print()" className="p-1  mx-5 font-bold text-white bg-blue-800 border border-gray-500">Download this as a PDF</a>
+  
         </div>
       </div>
 
       <div className="w-[90%] ms-[5%] ">
         <div className="flex justify-between text-xl my-2 mb-6 font-bold">
           <h1>In Respect of Articles Lost/Found in Navi Mumbai City.</h1>
-          <h1>Date / तारीख:20/07/2023 02:19:34t</h1>
+          
+          <h1>Date / तारीख:{data?.createdAt}</h1>
         </div>
         <div className="flex justify-between text-xl pb-4 font-bold border-b-2 border-black">
           <h1>Police Station / पोलीस ठाणे : Antop Hill</h1>
-          <h1>Lost/Found Report No : 977/2023</h1>
+          <h1>Lost/Found Report No : {data?._id}</h1>
         </div>
         <div className="border-b-2 border-black">
           <h1 className="text-xl underline py-2 font-bold">
@@ -36,31 +71,34 @@ function page() {
           <div className="text-lg">
             <div>
               <span className="text-center">Full Name / पूर्ण नाव </span>
-              <span className="ms-[370px]">:demo</span>
+              <span className="ms-[370px]">:{data?.name}</span>
             </div>
             <div>
               <span className="text-center">Mobile No. / मोबाइल क्र </span>
-              <span className="ms-[347px]">:demo</span>
+              <span className="ms-[347px]">:{data?.mobile}</span>
             </div>
             <div>
               <span className="text-center">Email / ईमेल </span>
-              <span className="ms-[430px]">:demo</span>
+              <span className="ms-[430px]">:{data?.email}</span>
             </div>
             <div>
               <span className="text-center">Address / पत्ता </span>
-              <span className="ms-[413px]">:demo</span>
+              <span className="ms-[413px]">:{data?.address}</span>
             </div>
             <div>
               <span className="text-center">Article Description / लेख वर्णन </span>
-              <span className="ms-[295px]">:demo</span>
+              <span className="ms-[295px]">:{data?.ArticleDescription
+}</span>
             </div>
             <div>
               <span className="text-center">Location of Lost / Found Article / हरवलेले/सापडलेलेदस्तऐवजचे स्थान </span>
-              <span className="ms-[25px]">:demo</span>
+              <span className="ms-[25px]">:{data?.reportType
+}
+</span>
             </div>
             <div>
               <span className="text-center">Date And Time of Lost / गमावलेली तारीख आणि वेळ </span>
-              <span className="ms-[142px]">:demo</span>
+              <span className="ms-[142px]">:{data?.createdAt}</span>
             </div>
           </div>
         </div>
@@ -91,7 +129,7 @@ function page() {
               <div className="absolute top-[15%] font-bold left-[20%] ">
                 <h1>Navi Mumbai Police</h1>
                 <h1>Digitally Signed</h1>
-                <h1>Date: </h1>
+                <h1>Date: {data?.createdAt}</h1>
               </div>
             </div>
           </div>
