@@ -3,19 +3,42 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useTranslation } from "react-i18next";
 import i18Instance from "@/customHooks/i18Instance";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "@/customHooks/axiosInstance";
 import { useRouter } from "next/navigation";
-i18Instance();
+import { ImGithub } from "react-icons/im";
+i18Instance()
 
 function Page() {
   const { t } = useTranslation();
-  const router = useRouter()
-  const [otpVerPopup, setotpVerPopup] = useState(false)
+  const router = useRouter();
+  const [captcha, setCaptcha] = useState("");
+  const [captchaImage, setCaptchaImage] = useState("");
+
+  useEffect(() => {
+    handleRefreshCaptcha();
+  }, []);
+
+  const [errorMessage, seterrorMessage] = useState("");
+  const [otpVerPopup, setotpVerPopup] = useState(false);
   const optionsFeedback = [
     { value: "option1", label: t("inform_us") },
     { value: "option2", label: t("feedback") },
   ];
+
+  const handleRefreshCaptcha = () => {
+    //function for refreshing the captcha from backend
+    axios
+      .get("/captcha")
+      .then((response) => {
+        const { data } = response;
+        setCaptchaImage("data:image/svg+xml;base64," + btoa(data));
+      })
+      .catch((error) => {
+        console.log(error.message);
+        seterrorMessage("Failed to refresh captcha.");
+      });
+  };
 
   const optionsPoliceStation = [
     { value: "option1", label: t("apmc") },
@@ -68,18 +91,22 @@ function Page() {
       description: "",
     });
   };
-
+  const [otp, setOtp] = useState("");
+  console.log("otp", otp);
   const handleSubmit = async (e) => {
-    alert("submit enter");
-    e.preventDefault();
-   
+    // e.preventDefault();
+
     try {
-      const {data}=await axios.post("/feedBackRoute/create",feedbackData)
+      const { data } = await axios.post("/feedBackRoute/create", feedbackData);
       // const { data } = await signUp(user);
-      console.log("feedback data",data);
-     
-      resetForm();
-   
+      console.log("feedback data", data);
+      if (data) {
+        const id = data._id;
+        router.push(`/feedbackpdf?data=${id}`);
+        resetForm();
+      } else {
+        alert("login Failed");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -166,7 +193,7 @@ function Page() {
                       type="text"
                       id="name"
                       name="fullName"
-                      value={feedbackData.firstName}
+                      value={feedbackData.fullName}
                       onChange={handleChange}
                       className="w-full py-1 border border-gray-500 rounded-lg "
                       required
@@ -233,7 +260,12 @@ function Page() {
                   </div>
                 </div>
               </div>
-
+              {/* <button onClick={()=>{
+                          const id="64b840ff50a3e5672e40106d"
+                         
+                        }}>
+                          haiiiiii
+                        </button> */}
               <div className="flex justify-center w-full my-5">
                 <div className="  md:w-[100%] w-full">
                   <label htmlFor="article" className="font-bold  text-gray-500">
@@ -249,7 +281,6 @@ function Page() {
                     className=" w-full py-1 border border-gray-500 rounded-lg"
                     required
                   />
-                  
                 </div>
               </div>
 
@@ -270,34 +301,61 @@ function Page() {
                   />
                 </div>
               </div>
-              <img src="" alt="captcha" className="bg-white" />
-                    <button
-                      type="button"
-                      className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
-                      // onClick={handleRefreshCaptcha}
-                    >
-                      {t("refresh")}
-                    </button>
-                     <input
-                        type="text"
-                        name="captcha"
-                        placeholder="Enter the numbers above"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        required
-                        // value={values.captcha}
-                        //   onChange={handleCaptchaInput}
-                      />
+
+              <div>
+                <div className="flex my-4">
+                  <img
+                    src={captchaImage}
+             
+                    alt="captcha"
+                    className="bg-white h-16 w-40"
+                  />
+                  <button
+                    type="button"
+                    className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
+                    onClick={handleRefreshCaptcha}
+                  >
+                    Refresh
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  name="captcha"
+                  placeholder="Enter the data above"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[30%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                  value={captcha}
+                  onChange={(e) => setCaptcha(e.target.value)}
+                />
+                <div className="  text-red-600">
+                  <p>{errorMessage}</p>
+                </div>
+              </div>
               <button
-                        // type="submit"
-                        onClick={() => {
-                          // alert()
-                          handleSubmit()
-                          setotpVerPopup(!otpVerPopup)
-                        }}
-                        className="p-1 mx-5 font-bold text-white bg-blue-800 border border-gray-500"
-                      >
-                        {t("submit")}
-                      </button>
+                // type="submit"
+                onClick={async () => {
+                  // alert()
+                  if (feedbackData.mobile !== "") {
+                    const ata = {
+                      mobile: feedbackData.mobile,
+                    };
+
+                    const { data } = await axios.post("/otp/sendOtp", ata);
+                    console.log("data", data);
+                    //const data="kkkk"
+                    if (data.status == "pending") {
+                      setotpVerPopup(!otpVerPopup);
+                    } else {
+                      alert("Failed to Send OTP");
+                    }
+                  } else {
+                    alert("Enter Mobile Number");
+                  }
+                }}
+                className="p-1 mx-5 font-bold text-white bg-blue-800 border border-gray-500"
+              >
+                {t("submit")}
+              </button>
               <div className="flex justify-center mb-16">
                 <div className="">
                   <div className="flex justify-center">
@@ -352,38 +410,58 @@ function Page() {
         </div>
       </div>
 
+      {otpVerPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+          <div className="bg-white p-8 rounded-md">
+            <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
 
-      {otpVerPopup && 
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
-      <div className="bg-white p-8 rounded-md">
-        <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
-        <form >
-          <input
-            type="text"
-            // value={otp}
-            // onChange={handleInputChange}
-            className="w-full border border-gray-300 p-2 rounded-md mb-4"
-            placeholder="Enter OTP"
-          />
-          <div className="flex justify-end">
-            <button
-              type="button"
-              onClick={!otpVerPopup}
-              className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
-            >
-              Verify
-            </button>
+            <input
+              type="number"
+              value={otp}
+              name="otp"
+              onChange={(e) => {
+                setOtp(e.target.value);
+              }}
+              className="w-full border border-gray-300 p-2 rounded-md mb-4"
+              placeholder="Enter OTP"
+            />
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={() => {
+                  setotpVerPopup(!otpVerPopup);
+                }}
+                className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
+              >
+                Cancel
+              </button>
+              <button
+                // type="submit"
+                className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
+                onClick={async () => {
+                  if (otp !== "" && otp.length == 6) {
+                    const ata = {
+                      mobile: feedbackData.mobile,
+                      otp: otp,
+                    };
+                    console.log("verify", ata);
+                    const { data } = await axios.post("/otp/verifyOtp", ata);
+                    if (data.valid) {
+                      handleSubmit();
+                    } else {
+                      alert("OTP verification Failed");
+                    }
+                  } else {
+                    alert("enter a valid OTP");
+                  }
+                }}
+              >
+                Verify
+              </button>
+            </div>
           </div>
-        </form>
-      </div>
-    </div>
-}
+        </div>
+      )}
     </>
   );
 }

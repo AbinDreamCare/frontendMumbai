@@ -1,17 +1,76 @@
-import React from "react";
+'use client';
+import axios from "@/customHooks/axiosInstance";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 function page() {
+  // const [docId,setDocId]=useState("")
+//  useEffect(()=>{
+//   const queryString = window.location.search;
+//   console.log(queryString);
+//   let paramString = queryString.split('?')[1];
+//   let queryStrings = new URLSearchParams(paramString);
+  
+//   for (let pair of queryStrings.entries()) {
+//      console.log("Key is: " + pair[0]);
+//      console.log("Value is: " + pair[1]);
+//      setDocId(pair[1])
+//   }
+  
+//  },[])
+// console.log("Id",docId);
+
+const [data,setData]=useState()
+useEffect(async()=>{
+
+  async function fetchData() {
+    let docId;
+    const queryString = window.location.search;
+    console.log(queryString);
+    let paramString = queryString.split('?')[1];
+    let queryStrings = new URLSearchParams(paramString);
+    
+    for (let pair of queryStrings.entries()) {
+       console.log("Key is: " + pair[0]);
+       console.log("Value is: " + pair[1]);
+      docId=pair[1]
+    }
+    // You can await here
+    const ata= {docId:docId}
+  const {data}=await axios.post('/feedBackRoute/getone',ata)
+  console.log('data1',data);
+  if(data){
+    setData(data)
+  }
+    // ...
+  }
+  fetchData();
+ 
+},[])
+
+
+console.log('data',data);
+
   return (
-    <div className="text-gray-800">
+    
+    <div>
+      <div id="divcontents">
+      
+      <div className="text-gray-800">
+      
       <div className="w-[90%] ms-[5%] flex justify-center border-b-2 border-black">
         <div>
+      <div></div>
           <div className="flex justify-center py-5">
+            
             {" "}
             <img
+            
               className="w-32"
               src="/admin/logo-navi-mumbai.png"
               alt="logo"
             />
+            
           </div>
           <h1 className="text-4xl mb-5 text-gray-800 text-center">
             Navi Mumbai Police
@@ -22,11 +81,15 @@ function page() {
       <div className="w-[90%] ms-[5%] ">
         <div className="flex justify-between text-xl my-2 mb-6 font-bold">
           <h1>Information Report</h1>
-          <h1>Date / तारीख:20/07/2023 02:19:34t</h1>
+          <div>
+          < a href="javascript:window.print()" className="p-1  mx-5 font-bold text-white bg-blue-800 border border-gray-500">Download this as a PDF</a>
+  
+          </div>
+          <h1>Date / तारीख:{data?.createdAt}</h1>
         </div>
         <div className="flex justify-between text-xl pb-4 font-bold border-b-2 border-black">
-          <h1>Police Station / पोलीस ठाणे : Antop Hill</h1>
-          <h1>Report No. / अहवाल क्र. : 977/2023</h1>
+          <h1>Police Station / पोलीस ठाणे : {data?.policeStation}</h1>
+          <h1>Report No. / अहवाल क्र. : {data?._id}</h1>
         </div>
         <div className="border-b-2 border-black">
           <h1 className="text-xl underline py-2 font-bold">
@@ -36,27 +99,27 @@ function page() {
           <div className="text-lg">
             <div>
               <span className="text-center">Name / नाव </span>
-              <span className="ms-[230px]">:demo</span>
+              <span className="ms-[230px]">:{data?.fullName}</span>
             </div>
             <div>
               <span className="text-center">Mobile No. / मोबाइल क्र </span>
-              <span className="ms-[143px]">:demo</span>
+              <span className="ms-[143px]">:{data?.mobile}</span>
             </div>
             <div>
               <span className="text-center">Email / ईमेल </span>
-              <span className="ms-[223px]">:demo</span>
+              <span className="ms-[223px]">:{data?.email}</span>
             </div>
             <div>
               <span className="text-center">Address / पत्ता </span>
-              <span className="ms-[210px]">:demo</span>
+              <span className="ms-[210px]">:{data?.Address}</span>
             </div>
             <div>
               <span className="text-center">Subject / विषय </span>
-              <span className="ms-[208px]">:demo</span>
+              <span className="ms-[208px]">:{data?.subject}</span>
             </div>
             <div>
               <span className="text-center">Description / वर्णन </span>
-              <span className="ms-[182px]">:demo</span>
+              <span className="ms-[182px]">:{data?.description}</span>
             </div>
           </div>
         </div>
@@ -87,7 +150,7 @@ function page() {
               <div className="absolute top-[15%] font-bold left-[20%] ">
                 <h1>Navi Mumbai Police</h1>
                 <h1>Digitally Signed</h1>
-                <h1>Date: </h1>
+                <h1>Date:{data?.createdAt} </h1>
               </div>
             </div>
           </div>
@@ -99,7 +162,12 @@ function page() {
         <h1 className="text-center font-bold mb-10">Issued By: Navi Mumbai Police</h1>
       </div>
     </div>
+      </div>
+      
+    </div>
+    
   );
+
 }
 
 export default page;
