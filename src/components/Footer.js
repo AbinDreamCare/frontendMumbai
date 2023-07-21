@@ -41,35 +41,35 @@ function Footer() {
       <div className="bg-[#15233E] w-full p-6 text-white hidden sm:block">
         <div className="w-full">
           <div className="justify-center md:flex text-[12px]">
-            <div className="cursor-pointer me-4 hover:text-[#E7581A]">{t('emergency')}: 112</div>
-            <div className="cursor-pointer me-4 hover:text-[#E7581A]">
+            <div className="cursor-pointer me-4 hover:text-[#E7581A]" title={t('emergency')}>{t('emergency')}: 112</div>
+            <div className="cursor-pointer me-4 hover:text-[#E7581A]" title={t('traffic_helpline')}>
               {t('traffic_helpline')} : 7738393839
             </div>
-            <div className="cursor-pointer me-4 hover:text-[#E7581A]">
+            <div className="cursor-pointer me-4 hover:text-[#E7581A]" title={t('senior_citizen_helpline')}>
               {t('senior_citizen_helpline')} : 1090
             </div>
-            <div className="cursor-pointer me-4 hover:text-[#E7581A]">{t('costal_helpline')} : 1093</div>
-            <div className="cursor-pointer hover:text-[#E7581A]">{t('women_helpline')} : 103</div>
+            <div className="cursor-pointer me-4 hover:text-[#E7581A]" title={t('costal_helpline')}>{t('costal_helpline')} : 1093</div>
+            <div className="cursor-pointer hover:text-[#E7581A]" title={t('women_helpline')}>{t('women_helpline')} : 103</div>
           </div>
         </div>
         <div className="justify-start md:flex md:justify-between md:ms-16">
           <div>
-            <div className="mt-6 mb-4 underline md:text-lg underline-offset-8 sm:font-semibold ">
+            <div  title={t('navi_mumbai_police')} className="mt-6 mb-4 underline md:text-lg underline-offset-8 sm:font-semibold ">
               {t('navi_mumbai_police')}
             </div>
             <div className="justify-start md:flex md:justify-end text-[12px]">
               <div>
-                <div onClick={() => (router.push('/press-releases'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('press_release')}</div>
-                <div onClick={() => (router.push('/faqs'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('faqs')}</div>
-                <div onClick={() => (router.push('/martyrs'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('martyrs')}</div>
-                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('site_map')}</div>
+                <div onClick={() => (router.push('/press-releases'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('press_release')}>{t('press_release')}</div>
+                <div onClick={() => (router.push('/faqs'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('faqs')}>{t('faqs')}</div>
+                <div onClick={() => (router.push('/martyrs'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('martyrs')}>{t('martyrs')}</div>
+                <div className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('site_map')}>{t('site_map')}</div>
               </div>
               <div>
-                <div onClick={() => (router.push('/senior-officers'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
+                <div title={t('senior_police_officers')} onClick={() => (router.push('/senior-officers'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
                   {t('senior_police_officers')}
                 </div>
-                <div onClick={() => (router.push('/history'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('history')}</div>
-                <div onClick={() => (router.push('/police-recruitment'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
+                <div onClick={() => (router.push('/history'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('history')}>{t('history')}</div>
+                <div title={t('police_recruitments')} onClick={() => (router.push('/police-recruitment'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
                   {t('police_recruitments')}
                 </div>
                 {/* <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('disclaimer')}</div> */}
@@ -77,36 +77,36 @@ function Footer() {
             </div>
           </div>
           <div>
-            <div className="mt-6 mb-4 underline md:text-lg underline-offset-8 sm:font-semibold">
+            <div title={t('info_services')} className="mt-6 mb-4 underline md:text-lg underline-offset-8 sm:font-semibold">
               {t('info_services')}
             </div>
             <div className="md:flex justify-end text-[12px] ">
               <div>
-                <div onClick={() => (router.push('/safety-tips'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('safety_tips')}</div>
-                <div onClick={() => (router.push("https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx"))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('citizen_wall')}</div>
-                <div onClick={() => (router.push('/initiatives'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('initiative')}</div>
+                <div onClick={() => (router.push('/safety-tips'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('safety_tips')}>{t('safety_tips')}</div>
+                <div onClick={() => (router.push("https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx"))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('citizen_wall')}>{t('citizen_wall')}</div>
+                <div onClick={() => (router.push('/initiatives'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('initiative')}>{t('initiative')}</div>
                 {/* <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('licensing_unit')}</div> */}
               </div>
               <div>
-                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('missing_person')}</div>
-                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchDeadBodyList.aspx'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
+                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('missing_person')}>{t('missing_person')}</div>
+                <div title={t('unidentified_dead_bodies')} onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchDeadBodyList.aspx'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
                   {t('unidentified_dead_bodies')}
                 </div>
-                <div onClick={() => (router.push('/useful-websites'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('useful_website')}</div>
-                <div onClick={() => (router.push("/emergency-contacts"))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('emergency_contacts')}</div>
+                <div onClick={() => (router.push('/useful-websites'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('useful_website')}>{t('useful_website')}</div>
+                <div onClick={() => (router.push("/emergency-contacts"))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('emergency_contacts')}>{t('emergency_contacts')}</div>
               </div>
             </div>
           </div>
           <div>
-            <div className="mt-6 mb-4 md:text-lg underline underline-offset-8 sm:text-[12px] sm:font-semibold">
+            <div title={t('quick_links')} className="mt-6 mb-4 md:text-lg underline underline-offset-8 sm:text-[12px] sm:font-semibold">
               {t('quick_links')}
             </div>
             <div className="flex justify-start md:justify-end text-[12px]">
               <div>
                 {/* <div className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('tenders')}</div> */}
-                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/Login.aspx'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('online_complaint')}</div>
-                <div onClick={() => (router.push("/lost-and-found"))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">{t('lost_found')}</div>
-                <div onClick={() => (router.push('/right-to-information'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
+                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/Login.aspx'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('online_complaint')}>{t('online_complaint')}</div>
+                <div onClick={() => (router.push("/lost-and-found"))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('lost_found')}>{t('lost_found')}</div>
+                <div title={t('right_to_info')} onClick={() => (router.push('/right-to-information'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
                   {t('right_to_info')}
                 </div>
               </div>
@@ -115,7 +115,7 @@ function Footer() {
         </div>
         <div className="mx-16 mt-6 md:flex md:justify-between">
           <div className="flex ">
-            <div className="me-2">{t('follow_us')}</div>
+            <div className="me-2" title={t('follow_us')}>{t('follow_us')}</div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white hover:text-[#E7581A]">
               <a href="https://www.instagram.com/navimumbaipolice/?hl=en" target="_blank"><AiOutlineInstagram /></a>
             </div>
@@ -143,25 +143,25 @@ function Footer() {
         <div className="flex justify-start">
           <div className="justify-start md:flex text-[12px]">
             <div onClick={() => (router.push('/emergency-contacts'))} className="cursor-pointer">{t('emergency')}: 112</div>
-            <div className="cursor-pointer">
+            <div title={t('traffic_helpline')} className="cursor-pointer">
             {t('traffic_helpline')} : 7738393839
             </div>
-            <div className="cursor-pointer">
+            <div title={t('senior_citizen_helpline')} className="cursor-pointer">
             {t('senior_citizen_helpline')} : 1090
             </div>
-            <div className="cursor-pointer">{t('costal_helpline')} : 1093</div>
-            <div className="cursor-pointer">{t('women_helpline')} : 103</div>
+            <div className="cursor-pointer" title={t('costal_helpline')}>{t('costal_helpline')} : 1093</div>
+            <div className="cursor-pointer" title={t('women_helpline')}>{t('women_helpline')} : 103</div>
           </div>
           <div className="ms-5">
-            <div className=" mb-4 underline underline-offset-8 text-[12px] sm:font-semibold">
+            <div title={t('quick_links')} className=" mb-4 underline underline-offset-8 text-[12px] sm:font-semibold">
             {t('quick_links')}
             </div>
             <div className="flex justify-start md:justify-end text-[12px]">
               <div>
                 {/* <div className="cursor-pointer">{t('tenders')}</div> */}
-                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/Login.aspx'))} className="cursor-pointer">{t('online_complaint')}</div>
-                <div onClick={() => (router.push("/lost-and-found"))} className="cursor-pointer">{t('lost_found')}</div>
-                <div onClick={() => (router.push('/right-to-information'))} className="cursor-pointer">
+                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/Login.aspx'))} className="cursor-pointer" title={t('online_complaint')}>{t('online_complaint')}</div>
+                <div onClick={() => (router.push("/lost-and-found"))} className="cursor-pointer" title={t('lost_found')}>{t('lost_found')}</div>
+                <div title={t('right_to_info')} onClick={() => (router.push('/right-to-information'))} className="cursor-pointer">
                 {t('right_to_info')}
                 </div>
               </div>
@@ -173,48 +173,48 @@ function Footer() {
 
         <div className="flex items-center justify-center">
           <div>
-            <div className="mt-6 mb-4 underline underline-offset-8 sm:font-semibold text-[12px]">
+            <div title={t('navi_mumbai_police')} className="mt-6 mb-4 underline underline-offset-8 sm:font-semibold text-[12px]">
             {t('navi_mumbai_police')}
             </div>
             <div className="justify-start text-[12px]">
               <div>
-                <div onClick={() => (router.push('/press-releases'))} className="cursor-pointer">{t('press_release')}</div>
-                <div onClick={() => (router.push('/faqs'))} className="me-[48px] cursor-pointer">{t('faqs')}</div>
-                <div onClick={() => (router.push('/martyrs'))} className="me-[48px] cursor-pointer">{t('martyrs')}</div>
-                <div className="me-[48px] cursor-pointer">{t('site_map')}</div>
+                <div onClick={() => (router.push('/press-releases'))} className="cursor-pointer" title={t('press_release')}>{t('press_release')}</div>
+                <div onClick={() => (router.push('/faqs'))} className="me-[48px] cursor-pointer" title={t('faqs')}>{t('faqs')}</div>
+                <div onClick={() => (router.push('/martyrs'))} className="me-[48px] cursor-pointer" title={t('martyrs')}>{t('martyrs')}</div>
+                <div className="me-[48px] cursor-pointer" title={t('site_map')}>{t('site_map')}</div>
               </div>
               <div>
-                <div onClick={() => (router.push('/senior-officers'))} className="me-[48px] cursor-pointer">
+                <div title={t('senior_police_officers')} onClick={() => (router.push('/senior-officers'))} className="me-[48px] cursor-pointer">
                 {t('senior_police_officers')}
                 </div>
-                <div onClick={() => (router.push('/history'))} className="me-[48px] cursor-pointer">{t('history')}</div>
-                <div onClick={() => (router.push('/police-recruitment'))} className="me-[48px] cursor-pointer">
+                <div onClick={() => (router.push('/history'))} className="me-[48px] cursor-pointer" title={t('history')}>{t('history')}</div>
+                <div title={t('police_recruitments')} onClick={() => (router.push('/police-recruitment'))} className="me-[48px] cursor-pointer">
                 {t('police_recruitments')}
                 </div>
-                <div className="me-[48px] cursor-pointer">{t('disclaimer')}</div>
+                <div className="me-[48px] cursor-pointer" title={t('disclaimer')}>{t('disclaimer')}</div>
               </div>
             </div>
           </div>
 
           
           <div className="ms-7">
-            <div className="mt-6 mb-4 underline underline-offset-8 sm:font-semibold text-[12px]">
+            <div title={t('info_services')} className="mt-6 mb-4 underline underline-offset-8 sm:font-semibold text-[12px]">
               {t('info_services')}
             </div>
             <div className="md:flex justify-end text-[12px] ">
               <div>
-                <div onClick={() => (router.push('/safety-tips'))} className="me-[48px] cursor-pointer">{t('safety_tips')}</div>
-                <div onClick={() => (router.push("https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx"))} className="me-[48px] cursor-pointer">{t('citizen_wall')}</div>
-                <div onClick={() => (router.push('/initiatives'))} className="me-[48px] cursor-pointer">{t('initiative')}</div>
+                <div onClick={() => (router.push('/safety-tips'))} className="me-[48px] cursor-pointer" title={t('safety_tips')}>{t('safety_tips')}</div>
+                <div onClick={() => (router.push("https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx"))} className="me-[48px] cursor-pointer" title={t('citizen_wall')}>{t('citizen_wall')}</div>
+                <div onClick={() => (router.push('/initiatives'))} className="me-[48px] cursor-pointer" title={t('initiative')}>{t('initiative')}</div>
                 {/* <div className="me-[48px] cursor-pointer">{t('licensing_unit')}</div> */}
               </div>
               <div>
-                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx'))} className="me-[48px] cursor-pointer">{t('missing_persons')}</div>
-                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchDeadBodyList.aspx'))} className="me-[48px] cursor-pointer">
+                <div onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx'))} className="me-[48px] cursor-pointer" title={t('missing_persons')}>{t('missing_persons')}</div>
+                <div title={t('unidentified_dead_bodies')} onClick={() => (router.push('https://citizen.mahapolice.gov.in/Citizen/MH/SearchDeadBodyList.aspx'))} className="me-[48px] cursor-pointer">
                   {t('unidentified_dead_bodies')}
                 </div>
-                <div onClick={() => (router.push('/useful-websites'))} className="me-[48px] cursor-pointer">{t('useful_websites')}</div>
-                <div onClick={() => (router.push('/emergency-contacts'))} className="me-[48px] cursor-pointer">{t('emergency_contacts')}</div>
+                <div onClick={() => (router.push('/useful-websites'))} className="me-[48px] cursor-pointer" title={t('useful_websites')}>{t('useful_websites')}</div>
+                <div onClick={() => (router.push('/emergency-contacts'))} className="me-[48px] cursor-pointer" title={t('emergency_contacts')}>{t('emergency_contacts')}</div>
               </div>
             </div>
           </div>
@@ -222,7 +222,7 @@ function Footer() {
         </div>
         <div className="mx-16 mt-6 md:flex md:justify-between">
           <div className="flex ">
-            <div className="me-2">{t('follow_us')}</div>
+            <div className="me-2" title={t('follow_us')}>{t('follow_us')}</div>
             <div className="rounded-full p-1 mx-1 border-[1px] border-white">
             <a href="https://www.instagram.com/navimumbaipolice/?hl=en" target="_blank"><AiOutlineInstagram /></a>
             </div>

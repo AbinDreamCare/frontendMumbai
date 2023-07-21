@@ -22,11 +22,11 @@ export default function CPMessage() {
                   <div className="absolute top-0 left-0 z-10 flex justify-center w-full md:-top-80">
                     <Image src={"/commissioner.png"} height={500} width={500} className=" object-cover w-[80%] md:w-full" />
                   </div>
-                  <div className="text absolute top-[350px] md:top-[15px] left-14 md:left-5 font-saira text-[#15233E] text-[45px]  leading-[60px] font-extrabold z-30 ">{t('cp_name1')}</div>
+                  <div className="text absolute top-[350px] md:top-[15px] left-14 md:left-5 font-saira text-[#15233E] text-[45px]  leading-[60px] font-extrabold z-30 " title={t('cp_name1')}>{t('cp_name1')}</div>
                   <div className="polygonOrange absolute top-80 md:-top-8 left-0 h-[420px] w-full z-0"></div>
                   <div className="absolute top-5 md:-top-72 left-20 md:left-10 z-0 rounded-full bg-[#ABBED1] h-[270px] w-[270px]"></div>
                   <div className="curvedPOl absolute top-48 md:-top-40 right-0 rounded-3xl bg-[#E7581A] w-[172px] h-[211px]"></div>
-                  <div className="absolute top-[480px] md:top-[150px] py-4 px-8 text-lg right-0 z-30 bg-white text-black">{t('com_of_police')}</div>
+                  <div className="absolute top-[480px] md:top-[150px] py-4 px-8 text-lg right-0 z-30 bg-white text-black" title={t('com_of_police')}>{t('com_of_police')}</div>
                 </div>
 
 
@@ -39,10 +39,10 @@ export default function CPMessage() {
               <div className="mx-10 mt-[650px] md:mt-0 md:w-8/12">
 
 
-                <div className="hidden text-[40px] text-left font-extrabold leading-9 text-white sm:block">{t('from_cp_desk')}</div>
+                <div className="hidden text-[40px] text-left font-extrabold leading-9 text-white sm:block" title={t('from_cp_desk')}>{t('from_cp_desk')}</div>
 
 
-                <h1 className="mt-3 text-white md:text-lg">{t('namaskar_navi_mumbai')}</h1>
+                <h1 className="mt-3 text-white md:text-lg" title={t('namaskar_navi_mumbai')}>{t('namaskar_navi_mumbai')}</h1>
 
                 <h1 className="mt-3 text-sm leading-6 text-justify text-white md:text-lg">
                   {t('cp_msg1')}

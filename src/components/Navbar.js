@@ -161,7 +161,7 @@ const Navbar = () => {
         />
         </a>
         
-        <a href="/" className="mx-1 text-[1.4em]  md:w-auto font-semibold leading-[36px] text-sky-900 hover:text-[#E7581A]">
+        <a href="/" title={t('navi_mumbai_police')} className="mx-1 text-[1.4em]  md:w-auto font-semibold leading-[36px] text-sky-900 hover:text-[#E7581A]">
           {t('navi_mumbai_police')}
         </a>
       </div>
@@ -170,54 +170,54 @@ const Navbar = () => {
         <div className="justify-around hidden md:flex">
           <ul className="flex flex-col mt-[2px] text-[1em] w-11/12 mr-5 space-y-2 md:flex-row md:space-y-0 md:space-x-4 text-sky-900">
             <a href="/">
-            <li className="inline-flex font-medium leading-[28px] cursor-pointer hover:text-[#E7581A]">
+            <li title={t('home')} className="inline-flex font-medium leading-[28px] cursor-pointer hover:text-[#E7581A]">
               {t('home')}
             </li>
             </a>
-            <li onMouseEnter={() => setaboutUsToggle(true)} onMouseLeave={() => setaboutUsToggle(false)} className={`relative ${aboutUsToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
+            <li title={t('about_us')} onMouseEnter={() => setaboutUsToggle(true)} onMouseLeave={() => setaboutUsToggle(false)} className={`relative ${aboutUsToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
             {t('about_us')}
               {aboutUsToggle &&
                 <div className="absolute z-50 -left-5">
                   <ul className="text-black bg-white px-6 py-2 border-[1px]  rounded-lg">
                     {aboutUs.map((about, i) => (
                       <a key={i} href="#">
-                        <li onClick={() => (router.push(about.link))} className="hover:text-[#E7581A] w-48" key={i}>{about.title}</li>
+                        <li onClick={() => (router.push(about.link))} className="hover:text-[#E7581A] w-48" key={i} title={about.title}>{about.title}</li>
                       </a>
                     ))}
                   </ul>
                 </div>
               }
             </li>
-            <li onMouseEnter={() => setreportUsToggle(true)} onMouseLeave={() => setreportUsToggle(false)} className={`relative ${reportUsToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
+            <li title={t('report_us')} onMouseEnter={() => setreportUsToggle(true)} onMouseLeave={() => setreportUsToggle(false)} className={`relative ${reportUsToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
               {t('report_us')}
               {reportUsToggle &&
                 <div className="absolute z-50 -left-5">
                   <ul className="text-black bg-white px-6 py-2 border-[1px]  rounded-lg">
                     {ReportUs.map((report, i) => (
-                      <li onClick={() => (router.push(report.link))} className="hover:text-[#E7581A] w-48" key={i}>{report.title}</li>
+                      <li onClick={() => (router.push(report.link))} className="hover:text-[#E7581A] w-48" key={i} title={report.title}>{report.title}</li>
                     ))}
                   </ul>
                 </div>
               }
             </li>
-            <li onMouseEnter={() => setSpecialUnits1Toggle(true)} onMouseLeave={() => setSpecialUnits1Toggle(false)} className={`relative ${SpecialUnits1Toggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
+            <li title={t('special_units')} onMouseEnter={() => setSpecialUnits1Toggle(true)} onMouseLeave={() => setSpecialUnits1Toggle(false)} className={`relative ${SpecialUnits1Toggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
               {t('special_units')}
               {SpecialUnits1Toggle &&
                 <div className="absolute z-50 -left-80">
                   <ul className="text-black bg-white px-6 py-2 flex border-[1px]  rounded-lg">
                     <div>
                       {SpecialUnits1.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="w-60 hover:text-[#E7581A]" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="w-60 hover:text-[#E7581A]" key={i} title={special.title}>{special.title}</li>
                       ))}
                     </div>
                     <div>
                       {SpecialUnits2.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="w-60 hover:text-[#E7581A]" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="w-60 hover:text-[#E7581A]" key={i} title={special.title}>{special.title}</li>
                       ))}
                     </div>
                     <div>
                       {SpecialUnits3.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="w-72 hover:text-[#E7581A]" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="w-72 hover:text-[#E7581A]" key={i} title={special.title}>{special.title}</li>
                       ))}
                     </div>
 
@@ -225,7 +225,7 @@ const Navbar = () => {
                 </div>
               }
             </li>
-            <li onMouseEnter={() => setCitizenCornerToggle(true)} onMouseLeave={() => setCitizenCornerToggle(false)} className={`relative ${CitizenCornerToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
+            <li title={t('citizen_corner')} onMouseEnter={() => setCitizenCornerToggle(true)} onMouseLeave={() => setCitizenCornerToggle(false)} className={`relative ${CitizenCornerToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
               {t('citizen_corner')}
               {CitizenCornerToggle &&
                 <div className="absolute z-50 -left-36">
@@ -233,36 +233,37 @@ const Navbar = () => {
                     <div>
                       {CitizenCorner.map((special, i) => (
                         
-                        <li onClick={() => (router.push(special.link))} tar={special.target} className="w-60 hover:text-[#E7581A]" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} tar={special.target} className="w-60 hover:text-[#E7581A]" key={i} title={special.title}>{special.title}</li>
                       ))}
                     </div>
                     <div>
                       {CitizenCorner2.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="w-32 hover:text-[#E7581A]" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="w-32 hover:text-[#E7581A]" key={i} title={special.title}>{special.title}</li>
                       ))}
                     </div>
                   </ul>
                 </div>
               }
             </li>
-            <li onMouseEnter={() => setPoliceCornerToggle(true)} onMouseLeave={() => setPoliceCornerToggle(false)} className={`relative ${PoliceCornerToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
+            <li title={t('police_corner')} onMouseEnter={() => setPoliceCornerToggle(true)} onMouseLeave={() => setPoliceCornerToggle(false)} className={`relative ${PoliceCornerToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
               {t('police_corner')}
               {PoliceCornerToggle &&
                 <div className="absolute z-50 -left-5">
                   <ul className="text-black bg-white px-6 py-2 border-[1px]  rounded-lg">
                     {PoliceCorner.map((report, i) => (
-                      <li onClick={() => (router.push(report.link))} className="hover:text-[#E7581A] w-56" key={i}>{report.title}</li>
+                      <li onClick={() => (router.push(report.link))} className="hover:text-[#E7581A] w-56" key={i} title={report.title}> {report.title}</li>
                     ))}
                   </ul>
                 </div>
               }
-            </li>              <li onMouseEnter={() => setContactUsToggle(true)} onMouseLeave={() => setContactUsToggle(false)} className={`relative ${ContactUsToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
+            </li>              
+            <li title={t('contact_us')} onMouseEnter={() => setContactUsToggle(true)} onMouseLeave={() => setContactUsToggle(false)} className={`relative ${ContactUsToggle ? "hover:text-[#E7581A]" : ""} inline font-medium leading-[28px] cursor-pointer`}>
               {t('contact_us')}
               {ContactUsToggle &&
                 <div className="absolute z-50 -left-28">
                   <ul className="text-black bg-white px-6 py-2 border-[1px]  rounded-lg">
                     {ContactUs.map((report, i) => (
-                      <li onClick={() => (router.push(report.link))} className="hover:text-[#E7581A] w-44" key={i}>{report.title}</li>
+                      <li onClick={() => (router.push(report.link))} className="hover:text-[#E7581A] w-44" key={i} title={report.title}>{report.title}</li>
                     ))}
                   </ul>
                 </div>
@@ -417,7 +418,7 @@ const Navbar = () => {
           {isMenuOpen && (
             <div className="absolute right-0 w-full h-screen overflow-scroll border-b border-gray-200 top-12">
               <ul className="items-center px-6 pt-20 pb-6 overflow-auto text-lg text-left text-black bg-white ml-28">
-                <li className="h-full px-8 py-4 cursor-pointer hover:bg-white">
+                <li title={t('home')} className="h-full px-8 py-4 cursor-pointer hover:bg-white">
                   {t('home')}
                 </li>
                 <li onClick={() => setaboutUsMobile(!aboutUsMobile)} className="px-8 py-4">
@@ -426,7 +427,7 @@ const Navbar = () => {
                     <div className="w-full h-full mt-2 ml-6 text-sm ">
                       <ul className="rounded-lg ">
                         {aboutUs.map((about, i) => (
-                          <><li onClick={() => (router.push(about.link))} className="py-2 " key={i}>{about.title}</li></>
+                          <><li onClick={() => (router.push(about.link))} className="py-2 " key={i} title={about.title}>{about.title}</li></>
                         ))}
                       </ul>
                     </div>
@@ -438,7 +439,7 @@ const Navbar = () => {
                     <div className="w-full h-full mt-2 ml-6 text-sm">
                       <ul className="rounded-lg ">
                         {ReportUs.map((about, i) => (
-                          <><li onClick={() => (router.push(about.link))} className="py-2 " key={i}>{about.title}</li></>
+                          <><li onClick={() => (router.push(about.link))} className="py-2 " key={i} title={about.title}>{about.title}</li></>
                         ))}
                       </ul>
                     </div>
@@ -451,15 +452,15 @@ const Navbar = () => {
                     <div className="w-full h-full mt-2 ml-6 text-sm">
                       <ul className="rounded-lg ">                        
                       {SpecialUnits1.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="py-2" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="py-2" key={i} title={special.title}>{special.title}</li>
                       ))}
                     
                       {SpecialUnits2.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="py-2" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="py-2" key={i} title={special.title}>{special.title}</li>
                       ))}
                     
                       {SpecialUnits3.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="py-2" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="py-2" key={i} title={special.title}>{special.title}</li>
                       ))}
                       
                       </ul>
@@ -472,10 +473,10 @@ const Navbar = () => {
                     <div className="w-full h-full mt-2 ml-6 text-sm">
                       <ul className="rounded-lg ">
                       {CitizenCorner.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="py-2" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="py-2" key={i} title={special.title}>{special.title}</li>
                       ))}
                       {CitizenCorner2.map((special, i) => (
-                        <li onClick={() => (router.push(special.link))} className="py-2" key={i}>{special.title}</li>
+                        <li onClick={() => (router.push(special.link))} className="py-2" key={i} title={special.title}>{special.title}</li>
                       ))}
                       </ul>
                     </div>
@@ -487,7 +488,7 @@ const Navbar = () => {
                     <div className="w-full h-full mt-2 ml-6 text-sm">
                     <ul className="rounded-lg ">
                       {PoliceCorner.map((report, i) => (
-                      <li onClick={() => (router.push(report.link))} className="py-2" key={i}>{report.title}</li>
+                      <li onClick={() => (router.push(report.link))} className="py-2" key={i} title={report.title}>{report.title}</li>
                     ))}
                       </ul>
                     </div>
@@ -499,7 +500,7 @@ const Navbar = () => {
                     <div className="w-full h-full mt-2 ml-6 text-sm">
                     <ul className="rounded-lg ">
                       {ContactUs.map((report, i) => (
-                      <li onClick={() => (router.push(report.link))} className="py-2" key={i}>{report.title}</li>
+                      <li onClick={() => (router.push(report.link))} className="py-2" key={i} title={report.title}>{report.title}</li>
                     ))}
                       </ul>
                     </div>

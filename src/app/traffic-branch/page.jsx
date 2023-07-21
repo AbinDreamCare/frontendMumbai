@@ -20,16 +20,16 @@ function Page () {
             <div className="flex items-center justify-center my-10">
                 <img src="./trafficBrach.png" className="md:w-[50%] w-full h-[50%]" />
             </div>
-            <div className="w-full flex justify-center">
-            <div className="text-[#15233E] w-[50%] md:mx-24 mx-5">
+            <div className="flex justify-center w-full">
+            <div className="text-[#15233E] md:w-[50%] md:mx-24 mx-5">
                 <h1 className="text-2xl font-extrabold">{t('traffic_branch')}</h1>
                 <h1 className="">{t('traffic_1')}</h1>
                 <h1 className="font-extrabold">{t('traffic_2')}</h1>
-                +              </div>
+                              </div>
               </div>
               <div className="mx-5 md:mx-20">
                   <h1 className="font-extrabold text-3xl text-[#15233E] text-center my-10">Our Mission</h1>
-                  <div className="w-full flex justify-center">
+                  <div className="flex justify-center w-full">
                   <div className="items-center justify-center ">
                       <h1 className="leading-10">
                       {t('traffic_3')}
@@ -37,7 +37,7 @@ function Page () {
                       <h1 className="leading-10">
                       {t('traffic_4')}
                       </h1>
-                      +                      <h1 className="leading-10">{t('traffic_5')}</h1>
+                                            <h1 className="leading-10">{t('traffic_5')}</h1>
                       <h1 className="leading-10">{t('traffic_6')}</h1>
                       <h1 className="leading-10">{t('traffic_7')}</h1>
                       <h1 className="leading-10">{t('traffic_8')}</h1>
@@ -45,7 +45,9 @@ function Page () {
                   </div>
               </div>
           </div>
-          <Footer/>
+          <div className="mt-[26rem] md:mt-[0rem]">
+    <Footer />
+      </div>
       </>
   )
 };

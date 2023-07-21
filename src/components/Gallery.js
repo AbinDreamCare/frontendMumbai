@@ -65,7 +65,7 @@ const Gallery = () => {
     <>
       <div className="">
         <div className="text-center " id="gallery">
-          <h1 className="mt-12 mb-8 text-3xl font-bold text-black">
+          <h1 className="mt-12 mb-8 text-3xl font-bold text-black" title={t('photo_gallery')}>
             {t('photo_gallery')}
           </h1>
         </div>
@@ -84,7 +84,7 @@ const Gallery = () => {
                      />
                     <div className="hidden top-0 left-0 md:flex items-center justify-center w-full h-full transition-all duration-500 rounded-lg bg-black md:absolute bg-opacity-95 md:opacity-0 hover:opacity-100">
                     <div className="z-20 transform  ">
-                      <div className="px-1 flex justify-center items-center text-center text-white ">
+                      <div title={src.title} className="px-1 flex justify-center items-center text-center text-white ">
                         {src.title}
                       </div>
                     </div>

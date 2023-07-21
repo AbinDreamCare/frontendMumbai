@@ -75,10 +75,10 @@ const page = ()=> {
             <th className="px-6 py-3 font-medium tracking-wider text-center uppercase border">
               Info
             </th>
-            <th className="px-6 py-3 font-medium tracking-wider text-center uppercase border">
+            <th className="py-3 font-medium tracking-wider text-center uppercase border md:px-6">
               Info. In English
             </th>
-            <th className="px-6 py-3 font-medium tracking-wider text-center uppercase border">
+            <th className="py-3 font-medium tracking-wider text-center uppercase border md:px-6">
               Info. In Marathi
             </th>
           </tr>
@@ -95,7 +95,7 @@ const page = ()=> {
               <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 {hierarchy.name}
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
+              <td className="py-3 text-sm font-medium text-left align-middle border md:px-6">
                 <div className="flex justify-center text-orange-700">
                   <a
                     href={hierarchy.pdfEng}
@@ -106,7 +106,7 @@ const page = ()=> {
                   </a>
                 </div>
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
+              <td className="py-3 text-sm font-medium text-left align-middle border md:px-6">
                 <div className="flex justify-center text-orange-700">
                   <a
                     href={hierarchy.pdfMar}

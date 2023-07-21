@@ -109,7 +109,7 @@ function Page() {
       <Navbar/>
       <div className="pt-10 bg-[#D2D2D2] pb-10">
       <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-            <h1 className="pt-14 my-10">{t('hierarchy')}</h1>
+            <h1 className="my-10 pt-14">{t('hierarchy')}</h1>
           </div>
       <div className="flex justify-center mt-10 border-[#15233E]">
       <table className="pt-10 text-[#15233E] border-[#15233E]">
@@ -147,13 +147,13 @@ function Page() {
               <td className="px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border">
                 {hierarchy.designation}
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border">
+              <td className="md:px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border">
                 {hierarchy.shortForm}
               </td>
               <td className="hidden px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border md:table-cell">
                 {hierarchy.rank}
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border">
+              <td className="md:px-6 py-3 text-sm font-medium text-left text-[#15233E] border-[#15233E] align-middle border">
                 <Image
                   width={150}
                   height={80}

@@ -34,7 +34,7 @@ function Page() {
       <div className="font-bold  text-5xl leading-9 text-center pt-14 text-[#15233E]">
             <h1 className="pt-14">{t('press_release')}</h1>
           </div>
-      <div className="flex justify-center w-full mt-10">
+      <div className="flex justify-center w-full p-3 mt-10">
       <table className="pt-10 bg-white ">
         <thead>
           <tr className="text-base text-center text-gray-800 ">
@@ -44,7 +44,7 @@ function Page() {
             <th className="px-6 py-3 font-medium tracking-wider text-center uppercase border">
               Title
             </th>
-            <th className="px-6 py-3 font-medium tracking-wider text-center uppercase border">
+            <th className="py-3 font-medium tracking-wider text-center uppercase border md:px-6">
               Info
             </th>
           </tr>
@@ -61,7 +61,7 @@ function Page() {
               <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 {hierarchy.titleEng}
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
+              <td className="py-3 text-sm font-medium text-left align-middle border md:px-6">
                 <div className="flex justify-center text-orange-700">
                   <a
                     href={`http://3.7.252.48/uploads/${hierarchy.filename}`}

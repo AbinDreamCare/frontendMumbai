@@ -126,7 +126,7 @@ export default function BestServices() {
   return (
     <>
       <div className="-mt-64 text-center md:mt-0 bg-green-50">
-        <div className="mb-10 -mt-48 md:mt-0 md:pt-10 md:text-3xl font-extrabold leading-9 text-[24px] text-[#15233E]">
+        <div title={t('our_best_services')} className="mb-10 -mt-48 md:mt-0 md:pt-10 md:text-3xl font-extrabold leading-9 text-[24px] text-[#15233E]">
         {t('our_best_services')}
         </div>
         <div className="flex justify-center w-full p-3">
@@ -143,7 +143,7 @@ export default function BestServices() {
                       </div>
                     </div>
                     <div className="sm:text-left hover:text-[#E7581A] md:text-right">
-                      <div onClick={() => (router.push(serviceName.link))} className="text-[16px] md:text-[24px] lg:text-xl font-bold mt-2 ml-2 md:ml-0 md:mt-0 text-[#15233E] hover:text-[#E7581A]">
+                      <div title={serviceName.name} onClick={() => (router.push(serviceName.link))} className="text-[16px] md:text-[24px] lg:text-xl font-bold mt-2 ml-2 md:ml-0 md:mt-0 text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.name}
                       </div>
                       {/* <div onClick={() => (router.push(serviceName.link))} className="hidden text-xs font-normal sm:block md:text-sm text-[#15233E] hover:text-[#E7581A]">
@@ -187,7 +187,7 @@ export default function BestServices() {
                       </div>
                     </div>
                     <div className="text-left hover:text-[#E7581A]">
-                      <div onClick={() => (router.push(serviceName.link))} className="text-[16px] md:text-xl font-bold mt-2 ml-2 md:ml-0 md:mt-0 text-[#15233E] hover:text-[#E7581A]">
+                      <div title={serviceName.name} onClick={() => (router.push(serviceName.link))} className="text-[16px] md:text-xl font-bold mt-2 ml-2 md:ml-0 md:mt-0 text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.name}
                       </div>
                       {/* <div onClick={() => (router.push(serviceName.link))} className="hidden text-xs md:text-sm font-normal sm:block md:text-[16px] text-[#15233E] hover:text-[#E7581A]">

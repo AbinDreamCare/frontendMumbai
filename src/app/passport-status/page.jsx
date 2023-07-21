@@ -28,26 +28,25 @@ const PassportVerification = () => {
           </h1> */}
         </div>
         
-        <div className="justify-center mt-10 md:flex">
-            <Image src="/passport1.png" height={300} width={850} > 
-            </Image>
-        </div>
-        <div className="text-[#15233E] mx-14">
+        <div className="flex items-center justify-center mx-5 my-10 md:mx-44">
+          <img src="./navi_head.png" className="w-[100%] h-[50%]" />
+          </div>
+        <div className="text-[#15233E] md:mx-14">
           <div className="font-bold  text-5xl leading-9 text-center text-[#15233E]">
             {/* <h1 className="py-10">About Us</h1> */}
           </div>
           <div className="rounded-xl">
-            <div className="p-5 mt-8 lg:mt-10">
+            <div className="mt-8 p-5 lg:mt-10">
               <p className="text-2xl font-bold text-center">
               {t('passport_2')}
               </p>
-              <p className=" md:text-xl">
+              <p className="md:text-xl">
                 {t('passport_3')}<a href="https://aaplesarkar.mahaonline.gov.in/en" target="_blank" className="text-blue-500"> https://aaplesarkar.mahaonline.gov.in/en </a> / <a href="https://pcs.mahaonline.gov.in/Forms/Home.aspx" target="_blank" className="text-blue-500">https://pcs.mahaonline.gov.in/Forms/Home.aspx </a>{t('passport_4')}
               </p>
             </div>
           </div>
           <div className=" rounded-xl">
-            <div className="p-5 mt-8 lg:mt-10">
+            <div className="mt-8 p-5 lg:mt-10">
               <p className="text-2xl font-bold text-center">
                 {t('passport_5')}
               </p>
@@ -76,7 +75,7 @@ const PassportVerification = () => {
             <div className="p-5 mt-8 lg:mt-10">
               <p className="text-2xl font-bold text-center">{t('passport_14')}</p>
               <p className=" md:text-xl">
-              {t('passport_15')}<a href="https://www.passportindia.gov.in/AppOnlineProject/welcomeLink" target="_blank" className="text-blue-500"> https://www.passportindia.gov.in/AppOnlineProject/welcomeLink </a>{t('passport_16')}
+              {t('passport_15')}<a href="https://www.passportindia.gov.in/AppOnlineProject/welcomeLink" target="_blank" className="text-blue-500 whitespace-normal"> https://www.passportindia.gov.in </a>{t('passport_16')}
               </p>
             </div>
           </div>

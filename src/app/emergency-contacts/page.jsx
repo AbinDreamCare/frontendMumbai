@@ -214,7 +214,7 @@ function Page  () {
             </th>
             <th
               scope="col"
-              className="px-1 lg:px-6 py-3 font-medium text-[#15233E] uppercase tracking-wider border hidden sm:table-cell"
+              className="px-1 lg:px-6 py-3 font-medium text-[#15233E] uppercase tracking-wider border sm:table-cell"
             >
               {t('emergency_3')}
             </th>

@@ -15,13 +15,14 @@ const Carousel = () => {
 
   const emergencyContacts = [
     { title: "Emergency Dial: 112", link: "tel:112" },
-    { title: "Control Room Whatsapp Number:8424820665,8424820686", link: "tel:8424820665,8424820686" },
+    
     { title: "Traffic Helpline: 7738393839", link: "tel:7738393839" },
     { title: "Control Helpline: 7738363836", link: "tel:7738363836" },
     { title: "Cyber Help Line: 1930", link: "tel:1930" },
     { title: "Women Help Line: 103", link: "tel:103" },
     { title: "Costal Helpline: 1093", link: "tel:1093" },
-    { title: "Senior Citizen Helpline: 1090", link: "tel:1090" }
+    { title: "Senior Citizen Helpline: 1090", link: "tel:1090" },
+    { title: "Control Room Whatsapp Number:8424820665,8424820686", link: "tel:8424820665,8424820686" },
   ];
 
 
@@ -72,17 +73,6 @@ const Carousel = () => {
       })
   };
 
-  const [callIconToggle, setCallIconToggle] = useState(false);
-  const callIcon = [
-    { title:"Emergency Dial", number:"112"},
-    { title:"Traffic Helpline", number:"7738393839"},
-    { title:"Control Helpline", number:"7738363836"},
-    { title:"Cyber Help Line", number:"1930"},
-    { title:"Women Help Line", number:"103"},
-    { title:"Senior Citizen Helpline", number:"1090"},
-    { title:"Constal Helpline", number:"1093"},
-    { title:"Control Room Whatsapp Number", number:"8424820665,8424820686"},
-  ];
 
   return (
     <div className="relative w-full p-0 ">
@@ -103,32 +93,28 @@ const Carousel = () => {
               height={60}
               className="absolute  w-16 h-16 cursor-pointer bottom-[45%] right-[5%] md:right-16 md:top-16 hover:scale-125 hover:shadow-xl"
             />
-            <div className="">
+            <div >
               {emergencyContactstoggle && (
                 <div className="absolute z-50 bottom-[45%] right-[5%]">
                   <ul className="text-black w-[125%] bg-white px-6 py-2 border-[1px] rounded-lg">
                     {emergencyContacts.map((contact, i) => (
-                      <li key={i} className="hover:text-[#E7581A] w-48">
-                        <a href={contact.link}>{contact.title}</a>
+                      <li key={i} className="hover:text-[#E7581A] w-48 ">
+                        <a href={contact.link}><p className="font-bold" title={contact.title}>{contact.title}</p></a>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
-
             </div>
-
-
           </div>
 
           <div onClick={() => (setemergencyContactstoggle(!emergencyContactstoggle))}  className="md:hidden">
-
             <Image
               src="/call_img.png"
               alt="hb"
               width={60}
               height={60}
-              className="absolute  w-16 h-16 cursor-pointer bottom-[45%] right-[5%] md:right-16 md:top-16 hover:scale-125 hover:shadow-xl"
+              className="absolute w-16 h-16 cursor-pointer bottom-[36%] right-[5%] md:right-16 md:top-16 hover:scale-125 hover:shadow-xl"
             />
             <div className="">
               {emergencyContactstoggle && (
@@ -136,7 +122,7 @@ const Carousel = () => {
                   <ul className="text-black bg-white px-6 py-2 border-[1px] rounded-lg">
                     {emergencyContacts.map((contact, i) => (
                       <li key={i} className="hover:text-[#E7581A] w-48">
-                        <a href={contact.link}>{contact.title}</a>
+                        <a href={contact.link} title={contact.title}>{contact.title}</a>
                       </li>
                     ))}
                   </ul>
@@ -161,7 +147,7 @@ const Carousel = () => {
                       height={70}
                     />
                   </div>
-                  <h1 className="w-full mb-2 text-center hover:text-[#EB1815] ">
+                  <h1 title={t('emergency')} className="w-full mb-2 text-center hover:text-[#EB1815] ">
                     {t('emergency')}
                   </h1>
                   </a>
@@ -177,7 +163,7 @@ const Carousel = () => {
                       height={70}
                     />
                   </div>
-                  <h1 onClick={() => (router.push('/traffic-branch'))}  className="w-full mb-2 text-center hover:text-[#EB1815]">
+                  <h1 title={t('traffic_branch')} onClick={() => (router.push('/traffic-branch'))}  className="w-full mb-2 text-center hover:text-[#EB1815]">
                     {t('traffic_branch')}
                   </h1>
                 </li>
@@ -192,7 +178,7 @@ const Carousel = () => {
                       height={70}
                     />
                   </div>
-                  <h1 onClick={() => (router.push('/passport-status'))} className="w-full mb-2 text-center hover:text-[#EB1815]">
+                  <h1 title={t('passport_status')} onClick={() => (router.push('/passport-status'))} className="w-full mb-2 text-center hover:text-[#EB1815]">
                     {t('passport_status')}
                   </h1>
                 </li>
@@ -207,7 +193,7 @@ const Carousel = () => {
                       height={70}
                     />
                   </div>
-                  <h1 onClick={() => (router.push('/useful-websites'))} className="w-full mb-4 text-center hover:text-[#EB1815]">
+                  <h1 title={t('useful_website')} onClick={() => (router.push('/useful-websites'))} className="w-full mb-4 text-center hover:text-[#EB1815]">
                     {t('useful_website')}
                   </h1>
                 </li>
@@ -223,7 +209,7 @@ const Carousel = () => {
                       height={70}
                     />
                   </div>
-                  <h1 onClick={() => (router.push('/crime-branch'))} className="w-full mb-4 text-center hover:text-[#EB1815]">
+                  <h1 title={t('crime_branch')}  onClick={() => (router.push('/crime-branch'))} className="w-full mb-4 text-center hover:text-[#EB1815]">
                     {t('crime_branch')} 
                   </h1>
                 </li>
@@ -240,7 +226,7 @@ const Carousel = () => {
                       height={70}
                     />
                   </div>
-                  <h1 className="w-full mb-4 text-center hover:text-[#EB1815]">
+                  <h1 title={t('citizen_wall')} className="w-full mb-4 text-center hover:text-[#EB1815]">
                     {t('citizen_wall')}
                   </h1>
                 </li>
@@ -252,7 +238,7 @@ const Carousel = () => {
 
         <div className="absolute top-[5%] md:top-[55%] left-[25%] md:left-[31%] w-[60%] md:w-[40%] bg-white border-[1px] border-[#E7581A] rounded-2xl py-2 px-4 z-20">
           <button onClick={toggleDropdown} className="dropdown-toggle text-[#E7581A] flex justify-between w-full">
-            <span>{t('select_police_station')}</span>
+            <span title={t('select_police_station')}>{t('select_police_station')}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={`h-4 w-4 text-[#E7581A] transition-transform ${toggleDropdown ? "" : "rotate-180"
@@ -274,7 +260,7 @@ const Carousel = () => {
               {Data.map((policeData, i) => (
                 <ul key={i} className="dropdown-menu">
 
-                  <li onClick={() => (router.push(`/police-station/${policeData._id}`))} className="cursor-pointer hover:text-[#E7581A]">{policeData.stationEng}</li>
+                  <li onClick={() => (router.push(`/police-station/${policeData._id}`))} className="cursor-pointer hover:text-[#E7581A]" title={policeData.stationEng}>{policeData.stationEng}</li>
 
 
                 </ul>
@@ -283,7 +269,7 @@ const Carousel = () => {
           )}
         </div>
 
-        <div className=" absolute bottom-[35%] md:bottom-20 left-[5%] w-[90%] flex justify-center">
+        <div className=" absolute bottom-[30%] md:bottom-20 left-[5%] w-[90%] flex justify-center">
           <div className=" md:w-[70%]  z-10 flex items-center justify-center w-full">
             <div className="flex w-full border-1">
               <div className="w-[172px] h-[48px] px-3 text-base bg-orange-600 rounded-l-full font-extrabold leading-7 text-center align-middle">
@@ -292,7 +278,7 @@ const Carousel = () => {
               <div className="flex items-center justify-center w-full text-center text-black bg-white rounded-r-full h-50">
                 <marquee>
                   {headlinesData.map((headlines, index) => (
-                    <a href={headlines.link} className="px-5 text-base font-medium">{headlines.titleEnglish}</a>
+                    <a href={headlines.link} className="px-5 text-base font-medium" title={headlines.titleEnglish}>{headlines.titleEnglish}</a>
                   ))}
                 </marquee>
               </div>

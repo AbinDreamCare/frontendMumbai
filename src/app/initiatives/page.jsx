@@ -18,11 +18,11 @@ const CrimeBranch = ()=> {
           <h1 className="pt-14">{t('initiative')}</h1>
         </div>
           <div className="mt-5 ">
-            <div className="flex items-center justify-center p-3 mx-20 border-2 hover:bg-white hover:shadow-lg">
-                <div className="w-4/12 p-2">
+            <div className="items-center justify-center p-3 mx-3 md:mx-20 border-2 md:flex hover:bg-white hover:shadow-lg">
+                <div className="md:w-4/12 p-2">
                     <img src="./initiative1.png" className=""/>
                 </div>
-                <div className="w-8/12 pl-2">
+                <div className="md:w-8/12 pl-2">
                     <h1 className="text-lg font-bold">Senior Citizens Help Line 1090</h1>
                     <h1>One cannot escape the fact that senior citizens are at a much greater risk today than ever before. After all, a worrying number of the elderly live on their own. Abandoned by their uncaring families, they are left completely helpless in crisis and extremely vulnerable to criminal elements, health problems and depression. But now they will have a family of their own again</h1>
                     <br/>
