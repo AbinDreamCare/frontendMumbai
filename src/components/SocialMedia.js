@@ -22,7 +22,7 @@ export default function SocialMedia() {
     <>
       {/* <Try /> */}
       <div className="py-5 bg-zinc-500 md:bg-zinc-100">
-        <div className="mx-20 mt-5 text-center text-[24px] md:text-4xl font-extrabold md:justify-center md:flex text-white md:text-white">
+        <div className="mx-20 mt-5 text-center text-[24px] md:text-4xl font-extrabold md:justify-center md:flex text-white md:text-[#15233E]">
           {t('social_media')}
         </div>
         <div className="items-center justify-center md:flex">
