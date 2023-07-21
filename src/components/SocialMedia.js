@@ -21,7 +21,7 @@ export default function SocialMedia() {
   return (
     <>
       {/* <Try /> */}
-      <div className="bg-zinc-500 md:bg-[url('/social_bg_img.png')] py-5">
+      <div className="py-5 bg-zinc-500 md:bg-zinc-100">
         <div className="mx-20 mt-5 text-center text-[24px] md:text-4xl font-extrabold md:justify-center md:flex text-white md:text-white">
           {t('social_media')}
         </div>

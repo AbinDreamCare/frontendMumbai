@@ -65,16 +65,17 @@ export default function BestServices() {
     },
     {
       index: 5,
-      name: t('accident_compensation'),
-      message: t('accident_msg'),
-      icon: <AiFillFileAdd size={35} />,
-    },
-    {
-      index: 6,
       name: t('police_clearance'),
       message: t('dead_bodies_msg'),
       icon: <GiDeadlyStrike size={35} />,
       link:'https://pcs.mahaonline.gov.in/Forms/Home.aspx',
+    },
+    {
+      index: 6,
+      name: t('feedback'),
+      message: t('missing_person_msg'),
+      icon: <BsQuestionSquare size={35} />,
+      link:'/feedback',
     },
   ];
 
@@ -115,11 +116,11 @@ export default function BestServices() {
       link:"https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx"
     },
     {
-      index: 12,
-      name: t('feedback'),
-      message: t('missing_person_msg'),
-      icon: <BsQuestionSquare size={35} />,
-      link:'/feedback',
+      index: 5,
+      name: t('unidentified_dead_bodies'),
+      message: t('dead_bodies_msg'),
+      icon: <GiDeadlyStrike size={35} />,
+      link:'https://citizen.mahapolice.gov.in/Citizen/MH/SearchDeadBodyList.aspx',
     },
   ];
   return (
