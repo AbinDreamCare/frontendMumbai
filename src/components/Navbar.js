@@ -111,15 +111,17 @@ const Navbar = () => {
   { title: t('right_to_info'), link:"/right-to-information"},
   // { title: t('your_contribution') },
   { title: t('passport_status'), link: "/passport-status"},
+  { title: t('police_recruitments'), link: "/police-recruitment"},
   ]
 
   const CitizenCorner2 = [
     // { title: t('gras_payment') },
+    
   { title: t('useful_website') , link:"/useful-websites"},
   // { title: t('licensing_unit')},
   { title: t('citizen_wall'), link:"https://citizen.mahapolice.gov.in/Citizen/MH/index.aspx" },
   { title: t('safety_tips'), link:"/safety-tips" },
-  { title: t('dcp_visits'), link:"/dcp-visits"},
+  // { title: t('dcp_visits'), link:"/dcp-visits"},
   // { title: t('tenders') },
   { title: t('faqs'), link:"/faqs"},
   {title: t('nagarikanchi_sanad'), link:"/nagarikanchi-sanad"},
@@ -133,14 +135,14 @@ const Navbar = () => {
   { title: t('press_release') , link: "/press-releases"},
   // { title: t('crime_review')},
   // { title: t('miscellaneoue') },
-  { title: t('police_recruitments'), link: "/police-recruitment"},
+  
   { title: t('good_work'), link:"/good-work"},
   ]
 
   const ContactUs = [
     // { title: t('police_station_incharge'), link:"" },
+    { title: t('senior_police_officers'), link: "/senior-police-officers"},
   { title: t('divisional_acp'), link:"/divisional-acps" },
-  { title: t('senior_police_officers'), link: "/senior-police-officers"},
   { title: t('emergency_contacts') , link: "/emergency-contacts"},
   ]
   

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { GrStatusUnknown } from "react-icons/gr";
 import { GiPoliceOfficerHead } from 'react-icons/gi'
 import { LuNewspaper } from "react-icons/lu";
-import { FaPassport, FaCarCrash } from "react-icons/fa";
+import { FaPassport, FaInternetExplorer } from "react-icons/fa";
 import { HiSpeakerphone } from "react-icons/hi";
 import { AiFillFileAdd } from "react-icons/ai";
 import { GiDeadlyStrike } from "react-icons/gi";
@@ -37,24 +37,24 @@ export default function BestServices() {
   const servicesName1 = [
     {
       index: 1,
-      name: t('police_recruitments'),
+      name: t('online_complaint'),
       message: t('police_recruitment_msg'),
       icon: <GiPoliceOfficerHead size={35} style={{ color: "white" }} />,
-      link: "/police-recruitment"
+      link: "https://citizen.mahapolice.gov.in/Citizen/Login.aspx"
     },
     {
       index: 2,
-      name: t('press_release'),
+      name: t('tenant_information'),
       message: t('press_release_msg'),
       icon: <LuNewspaper size={35} />,
-      link: "/press-releases"
+      link: "/tenant-info"
     },
     {
       index: 3,
-      name: t('passport_status'),
+      name: t('lost_found'),
       message: t('passport_msg'),
       icon: <FaPassport size={35} />,
-      link: "/passport-status"
+      link: "/lost-and-found"
     },
     {
       index: 4,
@@ -71,54 +71,55 @@ export default function BestServices() {
     },
     {
       index: 6,
-      name: t('unidentified_dead_bodies'),
+      name: t('police_clearance'),
       message: t('dead_bodies_msg'),
       icon: <GiDeadlyStrike size={35} />,
-      link:'https://citizen.mahapolice.gov.in/Citizen/MH/SearchDeadBodyList.aspx',
+      link:'https://pcs.mahaonline.gov.in/Forms/Home.aspx',
     },
   ];
 
   const servicesName2 = [
     {
       index: 7,
-      name: t('dcp_visits'),
+      name: t('nccrp'),
       message: t('dcp_visit_msg'),
-      icon: <TbUserSearch size={35} />,
-      link:"/dcp-visits"
+      icon: <FaInternetExplorer size={35} />,
+      link:"https://cybercrime.gov.in/"
     },
     {
       index: 8,
-      name: t('police_clearance'),
+      name: t('published_fir'),
       message: t('police_clearance_msg'),
       icon: <BsCheck2Square size={35} />,
-      link:"https://pcs.mahaonline.gov.in/Forms/Home.aspx",
+      link:"https://citizen.mahapolice.gov.in/Citizen/MH/PublishedFIRs.aspx",
     },
     {
       index: 9,
-      name: t('citizen_portal'),
+      name: t('nagarikanchi_sanad'),
       message: t('citizen_portal_msg'),
       icon: <IoMdWallet size={35} />,
-      link:'https://citizen.mahapolice.gov.in/Citizen/MH/index_mh.aspx',
+      link:'/nagarikanchi-sanad',
     },
     {
       index: 10,
-      name: t('feedback'),
+      name: t('right_to_info'),
       message: t('feedback_msg'),
       icon: <BiMessageDetail size={35} />,
-      link: "/feedback"
+      link: "/right-to-information"
     },
     {
       index: 11,
-      name: t('stolan_vehicle'),
+      name: t('missing_person'),
       message: t("stolan_vehicle"),
-      icon: <FaCarCrash size={35} />,
+      icon: <TbUserSearch size={35} />,
+      link:"https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx"
     },
     {
       index: 12,
-      name: t('missing_person'),
+      name: t('feedback'),
       message: t('missing_person_msg'),
       icon: <BsQuestionSquare size={35} />,
-      link:'https://citizen.mahapolice.gov.in/Citizen/MH/SearchView.aspx',
+      link:'/feedback',
     },
   ];
   return (
@@ -144,9 +145,9 @@ export default function BestServices() {
                       <div onClick={() => (router.push(serviceName.link))} className="text-[16px] md:text-[24px] lg:text-xl font-bold mt-2 ml-2 md:ml-0 md:mt-0 text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.name}
                       </div>
-                      <div onClick={() => (router.push(serviceName.link))} className="hidden text-xs font-normal sm:block md:text-sm text-[#15233E] hover:text-[#E7581A]">
+                      {/* <div onClick={() => (router.push(serviceName.link))} className="hidden text-xs font-normal sm:block md:text-sm text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.message}
-                      </div>
+                      </div> */}
                     </div>
                     <div className="hidden mx-2 mt-1 md:block">
                       <div  className={`flex justify-center md:w-16 md:h-16 bg-[#E7581A]  hover:bg-sky-900 w-[50px] h-[50px]   rounded-full cursor-pointer`}>
@@ -188,9 +189,9 @@ export default function BestServices() {
                       <div onClick={() => (router.push(serviceName.link))} className="text-[16px] md:text-xl font-bold mt-2 ml-2 md:ml-0 md:mt-0 text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.name}
                       </div>
-                      <div onClick={() => (router.push(serviceName.link))} className="hidden text-xs md:text-sm font-normal sm:block md:text-[16px] text-[#15233E] hover:text-[#E7581A]">
+                      {/* <div onClick={() => (router.push(serviceName.link))} className="hidden text-xs md:text-sm font-normal sm:block md:text-[16px] text-[#15233E] hover:text-[#E7581A]">
                         {serviceName.message}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="hidden my-4 font-extrabold md:block">

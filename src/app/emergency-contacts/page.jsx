@@ -218,12 +218,12 @@ function Page  () {
             >
               {t('emergency_3')}
             </th>
-            <th
+            {/* <th
               scope="col"
               className="  px-1 lg:px-6 py-3  font-medium text-[#15233E] uppercase tracking-wider border"
             >
               {t('emergency_4')}
-            </th>
+            </th> */}
           </tr>
         </thead>
         <tbody>
@@ -242,13 +242,13 @@ function Page  () {
                   </a>
                 </span>
               </td>
-              <td className="px-1 lg:px-6 py-3 text-left text-sm font-medium text-[#15233E]  align-middle border">
+              {/* <td className="px-1 lg:px-6 py-3 text-left text-sm font-medium text-[#15233E]  align-middle border">
                 <span className="flex justify-center text-orange-700">
                   <a href={hierarchy.extension} target="_blank" rel="noopener noreferrer">
                     <BsFiletypePdf size={30} />
                   </a>
                 </span>
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>

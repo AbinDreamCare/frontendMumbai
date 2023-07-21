@@ -59,11 +59,8 @@ function Page  (params)  {
           </div>
           <h1 className="text-lg font-semibold">{Data.officerNameEng}</h1>
           <h1 className="text-base font-medium">{Data.designationEng}</h1>
-          <a
-            href="tel:+91 9867852777"
-            className="text-base hover:text-blue-600"
-          >
-            {Data.officerNo}
+          <a href="tel:+91 9867852777" className="text-base hover:text-blue-600">
+            {Data.OfficerNo}
           </a>
         </div>
         <div className="lg:w-2/3 bg-[#E7E7E7] p-4 ">

@@ -19,14 +19,14 @@ export default function CPMessage() {
 
 
                 <div className="relative w-full h-700px">
-                  <div className="absolute top-0 md:-top-80 left-0 z-10 w-full flex justify-center">
+                  <div className="absolute top-0 left-0 z-10 flex justify-center w-full md:-top-80">
                     <Image src={"/commissioner.png"} height={500} width={500} className=" object-cover w-[80%] md:w-full" />
                   </div>
-                  <div className="text absolute top-[350px] md:top-[15px] left-14 md:left-5 font-saira text-[#F8F8F8] text-[45px]  leading-[60px] font-extrabold z-30 ">MILIND BHARAMBE</div>
+                  <div className="text absolute top-[350px] md:top-[15px] left-14 md:left-5 font-saira text-[#15233E] text-[45px]  leading-[60px] font-extrabold z-30 ">{t('cp_name1')}</div>
                   <div className="polygonOrange absolute top-80 md:-top-8 left-0 h-[420px] w-full z-0"></div>
                   <div className="absolute top-5 md:-top-72 left-20 md:left-10 z-0 rounded-full bg-[#ABBED1] h-[270px] w-[270px]"></div>
                   <div className="curvedPOl absolute top-48 md:-top-40 right-0 rounded-3xl bg-[#E7581A] w-[172px] h-[211px]"></div>
-                  <div className="absolute top-[480px] md:top-[150px] py-4 px-8 text-lg right-0 z-30 bg-white text-black">Commissioner of Police</div>
+                  <div className="absolute top-[480px] md:top-[150px] py-4 px-8 text-lg right-0 z-30 bg-white text-black">{t('com_of_police')}</div>
                 </div>
 
 

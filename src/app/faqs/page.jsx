@@ -17,8 +17,17 @@ const page = ()=> {
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
           <h1 className="pt-14">{t('faqs')}</h1>
         </div>
+
+        <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#E7E7E7] p-5 mt-5 rounded-lg">
+        <br/>
+              <h1 className="text-lg font-bold leading-9">1) What is dial 112?</h1>
+              <h1 className="text-lg leading-9"><b>Ans : </b>Dial 112 Command and Control Centre is a single point contact for the residents of State of Maharashtra in case of any emergency requiring immediate police intervention.</h1>
+              <br/>
+              </div>
+
         <h1 className="my-5 text-2xl font-extrabold text-center">FAQ's - Loudspeaker</h1>
-          <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#e0bbf3] p-5 ">
+          <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#E7E7E7] p-5 rounded-lg">
+          
               <br/>
               <h1 className="text-lg font-bold leading-9">1) Do I need permission for using loud speakers?</h1>
               <h1 className="text-lg leading-9"><b>Ans : </b>Yes. You should obtain permission from concerned C.P/ S.P./ District Magistrate for sound amplification under rules made under sec 33 of B.P.Act,1951. Such a permission is required to be taken for private/ public functions held in private / public places.</h1>
@@ -36,8 +45,8 @@ const page = ()=> {
           </div>
 
           <h1 className="my-10 text-2xl font-extrabold text-center">FAQ's - Externmen</h1>
-          <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#e0bbf3] p-5 ">
-              <br/>
+          <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#E7E7E7] p-5 rounded-lg">
+              
               <h1 className="text-lg font-bold leading-9">1) What is meant by externment?</h1>
               <h1 className="text-lg leading-9"><b>Ans : </b>As per section 55 of Maharashtra Police Act, 1951, if the movement or encampment of any gang or body of persons is causing or is calculated to cause danger or alarm or reasonable suspicion that unlawful designs are entertained by such gang, or by members thereof, then such gangs/ bodies of persons can be dispersed and ordered that they remove themselves outside the area. This is process is called externment of gangs and Sub Divisional Magistrates in Districts and DCsP in Commissionerates are empowered to pass such orders. Similarly, section 56 of Maharashtra Police Act, 1951 empowers the above named authorities to extern persons engaged in or about to be engaged in offences punishable under Ch XII - XVI – XVII I.P.C. .(for details, please refer sections 55-56 of Maharashtra Police Act, 1951 )</h1>
               <br/>

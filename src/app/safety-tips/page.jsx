@@ -18,7 +18,7 @@ const page = ()=> {
           <h1 className="pt-14">{t('safety_tips')}</h1>
         </div>
         <h1 className="my-5 text-2xl font-extrabold text-center">Ensuring Safety of Your Home</h1>
-          <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#e0bbf3] p-5 ">
+          <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#E7E7E7] p-5 rounded-lg">
               <br/>
               <h1 className="text-lg font-bold leading-9">Ensuring Safety of Your Home</h1>
               <h1 className="text-lg leading-9">Hire qualified / experienced watchmans only.</h1>
@@ -38,7 +38,7 @@ const page = ()=> {
           </div>
 
           <h1 className="my-10 text-2xl font-extrabold text-center">Precaution at Work Place</h1>
-          <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#e0bbf3] p-5 ">
+          <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#E7E7E7] p-5 rounded-lg">
               <br/>
               <h1 className="text-lg font-bold leading-9">Precaution at Work Place</h1>
               <h1 className="text-lg leading-9">1. Workplace precautions are those actions that are taken to reduce identified risks to an acceptable level. The most appropriate workplace precautions for any activity are decided by applying the following priorities:</h1>

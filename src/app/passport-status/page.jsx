@@ -38,46 +38,52 @@ const PassportVerification = () => {
           </div>
           <div className="rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
-              <p className="text-2xl font-bold ">
+              <p className="text-2xl font-bold text-center">
               {t('passport_2')}
               </p>
-              <p className=" md:text-2xl">
-                {t('passport_3')}
+              <p className=" md:text-xl">
+                {t('passport_3')}<a href="https://aaplesarkar.mahaonline.gov.in/en" target="_blank" className="text-blue-500"> https://aaplesarkar.mahaonline.gov.in/en </a> / <a href="https://pcs.mahaonline.gov.in/Forms/Home.aspx" target="_blank" className="text-blue-500">https://pcs.mahaonline.gov.in/Forms/Home.aspx </a>{t('passport_4')}
               </p>
             </div>
           </div>
           <div className=" rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
-              <p className="text-2xl font-bold">
-                {t('passport_4')}
+              <p className="text-2xl font-bold text-center">
+                {t('passport_5')}
               </p>
-              <p className=" md:text-2xl">
-              {t('passport_5')}
+              <p className=" md:text-xl">
+              {t('passport_6')}<a href="https://indianfrro.gov.in/eservices/" target="_blank" className="text-blue-500"> https://indianfrro.gov.in/eservices/ </a>{t('passport_7')}
               </p>
-            </div>
-          </div>
-          <div className=" rounded-xl">
-            <div className="p-5 mt-8 lg:mt-10">
-              <p className="text-2xl font-bold">
-              {t('passport_6')}
+              <p className=" md:text-xl">
+              {t('passport_8')}<a href="https://indianfrro.gov.in/eservices/" target="_blank" className="text-blue-500"> https://indianfrro.gov.in/sform/ </a>{t('passport_9')}
               </p>
-              <p className=" md:text-2xl">
-              {t('passport_7')}
+              <p className=" md:text-xl">
+              {t('passport_10')}<a href="https://indianfrro.gov.in/frro/FormC" target="_blank" className="text-blue-500"> https://indianfrro.gov.in/frro/FormC </a>{t('passport_11')}
               </p>
             </div>
           </div>
           <div className=" rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
-              <p className="text-2xl font-bold">{t('passport_8')}</p>
-              <p className=" md:text-2xl">
-              {t('passport_9')}
+              <p className="text-2xl font-bold text-center">
+             {t('passport_12')}
+              </p>
+              <p className=" md:text-xl">
+              {t('passport_13')}
               </p>
             </div>
           </div>
           <div className=" rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
-              <p className="text-2xl font-bold">
-              {t('passport_10')}
+              <p className="text-2xl font-bold text-center">{t('passport_14')}</p>
+              <p className=" md:text-xl">
+              {t('passport_15')}<a href="https://www.passportindia.gov.in/AppOnlineProject/welcomeLink" target="_blank" className="text-blue-500"> https://www.passportindia.gov.in/AppOnlineProject/welcomeLink </a>{t('passport_16')}
+              </p>
+            </div>
+          </div>
+          <div className=" rounded-xl">
+            <div className="p-5 mt-8 lg:mt-10">
+              <p className="text-xl font-bold underline">
+              {t('passport_17')}
               </p>
               <p className="text-2xl ">
                 022-27572236 (EXT. NO.- 424 / 446 )
