@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import axios from '@/customHooks/axiosInstance'
 import { useRouter } from "next/navigation";
-import { useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import i18Instance from "@/customHooks/i18Instance";
 import { FcBusinesswoman } from "react-icons/fc";
 import { FcManager } from "react-icons/fc";
@@ -12,9 +12,23 @@ import { FcPhone } from "react-icons/fc";
 i18Instance()
 
 const Carousel = () => {
-  const router =  useRouter()
+
+  const emergencyContacts = [
+    { title: "Emergency Dial: 112", link: "tel:112" },
+    { title: "Control Room Whatsapp Number:8424820665,8424820686", link: "tel:8424820665,8424820686" },
+    { title: "Traffic Helpline: 7738393839", link: "tel:7738393839" },
+    { title: "Control Helpline: 7738363836", link: "tel:7738363836" },
+    { title: "Cyber Help Line: 1930", link: "tel:1930" },
+    { title: "Women Help Line: 103", link: "tel:103" },
+    { title: "Costal Helpline: 1093", link: "tel:1093" },
+    { title: "Senior Citizen Helpline: 1090", link: "tel:1090" }
+  ];
+
+
+  const [emergencyContactstoggle, setemergencyContactstoggle] = useState(false)
+  const router = useRouter()
   const { t } = useTranslation();
-  
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [isDropDownOpen, setisDropDownOpen] = useState(false);
@@ -43,9 +57,9 @@ const Carousel = () => {
       const { data } = response;
       setheadlinesData(data)
     })
-    .catch((error) => {
-      console.log(error.message);
-    })
+      .catch((error) => {
+        console.log(error.message);
+      })
   };
 
   const getPoliceStationDatas = () => {
@@ -53,9 +67,9 @@ const Carousel = () => {
       const { data } = response;
       setData(data)
     })
-    .catch((error) => {
-      console.log(error.message);
-    })
+      .catch((error) => {
+        console.log(error.message);
+      })
   };
 
   const [callIconToggle, setCallIconToggle] = useState(false);
@@ -76,20 +90,62 @@ const Carousel = () => {
 
       <div className="relative md:block pb-[50%] md:pb-0 w-full" >
 
-        <iframe className="hidden md:block rep " width="560" height="315" src="https://www.youtube-nocookie.com/embed/EoYWwSalaJ4?autoplay=1&loop=1&playlist=EoYWwSalaJ4&mute=1&controls=0&rel=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <iframe className="md:hidden rep " width="560" height="315" src="https://www.youtube.com/embed/ixomwj9LP2s?autoplay=1&mute=1&loop=1&playlist=ixomwj9LP2s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe className="hidden md:block rep " width="560" height="315" src="https://www.youtube-nocookie.com/embed/S7JpI06xaHk?autoplay=1&loop=1&playlist=S7JpI06xaHk&mute=1&controls=0&rel=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe className="md:hidden rep " width="560" height="315" src="https://www.youtube.com/embed/4Do9z4-Ee0E?autoplay=1&mute=1&loop=1&playlist=ixomwj9LP2s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-         <div className="z-10 md:bg-opacity-[68%] md:w-[7%] w-[25%] opacity- h-screen ">
-          <div className="flex">
-            <a href="tel:+112">
+        <div className="z-10 md:bg-opacity-[68%] md:w-[7%] w-[25%] opacity- h-screen ">
+          <div  onMouseEnter={() => setemergencyContactstoggle(true)} onMouseLeave={() => setemergencyContactstoggle(false)} className="hidden md:flex">
+
             <Image
               src="/call_img.png"
               alt="hb"
               width={60}
               height={60}
-              className="absolute w-16 h-16 cursor-pointer bottom-[45%] right-[5%] md:right-16 md:top-16 hover:scale-125 hover:shadow-xl"
+              className="absolute  w-16 h-16 cursor-pointer bottom-[45%] right-[5%] md:right-16 md:top-16 hover:scale-125 hover:shadow-xl"
             />
-            </a>
+            <div className="">
+              {emergencyContactstoggle && (
+                <div className="absolute z-50 bottom-[45%] right-[5%]">
+                  <ul className="text-black w-[125%] bg-white px-6 py-2 border-[1px] rounded-lg">
+                    {emergencyContacts.map((contact, i) => (
+                      <li key={i} className="hover:text-[#E7581A] w-48">
+                        <a href={contact.link}>{contact.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+            </div>
+
+
+          </div>
+
+          <div onClick={() => (setemergencyContactstoggle(!emergencyContactstoggle))}  className="md:hidden">
+
+            <Image
+              src="/call_img.png"
+              alt="hb"
+              width={60}
+              height={60}
+              className="absolute  w-16 h-16 cursor-pointer bottom-[45%] right-[5%] md:right-16 md:top-16 hover:scale-125 hover:shadow-xl"
+            />
+            <div className="">
+              {emergencyContactstoggle && (
+                <div className="absolute z-50 bottom-[45%] right-[5%]">
+                  <ul className="text-black bg-white px-6 py-2 border-[1px] rounded-lg">
+                    {emergencyContacts.map((contact, i) => (
+                      <li key={i} className="hover:text-[#E7581A] w-48">
+                        <a href={contact.link}>{contact.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+            </div>
+
+
           </div>
           <div className="flex bg-[#15233EAD] md:h-full  justify-center ">
             <div className="z-10 flex justify-center py-6 bg-transparent">
@@ -192,37 +248,37 @@ const Carousel = () => {
               </ul>
             </div>
           </div>
-          </div> 
+        </div>
 
         <div className="absolute top-[5%] md:top-[55%] left-[25%] md:left-[31%] w-[60%] md:w-[40%] bg-white border-[1px] border-[#E7581A] rounded-2xl py-2 px-4 z-20">
           <button onClick={toggleDropdown} className="dropdown-toggle text-[#E7581A] flex justify-between w-full">
-            <span>{t('select_police_station')}</span> 
+            <span>{t('select_police_station')}</span>
             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`h-4 w-4 text-[#E7581A] transition-transform ${toggleDropdown ? "" : "rotate-180"
-                  }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+              xmlns="http://www.w3.org/2000/svg"
+              className={`h-4 w-4 text-[#E7581A] transition-transform ${toggleDropdown ? "" : "rotate-180"
+                }`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </button>
           {isDropDownOpen && (
             <div>
               {Data.map((policeData, i) => (
-            <ul key={i} className="dropdown-menu">
+                <ul key={i} className="dropdown-menu">
 
-<li onClick={() => (router.push(`/police-station/${policeData._id}`))} className="cursor-pointer hover:text-[#E7581A]">{policeData.stationEng}</li>
+                  <li onClick={() => (router.push(`/police-station/${policeData._id}`))} className="cursor-pointer hover:text-[#E7581A]">{policeData.stationEng}</li>
 
-              
-            </ul>
-            ))}
+
+                </ul>
+              ))}
             </div>
           )}
         </div>
@@ -236,9 +292,9 @@ const Carousel = () => {
               <div className="flex items-center justify-center w-full text-center text-black bg-white rounded-r-full h-50">
                 <marquee>
                   {headlinesData.map((headlines, index) => (
-                  <a href={headlines.link} className="px-5 text-base font-medium">{headlines.titleEnglish}</a>
+                    <a href={headlines.link} className="px-5 text-base font-medium">{headlines.titleEnglish}</a>
                   ))}
-                  </marquee>
+                </marquee>
               </div>
             </div>
           </div>
