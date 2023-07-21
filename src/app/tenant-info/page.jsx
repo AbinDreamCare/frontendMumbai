@@ -470,7 +470,7 @@ function page  () {
         <div className="lg:flex justify-evenly">
       <div className="p-4 ">
         <ul>
-          {options.map((option, index) => (
+          {options?.map((option, index) => (
             <li
               key={index}
               className={`cursor-pointer ${index === currentOption ? 'text-blue-500 font-bold' : ''}`}
@@ -483,7 +483,7 @@ function page  () {
       </div>
       <div className="p-4 ">
         <div className="p-4 border rounded">
-          <h2 className="mb-4 text-xl font-bold">{options[currentOption].name}</h2>
+          <h2 className="mb-4 text-xl font-bold">{options[currentOption]?.name}</h2>
           <form>
             {renderFields()}
             <div className="flex justify-between">
