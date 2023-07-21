@@ -19,7 +19,7 @@ useEffect(async()=>{
     }
     // You can await here
     const ata= {docId:docId}
-  const {data}=await axios.post('/LostandFound/getone',ata)
+  const {data}=await axios.post('/TenantInformation/getone',ata)
   console.log('data1',data);
   if(data){
     setData(data)
@@ -37,6 +37,8 @@ console.log('data',data);
     <div className="text-gray-800">
       <div className="w-[90%] ms-[5%] flex justify-center border-b-2 border-black">
         <div>
+        <a href="/" className="p-1  mx-5 font-bold text-white bg-blue-800 border border-gray-500">go back</a>
+       
           <div className="flex justify-center py-5">
             {" "}
             <img
@@ -71,7 +73,7 @@ console.log('data',data);
           <div className="text-lg">
             <div>
               <span className="text-center">Owner Name / पूर्ण नाव</span>
-              <span className="ms-[370px]">:{data?.name}</span>
+              <span className="ms-[370px]">:{data?.fullName}</span>
             </div>
             <div>
               <span className="text-center">Owner Mobile / भ्रमणध्वनी क्रमांक </span>
@@ -105,19 +107,23 @@ console.log('data',data);
           <div className="text-lg">
             <div>
               <span className="text-center">Address of Rented Property / भाड्याने दिलेल्या मालमत्तेचापत</span>
-              <span className="ms-[370px]">:{data?.name}</span>
+              <span className="ms-[370px]">:{data?.rentPropertyAddress}</span>
             </div>
             <div>
               <span className="text-center">Rented Property Pin code / पिनकोड </span>
-              <span className="ms-[347px]">:{data?.mobile}</span>
+              <span className="ms-[347px]">:{data?.pinCode
+}</span>
             </div>
             <div>
               <span className="text-center">Rented Property Agreement Start Date / करार प्रारंभतारीख </span>
-              <span className="ms-[430px]">:{data?.email}</span>
+              <span className="ms-[430px]">:{data?.
+AgreementStartDate
+}</span>
             </div>
             <div>
               <span className="text-center">Agreement End Date / करार शेवटची तारीख </span>
-              <span className="ms-[413px]">:{data?.address}</span>
+              <span className="ms-[413px]">:{data?.AgreementEndDate
+}</span>
             </div>
                      
           </div>
@@ -131,24 +137,94 @@ console.log('data',data);
           <div className="text-lg">
             <div>
               <span className="text-center">Tenant′s Name / पूर्ण नाव</span>
-              <span className="ms-[370px]">:{data?.name}</span>
+              <span className="ms-[370px]">:{data?.
+tenantName
+}</span>
             </div>
             <div>
               <span className="text-center">Tenant Permanent Address / कायमचा पत </span>
-              <span className="ms-[347px]">:{data?.mobile}</span>
+              <span className="ms-[347px]">:{data?.tenantPermenentAddress
+}</span>
             </div>
             <div>
               <span className="text-center">Tenant City/District / शहर/जिल</span>
-              <span className="ms-[430px]">:{data?.email}</span>
+              <span className="ms-[430px]">:{data?.tenantPermantCity
+}</span>
             </div>
             <div>
               <span className="text-center">Identity Proof of Tenant / भाडेकरु ओळख पुराव</span>
-              <span className="ms-[413px]">:{data?.address}</span>
+              <span className="ms-[413px]">:{data?.tenantIdNumber
+}</span>
             </div>
                      
           </div>
         </div>
+        <div className="border-b-2 border-black">
+          <h1 className="text-xl underline py-2 font-bold">
+          Tenant Work Place Details / भा डेकरुचा तपशी ल:-
+          </h1>
 
+          <div className="text-lg">
+            <div>
+              <span className="text-center">Tenant′s Work Place Number  / पूर्ण नाव</span>
+              <span className="ms-[370px]">:{data?.tenantWorkPlaceNumber
+}</span>
+            </div>
+            <div>
+              <span className="text-center">tenantWorkPlaceEmail
+ / कायमचा पत </span>
+              <span className="ms-[347px]">:{data?.tenantWorkPlaceEmail
+}</span>
+            </div>
+            <div>
+              <span className="text-center">tenantOccupation
+ / शहर/जिल</span>
+              <span className="ms-[430px]">:{data?.tenantOccupation
+}</span>
+            </div>
+            <div>
+              <span className="text-center">tenantWorkplaceAddress
+ / भाडेकरु ओळख पुराव</span>
+              <span className="ms-[413px]">:{data?.tenantWorkplaceAddress
+}</span>
+            </div>
+                     
+          </div>
+        </div>
+        <div className="border-b-2 border-black">
+          <h1 className="text-xl underline py-2 font-bold">
+          Tenant Known persion details / भा डेकरुचा तपशी ल:-
+          </h1>
+
+          <div className="text-lg">
+            <div>
+              <span className="text-center">TenantKnownPersonName / पूर्ण नाव</span>
+              <span className="ms-[370px]">:{data?.tenantKnownPersonName}</span>
+            </div>
+            <div>
+              <span className="text-center">TenantKnownPerson Mobile / कायमचा पत </span>
+              <span className="ms-[347px]">:{data?.tenantKnownPersonMobile}</span>
+            </div>
+            <div>
+              <span className="text-center">TenantKnownPersonName 2 / शहर/जिल</span>
+              <span className="ms-[430px]">:{data?.tenantKnownPerson2Name}</span>
+            </div>
+            <div>
+              <span className="text-center">TenantKnownPerson Mobile 2 / भाडेकरु ओळख पुराव</span>
+              <span className="ms-[413px]">:{data?.tenantKnownPerson2Mobile}</span>
+            </div>
+            <div>
+              <span className="text-center">Agent Name / भाडेकरु ओळख पुराव</span>
+              <span className="ms-[413px]">:{data?.AgentName}</span>
+            </div>
+            <div>
+              <span className="text-center">Agent Details / भाडेकरु ओळख पुराव</span>
+              <span className="ms-[413px]">:{data?.AgentDetails}</span>
+            </div>
+
+                     
+          </div>
+        </div>
         <div className="border-b-2 border-black">
           <h1 className="text-xl  py-2 font-bold">Note:</h1>
           <div className="flex justify-between">
