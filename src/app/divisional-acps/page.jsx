@@ -31,21 +31,21 @@ function Page() {
       <div className="md:flex justify-center w-full">
       <div className="md:grid items-center justify-center w-full grid-cols-3">
       {Data.map((card, index) => (
-        <div key={index} className="border rounded-lg p-4 shadow-2xl w-[362px] my-10 mx-5">
+        <div key={index} className="border rounded-lg p-4 shadow-2xl w-[362px] my-10 md:mx-5">
           <div className="md:flex justify-center md:bg-blue-950 rounded-xl h-[239px]">
             <img src={`http://3.7.252.48/uploads/${card.filename}`} height={253} width={301} />
           </div>
-          <div className="text-center">
+          <div className="text-center md:mt-0 mt-20">
             <div>
-              <h1 className="md:mt-2 mt-8 text-lg font-semibold text-orange-600">{card.nameEng}</h1>
+              <h1 className="md:mt-2  text-lg font-semibold text-orange-600">{card.nameEng}</h1>
             </div>
             <div>
               <h1 className="mt-1 text-sm font-semibold">{card.designationEng}</h1>
             </div>
             <div className="flex justify-center">
-              <span className="flex mt-2 text-orange-700">
-                <a className="mx-4" href={`mailto:${card.email}`}><AiOutlineMessage size={24}/></a>
-                <a className="mx-4" href={`tel:${card.mobNo}`}><FiPhoneCall size={24}/></a>
+              <span className=" mt-2 text-orange-700">
+                <a className="mx-4 flex gap-5" href={`mailto:${card.email}`}><AiOutlineMessage size={24}/>{card.email}</a>
+                <a className="mx-4 flex gap-5" href={`tel:${card.mobNo}`}><FiPhoneCall size={24}/>{card.mobNo} </a>
               </span>
             </div>
           </div>

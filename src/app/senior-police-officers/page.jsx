@@ -46,9 +46,9 @@ function page() {
               <h1 className="mt-1 text-sm font-semibold">{card.designationEng}</h1>
             </div>
             <div className="flex justify-center">
-              <span className="flex mt-2 text-orange-700">
-                <a className="mx-4" href={`mailto:${card.email}`}><AiOutlineMessage size={24}/></a>
-                <a className="mx-4" href={`tel:${card.mobNo}`}><FiPhoneCall size={24}/>
+              <span className=" mt-2 text-orange-700">
+                <a className="mx-4 flex gap-5" href={`mailto:${card.email}`}><AiOutlineMessage size={24}/>{card.email}</a>
+                <a className="mx-4 flex gap-5" href={`tel:${card.mobNo}`}><FiPhoneCall size={24}/>
                 {card.mobNo}
                 </a>
               </span>
