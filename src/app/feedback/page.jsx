@@ -138,7 +138,7 @@ console.log("captcha",captcha);
           <Navbar />
 
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-            <h1 className="pt-14 mt-5">{t("feedback")}</h1>
+            <h1 className="pt-14 ">{t("feedback")}</h1>
           </div>
 
           <div className="w-full flex justify-center">

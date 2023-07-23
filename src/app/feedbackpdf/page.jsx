@@ -138,10 +138,10 @@ console.log("captcha",captcha);
           <Navbar />
 
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-            <h1 className="pt-14 mt-5">{t("feedback")}</h1>
+            <h1 className="mt-5 pt-14">{t("feedback")}</h1>
           </div>
 
-          <div className="w-full flex justify-center">
+          <div className="flex justify-center w-full">
             <div className="w-10/12">
               <div>
                 <h1 className="font-bold text-black">{t("disclaimer")}</h1>
@@ -149,8 +149,8 @@ console.log("captcha",captcha);
                 <h1 className="text-black">{t("inform_3")}</h1>
               </div>
 
-              <div className="justify-between  my-5 md:flex ">
-                <div className="md:w-4/12 md:pr-8 flex justify-start my-5 md:my-0">
+              <div className="justify-between my-5 md:flex ">
+                <div className="flex justify-start my-5 md:w-4/12 md:pr-8 md:my-0">
                   <div className="w-full">
                     <label
                       htmlFor="dropdownValue"
@@ -175,7 +175,7 @@ console.log("captcha",captcha);
                     </select>
                   </div>
                 </div>
-                <div className="md:w-4/12 md:px-4 flex justify-center my-5 md:my-0 w-full">
+                <div className="flex justify-center w-full my-5 md:w-4/12 md:px-4 md:my-0">
                   <div className="w-full">
                     <label
                       htmlFor="dropdownValue"
@@ -201,8 +201,8 @@ console.log("captcha",captcha);
                     </select>
                   </div>
                 </div>
-                <div className="md:w-4/12 md:pl-8 flex justify-items-end  my-5 md:my-0">
-                  <div className="w-full float-right">
+                <div className="flex my-5 md:w-4/12 md:pl-8 justify-items-end md:my-0">
+                  <div className="float-right w-full">
                     <label htmlFor="name" className="font-bold text-gray-500">
                       {t("full_name")}*
                     </label>
@@ -221,7 +221,7 @@ console.log("captcha",captcha);
               </div>
 
               <div className="flex justify-between w-full">
-                <div className="md:w-4/12 md:pr-8 flex justify-items-start  my-5 md:my-0">
+                <div className="flex my-5 md:w-4/12 md:pr-8 justify-items-start md:my-0">
                   <div className="w-full">
                     <label
                       htmlFor="contact"
@@ -240,7 +240,7 @@ console.log("captcha",captcha);
                     />
                   </div>
                 </div>
-                <div className="md:w-4/12 md:px-4 flex justify-center  my-5 md:my-0">
+                <div className="flex justify-center my-5 md:w-4/12 md:px-4 md:my-0">
                   <div className="w-full">
                     <label htmlFor="email" className="font-bold text-gray-500">
                       {t("email")} *
@@ -252,12 +252,12 @@ console.log("captcha",captcha);
                       name="email"
                       value={feedbackData.email}
                       onChange={handleChange}
-                      className="w-full  py-1 border border-gray-500 rounded-lg "
+                      className="w-full py-1 border border-gray-500 rounded-lg "
                       required
                     />
                   </div>
                 </div>
-                <div className="md:w-4/12 md:pl-8 flex justify-items-end  my-5 md:my-0">
+                <div className="flex my-5 md:w-4/12 md:pl-8 justify-items-end md:my-0">
                   <div className="w-full">
                     <label
                       htmlFor="address"
@@ -286,7 +286,7 @@ console.log("captcha",captcha);
                         </button> */}
               <div className="flex justify-center w-full my-5">
                 <div className="  md:w-[100%] w-full">
-                  <label htmlFor="article" className="font-bold  text-gray-500">
+                  <label htmlFor="article" className="font-bold text-gray-500">
                     {t("addrress")}*
                   </label>
                   <br />
@@ -296,7 +296,7 @@ console.log("captcha",captcha);
                     name="Address"
                     value={feedbackData.Address}
                     onChange={handleChange}
-                    className=" w-full py-1 border border-gray-500 rounded-lg"
+                    className="w-full py-1 border border-gray-500 rounded-lg "
                     required
                   />
                   
@@ -304,8 +304,8 @@ console.log("captcha",captcha);
               </div>
 
               <div className="flex justify-center my-5">
-                <div className=" justify-center w-full">
-                  <label htmlFor="article" className="font-bold  text-gray-500">
+                <div className="justify-center w-full ">
+                  <label htmlFor="article" className="font-bold text-gray-500">
                     {t("description")}
                   </label>
                   <br />
@@ -325,7 +325,7 @@ console.log("captcha",captcha);
                     src={captchaImage}
              
                     alt="captcha"
-                    className="bg-white h-16 w-40"
+                    className="w-40 h-16 bg-white"
                   />
 
 <button
@@ -438,8 +438,8 @@ console.log("captcha",captcha);
 
       {otpVerPopup && 
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
-      <div className="bg-white p-8 rounded-md">
-        <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
+      <div className="p-8 bg-white rounded-md">
+        <h2 className="mb-4 text-xl font-semibold">Enter OTP</h2>
        
           <input
             type="number"
@@ -449,7 +449,7 @@ console.log("captcha",captcha);
             onChange={(e)=>{
             setOtp(e.target.value)
             }}
-            className="w-full border border-gray-300 p-2 rounded-md mb-4"
+            className="w-full p-2 mb-4 border border-gray-300 rounded-md"
             placeholder="Enter OTP"
           />
           <div className="flex justify-end">
@@ -458,13 +458,13 @@ console.log("captcha",captcha);
               onClick={()=>{
                 setotpVerPopup(!otpVerPopup)
               }}
-              className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
+              className="px-4 py-2 mr-2 text-sm text-gray-600 rounded-md hover:bg-gray-100"
             >
               Cancel
             </button>
             <button
               // type="submit"
-              className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
+              className="px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600"
               onClick={async()=>{
                if(otp!=="" && otp.length ==6){
                 const ata={

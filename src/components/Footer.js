@@ -65,7 +65,7 @@ function Footer() {
                 <div className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('site_map')}>{t('site_map')}</div>
               </div>
               <div>
-                <div title={t('senior_police_officers')} onClick={() => (router.push('/senior-officers'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
+                <div title={t('senior_police_officers')} onClick={() => (router.push('/senior-police-officers'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]">
                   {t('senior_police_officers')}
                 </div>
                 <div onClick={() => (router.push('/history'))} className="me-[48px] cursor-pointer hover:text-[#E7581A]" title={t('history')}>{t('history')}</div>
@@ -184,7 +184,7 @@ function Footer() {
                 <div className="me-[48px] cursor-pointer" title={t('site_map')}>{t('site_map')}</div>
               </div>
               <div>
-                <div title={t('senior_police_officers')} onClick={() => (router.push('/senior-officers'))} className="me-[48px] cursor-pointer">
+                <div title={t('senior_police_officers')} onClick={() => (router.push('/senior-police-officers'))} className="me-[48px] cursor-pointer">
                 {t('senior_police_officers')}
                 </div>
                 <div onClick={() => (router.push('/history'))} className="me-[48px] cursor-pointer" title={t('history')}>{t('history')}</div>
