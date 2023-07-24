@@ -18,13 +18,13 @@ const page = ()=> {
           <h1 className="pt-14">{t('communication_it')}</h1>
         </div>
           <div className="flex items-center justify-center my-10">
-          <img src="./trafficBrach.png" className="w-[50%] h-[50%]" />
+          <img src="./navi_head.png" className="w-[50%] h-[50%]" />
           </div>
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
             <h1 className="text-xl font-extrabold text-center">{t('communication_it')}</h1>
             <br/>
-              <h1 className="font-semibold">Wireless branch is a technical branch which works under the supervision of D.C.P HQ. </h1>
-              <h1 className="font-semibold">Wireless branch provides uninterrupted wireless communication for 24 hours which helps to maintain law and order in the police commissionearte .This branch  assists in all other technical requirements .This branch also  co-ordinates with other technical service providers for providing uninterrupted services to the police .</h1>
+              <h1 className="font-semibold">{t('comm_1')}</h1>
+              <h1 className="font-semibold">{t('comm_2')}</h1>
           </div>
           </div>
           <div className="mt-[26rem] md:mt-[0rem]">

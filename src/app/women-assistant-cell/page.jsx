@@ -21,7 +21,7 @@ const page = ()=> {
           <img src="./navi_head.png" className="w-[80%] h-[50%]" />
           </div>
           <div className="text[#15233E] md:mx-20 md:ml-36 mx-5 text-left">
-              <h1>This cell is specially created to look into the grievances of women and cases of domestic violence. Women Social workers and members of Non-Governmental Organization have been taken on the panel. They hear the cases of victims and other family members and try to bring about settlement between them by counselling.The cases not settled are sent to Police Station for legal action.</h1>
+              <h1>{t('wom_1')}</h1>
               {/* </br> */}
               <h1 className="text-blue-500"><a href="https://womenchild.maharashtra.gov.in/content/homecontent/important-acts.php" target="_blank">Acts For Women Empowerment</a></h1>
               <h1 className="text-lg">MOBILE PHONE APPS FOR WOMEN SAFETY</h1>
@@ -36,12 +36,6 @@ const page = ()=> {
               <h1><b>REMEMBER :- </b></h1>
               <h1>Violence against you is not your fault. Violence is not anyone’s right. Don’t hesitate, don’t be afraid to call for help.</h1>
               <h1><b>Call 103 –</b> 24 hour helpline for crime against women in Navi Mumbai and the police will be there immediately to take action. It is up to you to make that call.</h1>
-
-
-
-
-
-
           </div>
           </div>
           <div className="mt-[26rem] md:mt-[0rem]">

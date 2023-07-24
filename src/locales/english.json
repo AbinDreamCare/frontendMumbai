@@ -260,33 +260,43 @@
     "short_form":"Short Form",
     "rank":"Rank",
     "insignia":"Insignia",
+
     "h1":"Commissioner of Police",
     "h11":"C.P.",
     "h111":"Director General of Police/Additional Director General of Police",
+
     "h2":"Special Commissioner of Police",
     "h22":"Spl.C.P.",
     "h222":"Additional Director General of Police",
+
     "h3":"Joint Commissioner of Police",
     "h33":"Jt. C.P",
     "h333":"Special Inspector General of Police",
+
     "h4":"Additional Commissioner of Police",
     "h44":"Addl. C.P.",
     "h444":"Deputy Inspector General of Police",
+
     "h5":"Deputy Commissioner of Police",
     "h55":"D.C.P.",
     "h555":"Superintendent of Police (Selection Grade)",
+
     "h6":"Deputy Commissioner of Police",
     "h66":"D.C.P.",
     "h666":"Superintendent of Police (Junior Management Grade)",
+
     "h7":"Deputy Commissioner of Police",
     "h77":"D.C.P.",
     "h777":"Addl. Superintendent of Police (Less than 10 years of service)",
+
     "h8":"Deputy Commissioner of Police",
     "h88":"D.C.P.",
     "h888":"Addl. Superintendent of Police (State Police Service)",
+
     "h9":"Assistant Commissioner of Police",
     "h99":"A.C.P.",
     "h999":"Deputy Superintendent of Police",
+
     "h_1":"Sr Police Inspector / Police Inspector",
     "h_11":"Sr. P.I. / P.I.",
     "h_111":"Police Inspector",
@@ -376,6 +386,7 @@
     "traffic_7":"Prevent and reduce road accidents.",
     "traffic_8":"Encourage participation and involvement of public in traffic management.",
 
+
     "________________________________________Useful Websites________________________________________":"",
 
     "web_1":"Nagpur Police",
@@ -401,6 +412,120 @@
     "web_21":"Pune Police.",
     "web_22":"National Cyber Crime Reporting Portal",
     "web_23":"Bureau of Police Research and Development Ministry of Home Affairs",
+
+"___________________________________________History_______________________________________________________":"",
+
+"history_1":"*    Navi Mumbai city is the most important geographical location of the district of Thane with 144 km sea shore which earlier worked as a Zone-5 in the Thane Police Commissionerate. Independent Navi Mumbai Police Commissionerate was created as a result of the need for keeping the law and order with security of Navi Mumbai city and following matters.",
+"history_2":"*    The total area of Navi Mumbai area is 953 sq. Km. As well as the increasing urbanization, CIDCO and private organizations are growing through",
+"history_3":"*    Citizens' Residence (Gharkool, Spaghetti, Vastuvihar, Gharonda, Swapnapurti etc.  Cidco Projects) Central Park and Wonderpark created by CIDCO and Navi Mumbai Municipal Corporation.",
+"history_4":"*    Railway network (Harbor Line, Trans Harbour Line & Konkan Railway)",
+"history_5":"*    Trade Centers (Grain Market, Spices Market, Fruits Market, Onion-Potato Market and Flower Market etc. APMC Market)",
+"history_6":"*    JNPT International Port.",
+"history_7":"*    Important Vital Locations - All religious places of worship, MIDC Panvel, ONGC Uran, HPCL PLANT, IPCL Company, BPCL Company, Deepak Fertilizers Company, Airoli Power House, Bokadvira Power Project, NAD Karanja, Elephanta Caves, Creek Bridges, Government/Semi-Government Offices etc.",
+"history_8":"*    Coastal-line, National / State / Express Highways. ",
+"history_9":"*    Office of the Commissioner of Police, Navi Mumbai was inaugurated on 19/11/1994 by Sh. A. V. Krishnan, The then Director General of Police, Maharashtra State, Mumbai ",
+"history_10":"*    After the formation of the Navi Mumbai Police Commissionerate, Zone-1, Vashi and     Zone-2, Panvel became operational. Out of the 20 Police Stations in operation, each of the 10 police stations was divided into areas.",
+
+"___________________________________Economic Offence Wing________________________________________________":"",
+
+"eco_1":"Economic Offences Wing, Navi Mumbai Commissionerate",
+"eco_2":"The purpose of the Economic Offences Wing (EOW) is to prevent, detect and investigate cases of Economic and Intellectual Property related crimes to ensure prompt justice and desired relief to the victims.",
+"eco_3":"Economic Offences Wing deals with important cases concerning Multi-level frauds, Share market frauds, Offences of Forgery, Cheating by indiviluals and Non Banking Financial Companies, Offences related to Intellectual  Property Rights and such other cases.",
+
+"___________________________________Motar Transport Branch_____________________________________________":"",
+
+"moto_1":"In Motor Transport Department officers & Police employees are deployed for the various works. It includes two wheeler & four wheeler vehicles & drivers are deployed for the vehicles according to the rules. Vehicles are provided to the police forces according to the daily requirements.",
+
+"____________________________________CCTNC_______________________________________________________________":"",
+"cctns_1":"CCTNS  aims to integrate all the data and records of crime into a Core Application Software(CAS), which is presently spreading across 28 states and 9 union territories of India. The project also involves training of police personnel and setting up of citizen portal to provide services to citizens.",
+"cctns_2":"It will digitize data related to FIR registration, investigation and charge sheets in all police stations.",
+"cctns_3":"It would help in developing a national database of crime and criminals.  ",
+"cctns_4":"The full implementation of the project with all the new components would lead to a Central citizen portal having linkages with state level citizen portals that will provide a number of citizen friendly services.",
+"cctns_5":"ALL  police officers and staff are trained well for proper functioning of CCTNS CAS software.",
+"cctns_6":"ALL entries of police station are entered online /offline in CCTNS CAS  as like FIR, Missing Persons, Dead Bodies, Arrested Persons,Criminals, Festivel permissions, etc.",
+"cctns_7":"CCTNS course training is provided to all police officers and staff by our Expert trainers in Role Based Training (RBT) center.",
+
+"_____________________________________Control Room__________________________________________________________":"",
+
+"control_1":"The Police Control Room controls the activities of all Police Stations in Navi Mumbai police Commissionerate jurisdiction. It also plays role of communicator between the field staff and controlling authorities at all levels. Control Room ensures maintenance of Law and Order. During critical situations and in the absence of Senior Officers/Unit Commander, the Control Room Officer has to take decisions and to direct the officers present on the spot, If required, to dispatch forces to assist the police officers on the spot. It also  promptly communicate important events to the Unit Commander, other senior officers and Control Room.",
+"control_2":"The  Control Room (CONTROL ROOM) of the navi mumbai poilce Commissioner has been set up and it has the following functions:",
+"control_3":"100 Number :-",
+"control_4":"There are 7 lines with 7 call takers deputed 24x7 to receive the call from citizen in need of help.After receiving the complaints or suggestion from citizen on this line, it is reported to Control Room Officer. The control Room Officer takes further actions to provide necessary help to caller.",
+"control_5":"Phone a Friend -",
+"control_6":"There are 2 separate telephone numbers available in the Control Room. A System established to collect the feedback from the complaint. It aims to measure the satisfaction of the complaint regarding resolution of his grievance by the field staff.",
+"control_7":" Helpline for Senior Citizens and Women :",
+"control_8":"There are two help line Numbers  provided for Women and  Senior Citizens. manned by staff for 24x7 .The Complaints of senior citizen/ women is attended on priority and immediate  help is provided as per the need",
+"control_9":"These numbers are :",
+"control_10":"1) Helpline No. for Senior Citizens- 1800-200-2122",
+"control_11":"2) Helpline No. for women- 103",
+"control_12":"3) Control Room WhatsApp No. - 8424820686 / 8424820665",
+
+"_____________________________________Police Headquarter____________________________________________________":"",
+
+"poHead_1":"The Head Quarter maintains Reserve Police Force, which is used for guard duties, escort duties and  other general duties.The Headquater also organise Basic Police Training Sessions.During Law & Order situation,Police Headquarter provides reserved Police Force to handle the situation. Police Inspector of Headquarter maintains the discipline, organises training,  looks after the Canteen, a Store, Armoury, etc.",
+
+"______________________________________________Special Branch_______________________________________________":"",
+
+"spl_1":"Working of Special Branch",
+"spl_2":"Special Branch is very important wing of Police Department. The Special Branch staff play important role in collecting advance intelligence about potential Low and Order matters as well as illegal activities. ",
+"spl_3":"This branch collects confidential information in advance regarding activities of various Organizations, Movements & Activities of various Political Parties. ",
+
+"_____________________________________________Cyber Crime Branch___________________________________________":"",
+
+"cyber_1":"CYBER POLICE STATION, NAVI MUMBAI",
+"cyber_2":"ADD :- SAWALI BLDG., 1st FLOOR, SECTOR-5, NEAR Dr. D.Y.PATIL HOSPITAL, NERUL, NAVI MUMBAI-400706",
+"cyber_3":"PHONE :- 022-27578309",
+"cyber_4":"Navi Mumbai Police Commissionerate had a cyber wing earlier but considering the seriousness of day by day increase in cyber crimes Cyber Police Station has been established in Navi Mumbai Police Commissionerate on 11th May 2023. This police station deals with the investigation of Internet crimes (eg website hacking, cyber stalking, spreading obscenities, e-mail fraud, credit card crimes, software system crimes, online financial fraud, etc.) .vs. and investigates cases registered under the Information Technology (Amendment) Act, 2008, among others.",
+"cyber_5":"Role / Responsibilities of Cyber Police Station:",
+"cyber_6":"1. The objective of Cyber Police Station is to prevent various types of cyber crimes and properly investigate the crimes committed.",
+"cyber_7":"2. Providing regular training to Navi Mumbai Police personnel in cyber crime investigation system.",
+"cyber_8":"3. Organizing / arranging cyber crime prevention / awareness programs in schools, colleges and housing societies / associations.",
+"cyber_9":"4. Cyber Police Station, Navi Mumbai also provides technical support for investigations to local Police Stations, Crime Cells and officers of other branches of the police.",
+"cyber_10":"5. If any adverse comments or malicious comments against the State are detected through social media monitoring which may lead to law and order problems, the Cyber Police Station, Navi Mumbai, shall be notified to the Computer Emergency Response Team, India (CERT-IN) through the Nodal Officer (Additional Commissioner of Police, of Crimes, Navi Mumbai) (under Section 69 IT Act) or by obtaining the order of the concerned Hon'ble Court and sending the request. The court will block electronic transmission of such content when the website registrar / service provider does not accept the request made by email.",
+"cyber_11":"6. Cyber Police Station, Navi Mumbai acts as the nodal for Navi Mumbai Police in Child Pornography and Rape, Gang Rape cases.",
+"cyber_12":"Cyber Crime Safety Tips In English",
+"cyber_13":"Cyber Safety Safety Tips In Marathi",
+"cyber_14":"Cyber Crime Awareness Slides",
+"cyber_15":"Information Technology Act",
+"cyber_16":"IT ACT 2000",
+"cyber_17":"IT AMENDMENT ACT 2008",
+
+"____________________________________________Communication & IT____________________________________________":"",
+
+"comm_1":" Wireless branch is a technical branch which works under the supervision of D.C.P HQ. ",
+"comm_2":"Wireless branch provides uninterrupted wireless communication for 24 hours which helps to maintain law and order in the police commissionearte .This branch  assists in all other technical requirements .This branch also  co-ordinates with other technical service providers for providing uninterrupted services to the police .",
+
+"___________________________________________Women Branch___________________________________________________":"",
+
+"wom_1":"This cell is specially created to look into the grievances of women and cases of domestic violence. Women Social workers and members of Non-Governmental Organization have been taken on the panel. They hear the cases of victims and other family members and try to bring about settlement between them by counselling.The cases not settled are sent to Police Station for legal action.",
+
+"___________________________________________Right To information___________________________________________":"",
+
+"right_1":"An Act to provide for setting out the practical regime of right to information for citizens to secure access to information under the control of public authorities, in order to promote transparency and accountability in the working of every public authority, the constitution of a Central Information Commission and State Information Commissions and for matters connected therewith or incidental thereto RIGHT TO INFORMATION ACT 2005 come into force.",
+"right_2":"Section 4:- Obligations of public authorities. —",
+"right_3":"(1) Every public authority shall—",
+"right_4":"(a) maintain all its records duly catalogued and indexed in a manner and the form which facilitates the right to information under this Act and ensure that all records that are appropriate to be computerised are, within a reasonable time and subject to availability of resources, computerised and connected through a network all over the country on different systems so that access to such records is facilitated.",
+"right_5":"As per abovementioned section The Navi Mumbai Police has been publishing its information as per Section 4(1)(b) and its subsections as given below:",
+"right_6":"Title",
+"right_7":"Info. in English",
+"right_8":"मराठी मध्ये माहिती",
+"right_9":"Right To Information Act (RTI)",
+"right_10":"RIGHT TO INFORMATION ACT 2005 SECTION 4 (1)(KHA) (01 to 17 POINTS) INFORMATION",
+"right_11":"MAHARASHTRA POLICE MANUAL, PART-II, 21(II)IN ANNEXURE-15 PRESCRIBED PERIOD FOR THE PRESERVATION OF POLICE STATION RECORDS.",
+"right_12":"RTI FORM",
+"right_13":"RTI GUIDELINES",
+"right_14":"RTI Officers Name & Address in NAVI MUMBAI POLICE COMMISSIONERATE",
+
+"_______________________________________Call Icon__________________________________________________________":"",
+
+"call_1":"Emergency Dial: 112",
+"call_2":"Traffic Helpline: 7738393839",
+"call_3":"Control Helpline: 7738363836",
+"call_4":"Cyber Help Line: 1930",
+"call_5":"Women Help Line: 103",
+"call_6":"Costal Helpline: 1093",
+"call_7":"Senior Citizen Helpline: 1090",
+"call_8":"Control Room Whatsapp Number:8424820665,8424820686",
 
 
 

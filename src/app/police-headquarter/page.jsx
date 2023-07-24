@@ -23,7 +23,7 @@ const page = ()=> {
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
               
               <br/>
-              <h1 className="text-lg leading-9">The Head Quarter maintains Reserve Police Force, which is used for guard duties, escort duties and  other general duties.The Headquater also organise Basic Police Training Sessions.During Law & Order situation,Police Headquarter provides reserved Police Force to handle the situation. Police Inspector of Headquarter maintains the discipline, organises training,  looks after the Canteen, a Store, Armoury, etc.</h1>
+              <h1 className="text-lg leading-9">{t('poHead_1')}</h1>
           </div>
           </div>
           <div className="mt-[26rem] md:mt-[0rem]">

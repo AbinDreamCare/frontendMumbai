@@ -23,7 +23,7 @@ const page = ()=> {
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
               
               <br/>
-              <h1 className="text-lg">In Motor Transport Department officers & Police employees are deployed for the various works. It includes two wheeler & four wheeler vehicles & drivers are deployed for the vehicles according to the rules. Vehicles are provided to the police forces according to the daily requirements.</h1>
+              <h1 className="text-lg">{t('moto_1')}</h1>
           </div>
           </div>
           <div className="mt-[26rem] md:mt-[0rem]">

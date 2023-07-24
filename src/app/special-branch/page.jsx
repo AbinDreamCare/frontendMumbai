@@ -23,9 +23,9 @@ const page = ()=> {
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
               
               <br/>
-              <h1 className="text-lg leading-9 text-center">Working of Special Branch</h1>
-              <h1 className="text-lg leading-9">Special Branch is very important wing of Police Department. The Special Branch staff play important role in collecting advance intelligence about potential Low and Order matters as well as illegal activities. </h1>
-              <h1 className="text-lg leading-9">This branch collects confidential information in advance regarding activities of various Organizations, Movements & Activities of various Political Parties. </h1>
+              <h1 className="text-lg leading-9 text-center">{t('spl_1')}</h1>
+              <h1 className="text-lg leading-9">{t('spl_2')}</h1>
+              <h1 className="text-lg leading-9">{t('spl_3')}</h1>
           </div>
           </div>
           <div className="mt-[26rem] md:mt-[0rem]">

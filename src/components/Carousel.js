@@ -13,22 +13,23 @@ i18Instance()
 
 const Carousel = () => {
 
+  const { t } = useTranslation();
+
   const emergencyContacts = [
-    { title: "Emergency Dial: 112", link: "tel:112" },
-    
-    { title: "Traffic Helpline: 7738393839", link: "tel:7738393839" },
-    { title: "Control Helpline: 7738363836", link: "tel:7738363836" },
-    { title: "Cyber Help Line: 1930", link: "tel:1930" },
-    { title: "Women Help Line: 103", link: "tel:103" },
-    { title: "Costal Helpline: 1093", link: "tel:1093" },
-    { title: "Senior Citizen Helpline: 1090", link: "tel:1090" },
-    { title: "Control Room Whatsapp Number:8424820665,8424820686", link: "tel:8424820665,8424820686" },
+    { title: t('call_1'), link: "tel:112" },
+    { title: t('call_2'), link: "tel:7738393839" },
+    { title: t('call_3'), link: "tel:7738363836" },
+    { title: t('call_4'), link: "tel:1930" },
+    { title: t('call_5'), link: "tel:103" },
+    { title: t('call_6'), link: "tel:1093" },
+    { title: t('call_7'), link: "tel:1090" },
+    { title: t('call_8'), link: "tel:8424820665,8424820686" },
   ];
 
 
   const [emergencyContactstoggle, setemergencyContactstoggle] = useState(false)
   const router = useRouter()
-  const { t } = useTranslation();
+  
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

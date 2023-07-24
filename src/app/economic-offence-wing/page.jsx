@@ -21,10 +21,10 @@ const page = ()=> {
           <img src="./navi_head.png" className="w-[100%] h-[50%]" />
           </div>
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
-              <h1 className="text-xl font-bold text-center"> Economic Offences Wing, Navi Mumbai Commissionerate</h1>
+              <h1 className="text-xl font-bold text-center">{t('eco_1')}</h1>
               <br/>
-              <h1 className="text-lg">The purpose of the Economic Offences Wing (EOW) is to prevent, detect and investigate cases of Economic and Intellectual Property related crimes to ensure prompt justice and desired relief to the victims.</h1>
-              <h1 className="text-lg">Economic Offences Wing deals with important cases concerning Multi-level frauds, Share market frauds, Offences of Forgery, Cheating by indiviluals and Non Banking Financial Companies, Offences related to Intellectual  Property Rights and such other cases.</h1>
+              <h1 className="text-lg">{t('eco_2')}</h1>
+              <h1 className="text-lg">{t('eco_3')}</h1>
           </div>
           </div>
           <div className="mt-[26rem] md:mt-[0rem]">

@@ -12,37 +12,37 @@ const page = ()=> {
   
   const recruitmentData = [
     {
-        name:"Right To Information Act (RTI)",
+        name: t('right_9'),
         id:"1",
         pdfEng:"./rti1Eng.pdf",
         pdfMar:"./rti1Mar.pdf"
     },
     {
-        name:"RIGHT TO INFORMATION ACT 2005 SECTION 4 (1)(KHA) (01 to 17 POINTS) INFORMATION",
+        name:t('right_10'),
         id:"2",
         pdfEng:"#",
         pdfMar:"./rti2Mar.pdf"
     },
     {
-        name:"MAHARASHTRA POLICE MANUAL, PART-II, 21(II)IN ANNEXURE-15 PRESCRIBED PERIOD FOR THE PRESERVATION OF POLICE STATION RECORDS.",
+        name:t('right_11'),
         id:"3",
         pdfEng:"#",
         pdfMar:"./rti3Mar.pdf"
     },
     {
-        name:"RTI FORM",
+        name:t('right_12'),
         id:"4",
         pdfEng:"./rti4Eng.pdf",
         pdfMar:"./rti4Mar.pdf"
     },
     {
-        name:"RTI GUIDELINES",
+        name:t('right_13'),
         id:"5",
         pdfEng:"#",
         pdfMar:"./rti5Mar.pdf"
     },
     {
-        name:"RTI Officers Name & Address in NAVI MUMBAI POLICE COMMISSIONERATE",
+        name:t('right_14'),
         id:"6",
         pdfEng:"#",
         pdfMar:"./rti6Mar.pdf"
@@ -60,26 +60,26 @@ const page = ()=> {
         </div>
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
               <br/>
-              <h1 className="text-lg leading-9">An Act to provide for setting out the practical regime of right to information for citizens to secure access to information under the control of public authorities, in order to promote transparency and accountability in the working of every public authority, the constitution of a Central Information Commission and State Information Commissions and for matters connected therewith or incidental thereto RIGHT TO INFORMATION ACT 2005 come into force.</h1>
+              <h1 className="text-lg leading-9">{t('right_1')}</h1>
               <br/>
               <br/>
-              <h1 className="text-lg leading-9">Section 4:- Obligations of public authorities. —</h1>
-              <h1 className="text-lg leading-9">(1) Every public authority shall—</h1>
-              <h1 className="text-lg leading-9">(a) maintain all its records duly catalogued and indexed in a manner and the form which facilitates the right to information under this Act and ensure that all records that are appropriate to be computerised are, within a reasonable time and subject to availability of resources, computerised and connected through a network all over the country on different systems so that access to such records is facilitated.</h1>
-              <h1 className="text-lg leading-9">As per abovementioned section The Navi Mumbai Police has been publishing its information as per Section 4(1)(b) and its subsections as given below:</h1>
+              <h1 className="text-lg leading-9">{t('right_2')}</h1>
+              <h1 className="text-lg leading-9">{t('right_3')}</h1>
+              <h1 className="text-lg leading-9">{t('right_4')}</h1>
+              <h1 className="text-lg leading-9">{t('right_5')}</h1>
                 <div>
                 <div className="flex justify-center w-full mt-10">
       <table className="pt-10 bg-[#D2D2D2] ">
         <thead>
           <tr className="text-base text-center text-gray-800 ">
             <th className="px-6 py-3 font-medium tracking-wider text-center uppercase border">
-              Info
+            {t('right_6')}
             </th>
             <th className="py-3 font-medium tracking-wider text-center uppercase border md:px-6">
-              Info. In English
+            {t('right_7')}
             </th>
             <th className="py-3 font-medium tracking-wider text-center uppercase border md:px-6">
-              Info. In Marathi
+            {t('right_8')}
             </th>
           </tr>
         </thead>
