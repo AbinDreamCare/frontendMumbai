@@ -44,16 +44,16 @@ export default function CPMessage() {
 
                 <h1 className="mt-3 text-white md:text-lg" title={t('namaskar_navi_mumbai')}>{t('namaskar_navi_mumbai')}</h1>
 
-                <h1 className="mt-3 text-sm leading-6 text-justify text-white md:text-lg">
+                <h1 title={t('cp_msg1')} className="mt-3 text-sm leading-6 text-justify text-white md:text-lg">
                   {t('cp_msg1')}
                   <br />
-                  <br />
+                  <br title={t('cp_msg2')}/>
                   {t('cp_msg2')}
                 </h1>
 
-                <h1 className="mt-3 text-lg text-white md:text-2xl">
+                <h1 title={t('cp_msg3')} className="mt-3 text-lg text-white md:text-2xl">
                   {t('cp_msg3')}
-                  <br />
+                  <br title={t('cp_msg4')} />
                   {t('cp_msg4')}
                 </h1>
               </div>

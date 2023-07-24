@@ -15,28 +15,28 @@ const page = ()=> {
         <Navbar/>
           <div className="bg-[#D2D2D2] py-10">
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-          <h1 className="pt-14">{t('history')}</h1>
+          <h1 className="pt-14" title={t('history')}>{t('history')}</h1>
         </div>
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left mt-10 border-2 p-5 shadow-lg">
-            <h1 className="text-xl font-semibold">{t('history_1')}</h1>
+            <h1 className="text-xl font-semibold" title={t('history_1')}>{t('history_1')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_2')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_2')}>{t('history_2')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_3')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_3')}>{t('history_3')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_4')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_4')}>{t('history_4')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_5')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_5')}>{t('history_5')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_6')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_6')}>{t('history_6')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_7')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_7')}>{t('history_7')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_8')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_8')}>{t('history_8')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_9')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_9')}>{t('history_9')}</h1>
              <br/>
-             <h1 className="text-xl font-semibold">{t('history_10')}</h1>
+             <h1 className="text-xl font-semibold" title={t('history_10')}>{t('history_10')}</h1>
 
           </div>
           </div>

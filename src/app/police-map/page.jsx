@@ -23,7 +23,7 @@ function Page  ()  {
       <div className="bg-[#15233E] h-auto">
       <div>
       <div className="text-5xl font-bold leading-9 text-center text-white">
-          <h1 className="pt-14">{t('navi_mumbai_police_map')}</h1>
+          <h1 className="pt-14" title={t('navi_mumbai_police_map')}>{t('navi_mumbai_police_map')}</h1>
         </div>
         <div className='px-4 pb-10 mt-10 md:flex md:justify-evenly'>
         {citiMap.map((mumbai) => (
@@ -38,7 +38,7 @@ function Page  ()  {
           />
         </div>
         <div className='mt-5 text-xl font-bold leading-7 text-center text-white'>
-          <h1 >
+          <h1 title={mumbai.title}>
           {mumbai.title}
           </h1>
         </div>

@@ -15,14 +15,14 @@ const CrimeBranch = ()=> {
         <Navbar/>
           <div className="bg-[#D2D2D2] py-10">
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-          <h1 className="pt-14">{t('initiative')}</h1>
+          <h1 className="pt-14" title={t('initiative')}>{t('initiative')}</h1>
         </div>
           <div className="mt-5 ">
-            <div className="items-center justify-center p-3 mx-3 md:mx-20 border-2 md:flex hover:bg-white hover:shadow-lg">
-                <div className="md:w-4/12 p-2">
+            <div className="items-center justify-center p-3 mx-3 border-2 md:mx-20 md:flex hover:bg-white hover:shadow-lg">
+                <div className="p-2 md:w-4/12">
                     <img src="./initiative1.png" className=""/>
                 </div>
-                <div className="md:w-8/12 pl-2">
+                <div className="pl-2 md:w-8/12">
                     <h1 className="text-lg font-bold">Senior Citizens Help Line 1090</h1>
                     <h1>One cannot escape the fact that senior citizens are at a much greater risk today than ever before. After all, a worrying number of the elderly live on their own. Abandoned by their uncaring families, they are left completely helpless in crisis and extremely vulnerable to criminal elements, health problems and depression. But now they will have a family of their own again</h1>
                     <br/>

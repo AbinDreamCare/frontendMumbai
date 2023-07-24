@@ -15,7 +15,7 @@ const page = ()=> {
         <Navbar/>
           <div className="bg-[#D2D2D2] py-10">
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-          <h1 className="pt-14">{t('faqs')}</h1>
+          <h1 className="pt-14" title={t('faqs')}>{t('faqs')}</h1>
         </div>
 
         <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left bg-[#E7E7E7] p-5 mt-5 rounded-lg">

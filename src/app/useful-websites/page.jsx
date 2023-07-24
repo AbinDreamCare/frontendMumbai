@@ -136,7 +136,7 @@ function Page  ()  {
       <Navbar/>
       <div className="bg-[#D2D2D2] h-full pb-10 ">
       <div className="font-bold  text-5xl leading-9 text-center text-[#15233E] pt-14">
-            <h1 className="pt-14">{t('useful_website')}</h1>
+            <h1 className="pt-14" title={t('useful_website')}>{t('useful_website')}</h1>
           </div>
         <table className=" text-[#15233E] flex justify-center items-center pt-10">
           <thead className="flex items-center justify-center ">
@@ -146,6 +146,7 @@ function Page  ()  {
                 <tr className="bg-[#ABABAB]">
                   <th
                     scope="col"
+                    title={hierarchy.Name_of_office}
                     className=" px-1 lg:px-6 py-3 text-left text-sm font-medium text-[#15233E] align-middle border"
                   >
                     {hierarchy.Name_of_office}

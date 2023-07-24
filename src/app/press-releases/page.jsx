@@ -32,7 +32,7 @@ function Page() {
       <Navbar/>
       <div className="bg-[#D2D2D2] h-screen">
       <div className="font-bold  text-5xl leading-9 text-center pt-14 text-[#15233E]">
-            <h1 className="pt-14">{t('press_release')}</h1>
+            <h1 className="pt-14" title={t('press_release')}>{t('press_release')}</h1>
           </div>
       <div className="flex justify-center w-full p-3 mt-10">
       <table className="pt-10 bg-white ">
@@ -58,7 +58,7 @@ function Page() {
               <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 {new Date(hierarchy.createdAt).toLocaleDateString()}
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
+              <td title= {hierarchy.titleEng} className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 {hierarchy.titleEng}
               </td>
               <td className="py-3 text-sm font-medium text-left align-middle border md:px-6">

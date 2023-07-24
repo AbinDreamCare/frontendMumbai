@@ -27,7 +27,7 @@ function page() {
       <Navbar/>
       <div className="bg-[#D2D2D2] h-screen">
       <div className="font-bold  text-5xl leading-9 text-center pt-14 text-[#15233E]">
-            <h1 className="pt-14">{t('police_recruitments')}</h1>
+            <h1 className="pt-14" title={t('police_recruitments')}>{t('police_recruitments')}</h1>
           </div>
       <div className="flex justify-center w-full mt-10">
       <table className="pt-10 bg-white ">
@@ -44,7 +44,7 @@ function page() {
             </th>
           </tr>
         </thead>
-        <tbody className="text-gray-800 bg-white  ">
+        <tbody className="text-gray-800 bg-white ">
           {recruitmentData.map((hierarchy) => (
             <tr
               key={hierarchy.id}
@@ -53,7 +53,7 @@ function page() {
               <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 {new Date(hierarchy.createdAt).toLocaleDateString()}
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
+              <td title={hierarchy.titleEng} className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 {hierarchy.titleEng}
               </td>
               <td className="px-6 py-3 text-sm font-medium text-left align-middle border">

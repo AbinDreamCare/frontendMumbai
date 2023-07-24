@@ -20,6 +20,7 @@
     "martyrs":"Martyrs",
     "nccrp":"National Cyber Crime Reporting Portal",
     "published_fir":"Published FIR",
+    "navi_mumbai_police_station_info":"Navi Mumbai Police Station Information",
 
     "cctns":"CCTNS",
     "control_room":"Control Room",
@@ -118,7 +119,7 @@
     "taloja":"Taloja",
     "turbhe":"Turbhe",
     "uran":"Uran",
-    "washi":"Washi",
+    "washi":"Vashi",
 
     "_______________________Headline___________________________________________________________________________":"",
     "headline":"Headline",
@@ -526,6 +527,16 @@
 "call_6":"Costal Helpline: 1093",
 "call_7":"Senior Citizen Helpline: 1090",
 "call_8":"Control Room Whatsapp Number:8424820665,8424820686",
+
+"______________________________________Police Station Information__________________________":"",
+
+"trubhe_midc":"Turbhe MIDC",
+"port_division":"Port Division",
+"panvel_division":"Panvel Division",
+"turbhe_division":"Turbhe Division",
+"vashi_division":"Vashi Division",
+"zone_1":"Zone I",
+"zone_2":"Zone II",
 
 
 

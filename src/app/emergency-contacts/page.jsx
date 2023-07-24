@@ -202,18 +202,21 @@ function Page  () {
           <tr className="text-base lg:mx-5">
             <th
               scope="col"
+              title={t('emergency_1')}
               className="px-1 lg:px-6 py-3  lg:font-medium text-[#15233E] uppercase tracking-wider border"
             >
               {t('emergency_1')}
             </th>
             <th
               scope="col"
+              title={t('emergency_2')}
               className="px-1 lg:px-6 py-3  font-medium text-[#15233E] uppercase tracking-wider border"
             >
               {t('emergency_2')}
             </th>
             <th
               scope="col"
+              title={t('emergency_3')}
               className="px-1 lg:px-6 py-3 font-medium text-[#15233E] uppercase tracking-wider border sm:table-cell"
             >
               {t('emergency_3')}
@@ -229,15 +232,15 @@ function Page  () {
         <tbody>
           {table.map((hierarchy, index) => (
             <tr key={index} className="bg-Main">
-              <td className="px-1 lg:px-6 py-3 text-left text-sm font-medium text-[#15233E] align-middle border">
+              <td className="px-1 lg:px-6 py-3 text-left text-sm font-medium text-[#15233E] align-middle border" title={hierarchy.Name_of_office}>
                 {hierarchy.Name_of_office}
               </td>
-              <td className="px-1 lg:px-6 py-3 text-left text-sm font-medium text-[#15233E]  align-middle border">
+              <td className="px-1 lg:px-6 py-3 text-left text-sm font-medium text-[#15233E]  align-middle border" title={hierarchy.telephone}>
                 {hierarchy.telephone}
               </td>
               <td className="px-1 lg:px-6 py-3 text-left text-sm font-medium text-[#15233E]  align-middle border">
                 <span className="flex justify-center text-orange-700">
-                  <a href={hierarchy.fax} target="_blank" rel="noopener noreferrer">
+                  <a href={hierarchy.fax} target="_blank" rel="noopener noreferrer" title={hierarchy.fax}>
                     <BsFiletypePdf size={30} />
                   </a>
                 </span>

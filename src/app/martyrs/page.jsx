@@ -20,7 +20,7 @@ const Page = () => {
     <div className="bg-[#D2D2D2]">
       <Navbar/>
       <div className="text-5xl font-bold leading-9 text-center text-[#15233E] pt-14">
-          <h1 className="pt-14">{t('martyrs')}</h1>
+          <h1 className="pt-14" title={t('martyrs')}>{t('martyrs')}</h1>
         </div>
       <div className="justify-center w-full md:flex">
       <div className="items-center justify-center grid-cols-3 md:grid">
@@ -31,13 +31,13 @@ const Page = () => {
           </div>
           <div className="text-center">
             <div>
-              <h1 className="mt-2 text-lg font-semibold text-orange-600">{card.name}</h1>
+              <h1 className="mt-2 text-lg font-semibold text-orange-600" title={card.name}>{card.name}</h1>
             </div>
             <div>
-              <h1 className="mt-1 text-sm font-semibold">{card.post}</h1>
+              <h1 className="mt-1 text-sm font-semibold" title={card.post}>{card.post}</h1>
             </div>
             <div className="flex justify-center">
-              <h1 className="mt-1 text-sm font-semibold text-orange-600">{card.dob}</h1>
+              <h1 className="mt-1 text-sm font-semibold text-orange-600" title={card.dob}>{card.dob}</h1>
             </div>
           </div>
         </div>

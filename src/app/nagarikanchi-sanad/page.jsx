@@ -25,7 +25,7 @@ const page = ()=> {
         <Navbar/>
           <div className="bg-[#D2D2D2] py-10">
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-          <h1 className="pt-14">{t('nagarikanchi_sanad')}</h1>
+          <h1 className="pt-14" title={t('nagarikanchi_sanad')}>{t('nagarikanchi_sanad')}</h1>
         </div>
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5">
               <br/>
@@ -53,11 +53,11 @@ const page = ()=> {
               key={hierarchy.id}
               className="transition-transform duration-300 transform hover:scale-105 hover:bg-white"
             >
-              <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
+              <td title={hierarchy.date} className="px-6 py-3 text-sm font-medium text-left align-middle border">
                 {hierarchy.date}
               </td>
               <td className="px-6 py-3 text-sm font-medium text-left align-middle border">
-                <div className="flex justify-center ">
+                <div title={hierarchy.name} className="flex justify-center ">
                   {hierarchy.name}
                 </div>
               </td>

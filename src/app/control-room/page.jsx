@@ -15,7 +15,7 @@ const page = ()=> {
         <Navbar/>
           <div className="bg-[#D2D2D2] py-10">
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-          <h1 className="pt-14">{t('control_room')}</h1>
+          <h1 className="pt-14" title={t('control_room')}>{t('control_room')}</h1>
         </div>
           <div className="flex items-center justify-center mx-5 my-10 md:mx-44">
           <img src="./navi_head.png" className="w-[100%] h-[50%]" />
@@ -23,15 +23,15 @@ const page = ()=> {
           <div className="text[#15233E] md:mx-20 md:ml-44 mx-5 text-left">
               
               <br/>
-              <h1 className="text-lg leading-9">{t('control_1')}</h1>
-              <h1 className="text-lg leading-9">{t('control_2')}</h1>
-              <h1 className="text-lg leading-9"><b>{t('control_3')}</b> {t('control_4')}</h1>
-              <h1 className="text-lg leading-9"><b>{t('control_5')}</b> {t('control_6')}</h1>
-              <h1 className="text-lg leading-9"><b>{t('control_7')} </b>{t('control_8')}</h1>
-              <h1 className="text-lg leading-9">{t('control_9')}</h1>
-              <h1 className="text-lg leading-9">{t('control_10')}</h1>
-              <h1 className="text-lg leading-9">{t('control_11')}</h1>
-              <h1 className="text-lg leading-9">{t('control_12')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_1')}>{t('control_1')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_2')}>{t('control_2')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_3')}><b>{t('control_3')}</b> {t('control_4')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_5')}><b>{t('control_5')}</b> {t('control_6')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_7')}><b>{t('control_7')} </b>{t('control_8')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_9')}>{t('control_9')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_10')}>{t('control_10')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_11')}>{t('control_11')}</h1>
+              <h1 className="text-lg leading-9" title={t('control_12')}>{t('control_12')}</h1>
 
           </div>
           </div>

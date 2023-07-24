@@ -17,27 +17,27 @@ function Page  () {
       <div className=" bg-[#D2D2D2]">
         <div className="text-[#15233E]">
           <div className="text-5xl font-bold leading-9 text-center pt-14 text-[#15233E]">
-            <h1 className="pt-14">{t('responsibility')}</h1>
+            <h1 className="pt-14" title={t('responsibility')}>{t('responsibility')}</h1>
           </div>
           <div className="mx-5 bg-[#E7E7E7] lg:mx-72 rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
-              <p className="font-bold">{t('res_1')}</p>
-              <p className="ml-5 text-lg font-normal">
+              <p className="font-bold" title={t('res_1')}>{t('res_1')}</p>
+              <p className="ml-5 text-lg font-normal" title={t('res_2')}>
               {t('res_2')}
-                <br />{t('res_3')}
-                <br /> 
+                <br  title={t('res_3')} />{t('res_3')}
+                <br title={t('res_4')}/> 
                 {t('res_4')}
-                <br />
+                <br title={t('res_5')}/>
                 {t('res_5')}
-                <br />
+                <br title={t('res_6')}/>
                 {t('res_6')}
               </p>
             </div>
           </div>
           <div className="mx-5 bg-[#E7E7E7] lg:mx-72 rounded-xl">
             <div className="p-5 mt-8 lg:mt-10">
-              <p className="font-bold">{t('res_7')}</p>
-              <p className="ml-5 text-lg font-normal">
+              <p className="font-bold" title={t('res_7')}>{t('res_7')}</p>
+              <p className="ml-5 text-lg font-normal" title={t('res_8')}>
               {t('res_8')}
               </p>
             </div>

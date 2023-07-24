@@ -15,13 +15,13 @@ const page = ()=> {
         <Navbar/>
           <div className="bg-[#D2D2D2] py-10">
           <div className="text-5xl font-bold leading-9 text-center text-[#15233E]">
-          <h1 className="pt-14">{t('women_assistance_cell')}</h1>
+          <h1 className="pt-14" title={t('women_assistance_cell')}>{t('women_assistance_cell')}</h1>
         </div>
           <div className="flex items-center justify-center my-10">
           <img src="./navi_head.png" className="w-[80%] h-[50%]" />
           </div>
           <div className="text[#15233E] md:mx-20 md:ml-36 mx-5 text-left">
-              <h1>{t('wom_1')}</h1>
+              <h1 title={t('wom_1')}>{t('wom_1')}</h1>
               {/* </br> */}
               <h1 className="text-blue-500"><a href="https://womenchild.maharashtra.gov.in/content/homecontent/important-acts.php" target="_blank">Acts For Women Empowerment</a></h1>
               <h1 className="text-lg">MOBILE PHONE APPS FOR WOMEN SAFETY</h1>

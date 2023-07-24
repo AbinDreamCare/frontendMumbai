@@ -63,6 +63,7 @@ const Navbar = () => {
   { title: t('initiative') , link:"/initiatives"},
   { title: t('gallery')},
   { title: t('martyrs'), link: "/martyrs" },
+  { title: t('navi_mumbai_police_station_info'), link: "/navi-mumbai-police-station-information"}
   ]
 
   const ReportUs = [

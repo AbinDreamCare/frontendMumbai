@@ -29,7 +29,7 @@ function page() {
     <div className="">
       <Navbar/>
       <div className="font-bold  text-5xl leading-9 text-center text-[#15233E]">
-            <h1 className="pt-14">{t('senior_police_officers')}</h1>
+            <h1 className="pt-14" title={t('senior_police_officers')}>{t('senior_police_officers')}</h1>
           </div>
       <div className="justify-center w-full md:flex">
       <div className="items-center justify-center w-full grid-cols-3 md:grid">
@@ -40,15 +40,15 @@ function page() {
           </div>
           <div className="text-center">
             <div>
-              <h1 className="mt-2 text-lg font-semibold text-orange-600">{card.nameEng}</h1>
+              <h1 className="mt-2 text-lg font-semibold text-orange-600" title={card.nameEng}>{card.nameEng}</h1>
             </div>
             <div>
-              <h1 className="mt-1 text-sm font-semibold">{card.designationEng}</h1>
+              <h1 className="mt-1 text-sm font-semibold" title={card.designationEng}>{card.designationEng}</h1>
             </div>
             <div className="flex justify-center">
-              <span className=" mt-2 text-orange-700">
-                <a className="mx-4 flex gap-5" href={`mailto:${card.email}`}><AiOutlineMessage size={24}/>{card.email}</a>
-                <a className="mx-4 flex gap-5" href={`tel:${card.mobNo}`}><FiPhoneCall size={24}/>
+              <span className="mt-2 text-orange-700 ">
+                <a className="flex gap-5 mx-4" href={`mailto:${card.email}`} title={card.email}><AiOutlineMessage size={24}/>{card.email}</a>
+                <a title={card.mobNo} className="flex gap-5 mx-4" href={`tel:${card.mobNo}`}><FiPhoneCall size={24}/>
                 {card.mobNo}
                 </a>
               </span>
