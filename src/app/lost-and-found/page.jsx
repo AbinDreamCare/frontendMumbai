@@ -10,44 +10,29 @@ i18Instance();
 
 const Page = () => {
   const { t } = useTranslation();
-  const router = useRouter()
-  const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
-  const [address, setAddress] = useState("");
-  // const [name, setName] = useState('');
-  // const [address, setAddress] = useState('');
-  const [time1, setTime1] = useState("");
-  const [time2, setTime2] = useState("");
-  const [time3, setTime3] = useState("");
-  const [time4, setTime4] = useState("");
-  const [date1, setDate1] = useState("");
-  const [date2, setDate2] = useState("");
-  const [option1, setOption1] = useState("");
-  const [option2, setOption2] = useState("");
-  const [file, setFile] = useState(null);
-  const [otpVerPopup, setotpVerPopup] = useState(false)
-  const [verifyCaptcha,setVerifycaptcha]=useState("")
-  const [captchaerror,setCaptchaError]=useState(true)
+  const router = useRouter();
+
+  const [otpVerPopup, setotpVerPopup] = useState(false);
+  const [captchaerror, setCaptchaError] = useState(true);
   const [lostFoundData, setlostFoundData] = useState({
     policeStation: "",
-    
-      name: "",
-      email: "",
-      mobile: "",
-      address: "",
-      pin: "",
-   
-   
-      reportType: "",
-      articleType: "",
-      city: "",
-      state: '',
-      Articlepin: '',
-  
+
+    name: "",
+    email: "",
+    mobile: "",
+    address: "",
+    pin: "",
+    reportType: "",
+    articleType: "",
+    city: "",
+    state: "",
+    Articlepin: "",
+
     ArticleDescription: "",
   });
-  const [otp,setOtp]=useState("")
-  console.log("otp",otp);
+
+  const [otp, setOtp] = useState("");
+
   const handleChange = (e) => {
     setlostFoundData({ ...lostFoundData, [e.target.name]: e.target.value });
   };
@@ -62,16 +47,13 @@ const Page = () => {
   const [captcha, setCaptcha] = useState("");
   const [captchaImage, setCaptchaImage] = useState("");
 
-
-  useEffect(() => {
-    handleRefreshCaptcha();
-  }, []);
   const handleRefreshCaptcha = () => {
     //function for refreshing the captcha from backend
     axios
       .get("/captcha/sendcaptcha")
       .then((response) => {
         const { data } = response;
+        console.log("captcha is", data.text);
         setCaptchaImage("data:image/svg+xml;base64," + btoa(data));
       })
       .catch((error) => {
@@ -80,64 +62,68 @@ const Page = () => {
       });
   };
 
-  const handleCaptchaCheck=async()=>{
-    const ata={
-     currentCaptcha:captcha
+  useEffect(() => {
+    handleRefreshCaptcha();
+  }, []);
+
+  const handleCaptchaCheck = async () => {
+    console.log("entering captcha verification");
+    const ata = {
+      currentCaptcha: captcha,
+    };
+
+    const { data } = await axios.post("/captcha/verifycaptcha", ata);
+    if (data.validity == true) {
+      console.log("data is true", data);
+      setCaptchaError(false);
+    } else {
+      setCaptchaError(true);
     }
-console.log("ata",ata);
-
-    const {data}=await axios.post("/captcha/verifycaptcha",ata)
-    alert("called")
-    console.log(("datacaptcha" ,captcha));
-    setCaptchaError(false)
-    
- }
-
- console.log(("errorsss",captchaerror));
-  console.log("lostFoundData", lostFoundData);
+  };
 
   const resetForm = () => {
     setlostFoundData({
       policeStation: "",
-    applicantDetails: {
-      name: "",
-      email: "",
-      contact: "",
-      address: "",
-      pin: "",
-    },
-    ArticleDetails: {
-      reportType: "",
-      articleType: "",
-      city: "",
-      state: '',
-      pin: '',
-    },
-    ArticleDescription: "",
+      applicantDetails: {
+        name: "",
+        email: "",
+        contact: "",
+        address: "",
+        pin: "",
+      },
+      ArticleDetails: {
+        reportType: "",
+        articleType: "",
+        city: "",
+        state: "",
+        pin: "",
+      },
+      ArticleDescription: "",
     });
   };
 
   const handleSubmit = async (e) => {
     alert("submit enter");
-    //e.preventDefault();
 
-    try {
-      const { data } = await axios.post("/LostandFound/create", lostFoundData);
-      // const { data } = await signUp(user);
-      console.log("lost & found data", data);
-      //router.push('/lost-found-pdf');
-      if(data){
-        const id=data._id
-      router.push(`/Lost-found-pdf?data=${id}`)
-      resetForm();
-      }else{
-        alert("Registration Failed")
+    //e.preventDefault();
+      try {
+        const { data } = await axios.post(
+          "/LostandFound/create",
+          lostFoundData
+        );
+
+        if (data) {
+          const id = data._id;
+          router.push(`/lost-found-pdf?data=${id}`);
+          resetForm();
+        } else {
+          alert("Registration Failed");
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
-    //  }
-  };
+  
+  }
 
   return (
     <>
@@ -167,7 +153,7 @@ console.log("ata",ata);
             </h1>
           </div>
 
-          <div  className="w-[80%] px-10 mx-auto">
+          <div className="w-[80%] px-10 mx-auto">
             <div className="w-1/2 my-3">
               <label
                 className="block mb-2 text-sm font-bold text-gray-700"
@@ -183,26 +169,26 @@ console.log("ata",ata);
                 onChange={handleChange}
               >
                 <option value="">Select Police Station</option>
-                <option value="1">APMC</option>
-                <option value="2">CBD Belapur</option>
-                <option value="3">Kalamboli</option>
-                <option value="4">Khandeshwar</option>
-                <option value="5">Kharghar</option>
-                <option value="6">Kopar Khairane</option>
-                <option value="7">Mora Sagari</option>
-                <option value="8">Nerul</option>
-                <option value="9">Nhava Sheva</option>
-                <option value="10">NRI</option>
-                <option value="11">Panvel</option>
-                <option value="12">Panvel Taluka</option>
-                <option value="13">Rabale</option>
-                <option value="14">Rabale MIDC</option>
-                <option value="15">Sanpada</option>
-                <option value="16">Taloja</option>
-                <option value="17">Turbhe</option>
-                <option value="18">Uran</option>
-                <option value="19">Vashi</option>
-                <option value="20">Kamothe</option>
+                <option value="APMC">APMC</option>
+                <option value="CBD Belapur">CBD Belapur</option>
+                <option value="Kalamboli">Kalamboli</option>
+                <option value="Khandeshwar">Khandeshwar</option>
+                <option value="Kharghar">Kharghar</option>
+                <option value="Kopar Khairane">Kopar Khairane</option>
+                <option value="Mora Sagari">Mora Sagari</option>
+                <option value="Nerul">Nerul</option>
+                <option value="Nhava Sheva">Nhava Sheva</option>
+                <option value="NRI">NRI</option>
+                <option value="Panvel">Panvel</option>
+                <option value="Panvel Taluka">Panvel Taluka</option>
+                <option value="Rabale">Rabale</option>
+                <option value="Rabale MIDC">Rabale MIDC</option>
+                <option value="Sanpada">Sanpada</option>
+                <option value="Taloja">Taloja</option>
+                <option value="Turbhe">Turbhe</option>
+                <option value="Uran">Uran</option>
+                <option value="Vashi">Vashi</option>
+                <option value="Kamothe">Kamothe</option>
               </select>
             </div>
             <div className="py-6 font-bold text-center my-6 bg-blue-400">
@@ -218,14 +204,13 @@ console.log("ata",ata);
                   Full Name*
                 </label>
                 <input
-                   id="name"
+                  id="name"
                   type="text"
                   name="name"
                   placeholder="Enter your name"
                   onChange={handleChange}
                   value={lostFoundData.name}
                   className="w-full px-3 py-4 leading-tight text-gray-700 border border-gray-300 rounded appearance-none focus:outline-none focus:border-blue-500"
-                
                   required
                 />
               </div>
@@ -343,15 +328,16 @@ console.log("ata",ata);
                   <option value="AADHAR Card">AADHAR Card</option>
                   <option value="Voter ID Card">Voter ID Card</option>
                   <option value="Ration Card">Ration Card</option>
-                  <option value="Educational Document">Educational Document</option>
+                  <option value="Educational Document">
+                    Educational Document
+                  </option>
                   <option value="Mobile ">Mobile </option>
                   <option value="Other Document">Other Document</option>
                 </select>
               </div>
             </div>
-            
+
             <div className="flex mb-4">
-              
               <div className="w-1/2 mr-2 ">
                 <label
                   className="block mb-2 text-sm font-bold text-gray-700"
@@ -392,7 +378,6 @@ console.log("ata",ata);
             </div>
 
             <div className="flex mb-4">
-              
               <div className="w-1/2 mr-2">
                 <label
                   className="block mb-2 text-sm font-bold text-gray-700"
@@ -464,31 +449,29 @@ console.log("ata",ata);
               </h1>
             </div>
             <img
-                    src={captchaImage}
-             
-                    alt="captcha"
-                    className="bg-white h-16 w-40"
-                  />
+              src={captchaImage}
+              alt="captcha"
+              className="bg-white h-16 w-40"
+            />
 
-<button
-                    type="button"
-                    className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
-                    onClick={handleRefreshCaptcha}
-                  >
-                      {t("refresh")}
-                    </button>
-                    <input
-                  type="text"
-                  name="captcha"
-                  placeholder="Enter the data above"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[30%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
-                  value={captcha}
-                  onChange={(e) => setCaptcha(e.target.value)}
-                />
-               
-                {captchaerror && <span>enter Captcha ....!</span>
-                }
+            <button
+              type="button"
+              className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
+              onClick={handleRefreshCaptcha}
+            >
+              {t("refresh")}
+            </button>
+            <input
+              type="text"
+              name="captcha"
+              placeholder="Enter the data above"
+              className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[30%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required
+              value={captcha}
+              onChange={(e) => setCaptcha(e.target.value)}
+            />
+
+            {captchaerror && <span>enter Captcha ....!</span>}
             {/* <button
               className="px-4 py-2 mx-5 mt-3 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
               type="reset"
@@ -496,37 +479,32 @@ console.log("ata",ata);
               Reset
             </button> */}
             <button
-          
-              onClick={async() => {
+              onClick={async () => {
                 // alert()
-                handleCaptchaCheck()
-                if(!captchaerror){
-                if(lostFoundData.mobile!==""){
+                await handleCaptchaCheck();
+                if (captchaerror == false) {
+                  alert("captcha is success")
+                  if (lostFoundData.mobile !== "") {
+                    const ata = {
+                      mobile: lostFoundData.mobile,
+                    };
 
-                  const ata={
-                    mobile:lostFoundData.mobile
+                    const { data } = await axios.post("/otp/sendOtp", ata);
+                    console.log("data", data);
+                    //const data="kkkk"
+                    if (data.status == "pending") {
+                      setotpVerPopup(!otpVerPopup);
+                    } else {
+                      alert("Failed to Send OTP");
+                    }
+                  } else {
+                    alert("Enter Mobile Number");
                   }
-                  
-                  const {data}=await axios.post("/otp/sendOtp",ata)
-                  console.log("data",data);
-                  //const data="kkkk"
-                  if(data.status=="pending"){
-                    setotpVerPopup(!otpVerPopup)
-                  }else{
-                    alert("Failed to Send OTP")
-                  }
-                }else{
-                  alert("Enter Mobile Number")
-                }}else{
-                  alert("captcha error")
+                } else {
+                  alert("captcha error");
                 }
-                
-                
-                
               }}
-            
               className="px-4 py-2 font-bold mt-3 text-white bg-blue-500 rounded hover:bg-blue-700"
-             
             >
               Submit
             </button>
@@ -537,63 +515,58 @@ console.log("ata",ata);
         </div>
       </div>
 
-      {otpVerPopup && 
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
-      <div className="bg-white p-8 rounded-md">
-        <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
-       
-          <input
-            type="number"
-            value={otp}
-            name="otp"
-           
-            onChange={(e)=>{
-            setOtp(e.target.value)
-            }}
-            className="w-full border border-gray-300 p-2 rounded-md mb-4"
-            placeholder="Enter OTP"
-          />
-          <div className="flex justify-end">
-            <button
-              type="button"
-              onClick={()=>{
-                setotpVerPopup(!otpVerPopup)
-              }}
-              className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
-            >
-              Cancel
-            </button>
-            <button
-              // type="submit"
-              className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
-              onClick={async()=>{
-                
-               if(otp!=="" && otp.length ==6){
-                const ata={
-                  mobile:lostFoundData.mobile,
-                  otp:otp
-                }
-                console.log("verify",ata);
-                const {data}=await axios.post("/otp/verifyOtp",ata)
-                if(data.valid){
-                  
-                  handleSubmit()
+      {otpVerPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+          <div className="bg-white p-8 rounded-md">
+            <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
 
-                }else{
-                  alert("OTP verification Failed")
-                }
-               }else{
-                alert("enter a valid OTP")
-               }
+            <input
+              type="number"
+              value={otp}
+              name="otp"
+              onChange={(e) => {
+                setOtp(e.target.value);
               }}
-            >
-              Verify
-            </button>
+              className="w-full border border-gray-300 p-2 rounded-md mb-4"
+              placeholder="Enter OTP"
+            />
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={() => {
+                  setotpVerPopup(!otpVerPopup);
+                }}
+                className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
+              >
+                Cancel
+              </button>
+              <button
+                // type="submit"
+                className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
+                onClick={async () => {
+                  if (otp !== "" && otp.length == 6) {
+                    const ata = {
+                      mobile: lostFoundData.mobile,
+                      otp: otp,
+                    };
+                    console.log("verify", ata);
+                    const { data } = await axios.post("/otp/verifyOtp", ata);
+                    if (data.valid) {
+                      handleSubmit();
+                    } else {
+                      alert("OTP verification Failed");
+                    }
+                  } else {
+                    alert("enter a valid OTP");
+                  }
+                }}
+              >
+                Verify
+              </button>
+            </div>
           </div>
-       
-      </div>
-    </div>
-}
+        </div>
+      )}
     </>
   );
 };

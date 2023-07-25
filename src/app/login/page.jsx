@@ -27,7 +27,7 @@ function page() {
   const handleRefreshCaptcha = () => {
     //function for refreshing the captcha from backend
     axios
-      .get("/captcha")
+      .get("/captcha/sendcaptcha")
       .then((response) => {
         const { data } = response;
         setCaptchaImage("data:image/svg+xml;base64," + btoa(data));

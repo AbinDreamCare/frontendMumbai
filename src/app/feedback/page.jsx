@@ -9,10 +9,9 @@ import { useRouter } from "next/navigation";
 i18Instance();
 
 function Page() {
-  
   const { t } = useTranslation();
-  const router = useRouter()
-  const [otpVerPopup, setotpVerPopup] = useState(false)
+  const router = useRouter();
+  const [otpVerPopup, setotpVerPopup] = useState(false);
   const optionsFeedback = [
     { value: "option1", label: t("inform_us") },
     { value: "option2", label: t("feedback") },
@@ -40,10 +39,9 @@ function Page() {
     { value: "option19", label: t("uran") },
     { value: "option20", label: t("washi") },
   ];
-  const [verifyCaptcha,setVerifycaptcha]=useState("")
-  const [captchaerror,setCaptchaError]=useState(true)
+  // const [verifyCaptcha,setVerifycaptcha]=useState("")
+  const [captchaerror, setCaptchaError] = useState(true);
 
-  
   const [feedbackData, setFeedBackdata] = useState({
     policeStation: "",
     category: "",
@@ -56,9 +54,11 @@ function Page() {
   });
   const [captcha, setCaptcha] = useState("");
   const [captchaImage, setCaptchaImage] = useState("");
+
   useEffect(() => {
     handleRefreshCaptcha();
   }, []);
+
   const handleRefreshCaptcha = () => {
     //function for refreshing the captcha from backend
     axios
@@ -73,25 +73,24 @@ function Page() {
       });
   };
 
-  const handleCaptchaCheck=async()=>{
-    const ata={
-     currentCaptcha:captcha
+  const handleCaptchaCheck = async () => {
+    const ata = {
+      currentCaptcha: captcha,
+    };
+    const { data } = await axios.post("/captcha/verifycaptcha", ata);
+    console.log("data is", data)
+    if (data.validity) {
+      setCaptchaError(false);
+    } else {
+      setCaptchaError(true);
     }
-console.log("ata",ata);
+  };
+  
 
-    const {data}=await axios.post("/captcha/verifycaptcha",ata)
-    alert("called")
-    console.log(("datacaptcha" ,captcha));
-    setCaptchaError(false)
-    
- }
-
- console.log(("errorsss",captchaerror));
+  console.log(("errorsss", captchaerror));
   const handleChange = (e) => {
     setFeedBackdata({ ...feedbackData, [e.target.name]: e.target.value });
   };
-  console.log("feedback", feedbackData);
-
   const resetForm = () => {
     setFeedBackdata({
       policeStation: "",
@@ -104,33 +103,25 @@ console.log("ata",ata);
       description: "",
     });
   };
-const [otp,setOtp]=useState("")
-console.log("otp",otp);
+  const [otp, setOtp] = useState("");
   const handleSubmit = async (e) => {
-   
     // e.preventDefault();
-   
+
     try {
-     
-        const {data}=await axios.post("/feedBackRoute/create",feedbackData)
+      const { data } = await axios.post("/feedBackRoute/create", feedbackData);
       // const { data } = await signUp(user);
-      console.log("feedback data",data);
-      if(data){
-        const id=data._id
-      router.push(`/feedbackpdf?data=${id}`)
-      resetForm();
-      }else{
-        alert("Registration Failed")
+      if (data) {
+        const id = data._id;
+        router.push(`/feedbackpdf?data=${id}`);
+        resetForm();
+      } else {
+        alert("Registration Failed");
       }
-      
-      
-   
     } catch (error) {
       console.log(error);
     }
     //  }
   };
-console.log("captcha",captcha);
   return (
     <>
       <div className="w-full">
@@ -278,7 +269,7 @@ console.log("captcha",captcha);
                   </div>
                 </div>
               </div>
-                        {/* <button onClick={()=>{
+              {/* <button onClick={()=>{
                           const id="64b840ff50a3e5672e40106d"
                          
                         }}>
@@ -299,7 +290,6 @@ console.log("captcha",captcha);
                     className=" w-full py-1 border border-gray-500 rounded-lg"
                     required
                   />
-                  
                 </div>
               </div>
 
@@ -322,65 +312,59 @@ console.log("captcha",captcha);
               </div>
 
               <img
-                    src={captchaImage}
-             
-                    alt="captcha"
-                    className="bg-white h-16 w-40"
-                  />
+                src={captchaImage}
+                alt="captcha"
+                className="bg-white h-16 w-40"
+              />
 
-<button
-                    type="button"
-                    className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
-                    onClick={handleRefreshCaptcha}
-                  >
-                      {t("refresh")}
-                    </button>
-                    <input
-                  type="text"
-                  name="captcha"
-                  placeholder="Enter the data above"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[30%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
-                  value={captcha}
-                  onChange={(e) => setCaptcha(e.target.value)}
-                />
-               
-                {captchaerror && <span>enter Captcha ....!</span>
-                }
               <button
-                        // type="submit"
-                        onClick={async() => {
-                          // alert()
-                          handleCaptchaCheck()
-                          if(!captchaerror){
-                          if(feedbackData.mobile!==""){
+                type="button"
+                className="ml-2 my-2 bg-gray-200 px-3 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400"
+                onClick={handleRefreshCaptcha}
+              >
+                {t("refresh")}
+              </button>
+              <input
+                type="text"
+                name="captcha"
+                placeholder="Enter the data above"
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[30%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required
+                value={captcha}
+                onChange={(e) => setCaptcha(e.target.value)}
+              />
 
-                            const ata={
-                              mobile:feedbackData.mobile
-                            }
-                            
-                            const {data}=await axios.post("/otp/sendOtp",ata)
-                            console.log("data",data);
-                            //const data="kkkk"
-                            if(data.status=="pending"){
-                              setotpVerPopup(!otpVerPopup)
-                            }else{
-                              alert("Failed to Send OTP")
-                            }
-                          }else{
-                            alert("Enter Mobile Number")
-                          }
-                        }else{
-                          alert("captcha error")
-                        }
-                          
-                          
-                          
-                        }}
-                        className="p-1 mx-5 font-bold text-white bg-blue-800 border border-gray-500"
-                      >
-                        {t("submit")}
-                      </button>
+              {captchaerror && <span>enter Captcha ....!</span>}
+              <button
+                // type="submit"
+                onClick={async () => {
+                  // alert()
+                  handleCaptchaCheck();
+                  if (!captchaerror) {
+                    if (feedbackData.mobile !== "") {
+                      const ata = {
+                        mobile: feedbackData.mobile,
+                      };
+
+                      const { data } = await axios.post("/otp/sendOtp", ata);
+                      console.log("data", data);
+                      //const data="kkkk"
+                      if (data.status == "pending") {
+                        setotpVerPopup(!otpVerPopup);
+                      } else {
+                        alert("Failed to Send OTP");
+                      }
+                    } else {
+                      alert("Enter Mobile Number");
+                    }
+                  } else {
+                    alert("captcha error");
+                  }
+                }}
+                className="p-1 mx-5 font-bold text-white bg-blue-800 border border-gray-500"
+              >
+                {t("submit")}
+              </button>
               <div className="flex justify-center mb-16">
                 <div className="">
                   <div className="flex justify-center">
@@ -435,63 +419,58 @@ console.log("captcha",captcha);
         </div>
       </div>
 
+      {otpVerPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+          <div className="bg-white p-8 rounded-md">
+            <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
 
-      {otpVerPopup && 
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
-      <div className="bg-white p-8 rounded-md">
-        <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
-       
-          <input
-            type="number"
-            value={otp}
-            name="otp"
-           
-            onChange={(e)=>{
-            setOtp(e.target.value)
-            }}
-            className="w-full border border-gray-300 p-2 rounded-md mb-4"
-            placeholder="Enter OTP"
-          />
-          <div className="flex justify-end">
-            <button
-              type="button"
-              onClick={()=>{
-                setotpVerPopup(!otpVerPopup)
+            <input
+              type="number"
+              value={otp}
+              name="otp"
+              onChange={(e) => {
+                setOtp(e.target.value);
               }}
-              className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
-            >
-              Cancel
-            </button>
-            <button
-              // type="submit"
-              className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
-              onClick={async()=>{
-               if(otp!=="" && otp.length ==6){
-                const ata={
-                  mobile:feedbackData.mobile,
-                  otp:otp
-                }
-                console.log("verify",ata);
-                const {data}=await axios.post("/otp/verifyOtp",ata)
-                if(data.valid){
-                  
-                  handleSubmit()
-
-                }else{
-                  alert("OTP verification Failed")
-                }
-               }else{
-                alert("enter a valid OTP")
-               }
-              }}
-            >
-              Verify
-            </button>
+              className="w-full border border-gray-300 p-2 rounded-md mb-4"
+              placeholder="Enter OTP"
+            />
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={() => {
+                  setotpVerPopup(!otpVerPopup);
+                }}
+                className="px-4 py-2 mr-2 text-sm rounded-md text-gray-600 hover:bg-gray-100"
+              >
+                Cancel
+              </button>
+              <button
+                // type="submit"
+                className="px-4 py-2 text-sm rounded-md text-white bg-blue-500 hover:bg-blue-600"
+                onClick={async () => {
+                  if (otp !== "" && otp.length == 6) {
+                    const ata = {
+                      mobile: feedbackData.mobile,
+                      otp: otp,
+                    };
+                    console.log("verify", ata);
+                    const { data } = await axios.post("/otp/verifyOtp", ata);
+                    if (data.valid) {
+                      handleSubmit();
+                    } else {
+                      alert("OTP verification Failed");
+                    }
+                  } else {
+                    alert("enter a valid OTP");
+                  }
+                }}
+              >
+                Verify
+              </button>
+            </div>
           </div>
-       
-      </div>
-    </div>
-}
+        </div>
+      )}
     </>
   );
 }

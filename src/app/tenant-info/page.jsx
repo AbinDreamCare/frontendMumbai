@@ -8,121 +8,7 @@ import axios from "@/customHooks/axiosInstance";
 import { useRouter } from "next/navigation";
 i18Instance()
 
-// const options = [
-//   {
-//     name: 'Property Owners Details',
-//     fields: [
-//       [
-//         { label: 'Select Station', type: 'dropdown',value:formData.policeStation, name: 'policeStation', options: ['APMC', 'CBD Belapur', 'Kalamboli', 'Kamothe', 'Khandeshwar', 'Kharghar', 'Kopar Khairane', 'Mora Sagari', 'Nerul', 'Nhava Sheva', 'NRI', 'Panvel', 'Panvel Taluka', 'Rabale', 'Rabale MIDC', 'Sanpada', 'Taloja', 'Turbhe', 'Uran', 'Vashi'] },
-//         { label: 'Property Owners Photo', type: 'file', name: 'propertyOwnerImage' },
-//       ],
-//       [
-//         { label: 'Full Name', type: 'text', name: 'fullName' },
-//       ],
-//       [
-//         { label: 'Mobile Number', type: 'number', name: 'mobile' },
-//         { label: 'Email ID', type: 'email', name: 'email' },
-//       ],
-//       [
-//         { label: 'Address', type: 'text', name: 'address' },
-//         { label: 'City/District', type: 'text', name: 'city' },
-//       ],
-//       [
-//         { label: 'State', type: 'dropdown', name: 'state', options: ['Andaman and Nicobar Islands', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chandigarh', 'Chattisgarh', 'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi', 'Goa', 'Gujrat', 'Haryana', 'Himachal Pradesh', 'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Lakshadweep', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Orissa', 'Pondicherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttaranchal', 'Utttar Pradesh', 'West Bengal'] },
-//         { label: 'Pincode', type: 'number', name: 'pinCode' },
-//       ],
-//     ],
-//   },
-//   {
-//     name: 'Rented Property Details',
-//     fields: [
-//       [
-//         { label: 'Address', type: 'text', name: 'rentPropertyAddress' },
-//         { label: 'City/District', type: 'text', name: 'rentPropertyCity' },
-//       ],
-//       [
-//         { label: 'State', type: 'dropdown', name: ' rentPropertyState', options: ['Andaman and Nicobar Islands', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chandigarh', 'Chattisgarh', 'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi', 'Goa', 'Gujrat', 'Haryana', 'Himachal Pradesh', 'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Lakshadweep', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Orissa', 'Pondicherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttaranchal', 'Utttar Pradesh', 'West Bengal'] },
-//         { label: 'Pincode', type: 'number', name: ' rentPropertyPincode' },
-//       ],
-//       [
-//         { label: 'Agreement Start Date', type: 'date', name: 'AgreementStartDate' },
-//         { label: 'Agreement End Date', type: 'date', name: 'AgreementEndDate' },
-//       ],
-//     ],
-//   },
-//   {
-//     name: 'Tenants Details',
-//     fields: [
-//       [
-//         { label: 'Tenant Name', type: 'text', name: 'ten name' },
-//         { label: 'Tenants Photo', type: 'file', name: 'ten file' },
-//       ],
-//       [
-//         { label: 'Tenants Permanent Address', type: 'text', name: 'tenantName' },
-//         { label: 'Tenants City/District', type: 'text', name: 'tenantPermenentAddress' },
-//       ],
-//       [
-//         { label: 'State', type: 'dropdown', name: 'tenantPermenentState', options: ['Andaman and Nicobar Islands', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chandigarh', 'Chattisgarh', 'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi', 'Goa', 'Gujrat', 'Haryana', 'Himachal Pradesh', 'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Lakshadweep', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Orissa', 'Pondicherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttaranchal', 'Utttar Pradesh', 'West Bengal'] },
-//         { label: 'Pincode', type: 'number', name: 'tenantPermenentPincode' },
-//       ],
-//       [
-//         { label: 'Identity Proof of Tenant', type: 'dropdown', name: 'tenantIdType', options: ['AADHAR CARD', 'PAN Card', 'Voter ID Card', 'Ration Card', 'Driving License', 'Other Document'] },
-//         { label: 'Tenant Identity Proof Number', type: 'number', name: 'tenantIdNumber' },
-//       ],
-//       [
-//         { label: 'Co-Residents', type: 'text', name: 'tenantCoresidents' },
-//         { label: '', type: 'text', name: 'ten input1' },
-//         { label: '', type: 'text', name: 'ten input2' },
-//       ],
-//       [
-//         { label: 'Upload Your Identity Proof', type: 'file', name: 'ten file', fullWidth: true },
-//       ],
-//     ],
-//   },
-//   {
-//     name: 'Tenants Workplace Details',
-//     fields: [
-//       [
-//         { label: 'Tenants Mobile Number', type: 'number', name: 'tenantWorkPlaceNumber' },
-//         { label: 'Tenants Email Address', type: 'email', name: 'tenantWorkPlaceEmail' },
-//       ],
-//       [
-//         { label: 'Tenants Occupation', type: 'text', name: 'tenantOccupation' },
-//         { label: 'Address of Tenants Workplace', type: 'text', name: 'tenantWorkplaceAddress' },
-//       ],
-//       [
-//         { label: 'Tenants City/District', type: 'text', name: 'tenantWorkplaceCity' },
-//         { label: 'State', type: 'dropdown', name: 'tenantWorkplaceState', options: ['Andaman and Nicobar Islands', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chandigarh', 'Chattisgarh', 'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi', 'Goa', 'Gujrat', 'Haryana', 'Himachal Pradesh', 'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Lakshadweep', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Orissa', 'Pondicherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttaranchal', 'Utttar Pradesh', 'West Bengal'] },
-//       ],
-//       [
-//         { label: 'Pincode', type: 'number', name: 'tenantWorkplacePincode' },
-//       ],
-//     ],
-//   },
-//   {
-//     name: 'Persons Knowing Tenant',
-//     fields: [
-//       [
-//         { label: 'Person 1 Name', type: 'text', name: 'tenantKnownPersonName' },
-//         { label: 'Contact Number 1', type: 'number', name: 'tenantKnownPersonMobile' },
-//       ],
-//       [
-//         { label: 'Person 2 Name', type: 'text', name: 'tenantKnownPerson2Name' },
-//         { label: 'Contact Number 2', type: 'number', name: 'tenantKnownPerson2Mobile' },
-//       ],
-//       [
-//         { label: 'Agent Name', type: 'text', name: 'AgentName' },
-//         { label: 'Agent Details', type: 'text', name: 'AgentDetails' },
-//       ],
-//       [
-//         { label: 'Enter Captcha', type: 'number', name: 'per number' },
-//       ],
-//       [
-//         { label: 'Accept Terms', type: 'checkbox', name: 'AcceptTerms' },
-//       ],
-//     ],
-//   },
-// ];
+
 
 function page  () {
   const router = useRouter()
@@ -288,7 +174,6 @@ function page  () {
     },
   ];
 
-  console.log("haiii");
   const { t } = useTranslation();
   
   const [currentOption, setCurrentOption] = useState(0);

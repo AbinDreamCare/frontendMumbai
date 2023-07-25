@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "@/customHooks/axiosInstance";
+
+
 function page() {
     const [data,setData]=useState()
 useEffect(async()=>{
