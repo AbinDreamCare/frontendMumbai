@@ -101,6 +101,7 @@ const Navbar = () => {
   // { title: t('juvenile_aid_protection_unit') },
   // { title: t('anti_human_trafficking_unit') },
   // { title: t('crime_detection_unit')},
+  { title: t('licence_branch'), link: "/licence-branch"},
   ]
 
   const CitizenCorner = [
@@ -134,7 +135,7 @@ const Navbar = () => {
   // { title: t('welfare_activities'), link:"/police-welfare"}, 
   // { title: t('media_coverage') },
   { title: t('press_release') , link: "/press-releases"},
-  // { title: t('crime_review')},
+  { title: t('crime_review'), link: "/crime-review"},
   // { title: t('miscellaneoue') },
   
   { title: t('good_work'), link:"/good-work"},
